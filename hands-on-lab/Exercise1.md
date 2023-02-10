@@ -22,15 +22,15 @@
 
 1. Select **Connect** on the Remote Desktop Connection dialog.
 
-   ![In the Remote Desktop Connection Dialog Box, the Connect button is highlighted.](./media/remote-desktop-connection-sql-2008.png "Remote Desktop Connection dialog")
+   ![In the Remote Desktop Connection Dialog Box, the Connect button is highlighted.](./media/1.5.png "Remote Desktop Connection dialog")
 
 1. Enter the following credentials when prompted, and then select **OK**:
 
-   - **Username**: `sqlmiuser`
-   - **Password**: `Password.1234567890`
+   - **Username**: `DemoUser`
+   - **Password**: `Pass@demo1234567`
 
-   ![The credentials specified above are entered into the Enter your credentials dialog.](media/rdc-credentials-sql-2008.png "Enter your credentials")
+   ![The credentials specified above are entered into the Enter your credentials dialog.](media/1.6.png "Enter your credentials")
 
 1. Select **Yes** to connect if prompted that the remote computer's identity cannot be verified.
 
-   ![In the Remote Desktop Connection dialog box, a warning states that the remote computer's identity cannot be verified and asks if you want to continue anyway. At the bottom, the Yes button is circled.](./media/remote-desktop-connection-identity-verification-sqlserver2008.png "Remote Desktop Connection dialog")
+   ![In the Remote Desktop Connection dialog box, a warning states that the remote computer's identity cannot be verified and asks if you want to continue anyway. At the bottom, the Yes button is circled.](./media/1.7.png "Remote Desktop Connection dialog")
