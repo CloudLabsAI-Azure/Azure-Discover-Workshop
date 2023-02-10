@@ -27,7 +27,7 @@
 1. Enter the following credentials when prompted, and then select **OK**:
 
    - **Username**: `DemoUser`
-   - **Password**: `Pass@demo1234567`
+   - **Password**: `Password.1234567890`
 
    ![The credentials specified above are entered into the Enter your credentials dialog.](media/1.6.png "Enter your credentials")
 
