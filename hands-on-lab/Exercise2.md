@@ -2,7 +2,7 @@
 
 ### Task 2: Create an Azure-SSIS integration runtime
 
-1. Navigate to the [Azure portal](https://portal.azure.com) and select **Data Factories** from the Azure services list.
+1. Navigate to the [Azure portal](https://portal.azure.com), search and select **Data Factories** from the Azure search bar.
 
     ![Resource groups is highlighted in the Azure services list.](media/1.14.png "Azure services")
 
