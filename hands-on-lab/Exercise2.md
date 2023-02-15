@@ -58,5 +58,11 @@
     
 1. Click on **Continue**.
 
-1. 
+1. Leave it as default, and Click on **Create**.
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.24.png "Azure services")
+
+1. You will see that **SSISIR** integration runtime is in running status.
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.25.png "Azure services")
     
