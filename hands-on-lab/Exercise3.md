@@ -60,4 +60,4 @@
 	 END' 
    EXEC sp_MSforeachdb @cmd;
     ```
-   ![The SQL Server Connect to Search dialog is displayed, with SQL2008-entered into the Server name and Windows Authentication selected.](media/1.32.png "Connect to Server")
+   ![The SQL Server Connect to Search dialog is displayed, with SQL2008-entered into the Server name and Windows Authentication selected.](media/1.33.png "Connect to Server")
