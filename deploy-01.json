@@ -147,7 +147,7 @@
       "dataFactoryName": "[concat('sqlhack-datafactory-', uniqueString(resourceGroup().id))]",
       "nodeSize": "Standard_A4_v2",
       "virtualNetworkId": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
-      "keyvaultname": "key-vaults"
+      "keyvaultname": "[concat('keyvault-',parameters('DeploymentID'))]"
   },
   "resources": [
   {
