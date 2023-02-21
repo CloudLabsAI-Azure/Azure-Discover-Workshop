@@ -81,7 +81,11 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    * Password: <inject key="AzureAdUserPassword"></inject>
 
-    ![On the Visual Studio welcome screen, the Sign in button is highlighted.](media/1.36.png "Visual Studio")
+    ![On the Visual Studio welcome screen, the Sign in button is highlighted.](media/1.66.png "Visual Studio")
+    
+1. Once you Signed in, Click on **Start Visual Studio**.
+
+     ![A Visual Studio security warning is displayed, and the Ask me for every project in this solution checkbox is unchecked and highlighted.](media/1.68.png "Visual Studio")
 
 1. At the security warning prompt, uncheck **Ask me for every project in this solution**, and then select **OK**.
 
@@ -117,29 +121,54 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 ### Task 3: Update App Service configuration
 
-In this task, you update the WWI gamer info web application to connect to and utilize the SQL MI database.
+1. First, use the Azure Cloud Shell to retrieve the fully qualified domain name of your SQL MI database. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
+
+   ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.62.png "Azure Cloud Shell")
+
+1. In the Cloud Shell window that opens at the bottom of your browser window, select **PowerShell**.
+
+   ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.63.png "Azure Cloud Shell")
+
+1. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and be presented with a PS Azure prompt.
+
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
+
+1. At the prompt, retrieve information about SQL MI in the SQLMI-Shared-RG resource group by entering the following PowerShell command.
+
+   ```powershell
+   $resourceGroup = "SQLMI-Shared-RG"
+   az sql mi list --resource-group $resourceGroup
+   ```
+
+   > **Note**
+   >
+   > If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions. Copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
+
+1. Within the above command's output, locate and copy the value of the `fullyQualifiedDomainName` property. Paste the value into a text editor, such as Notepad.exe, for reference below.
+
+   ![The output from the az sql mi list command is displayed in the Cloud Shell, and the fullyQualifiedDomainName property and value are highlighted.](media/1.65.png "Azure Cloud Shell")
 
 1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the Azure services list.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.1.png "Azure services")
 
-2. Select the <inject key="Resource Group Name" enableCopy="false"/> resource group from the list.
+1. Select the <inject key="Resource Group Name" enableCopy="false"/> resource group from the list.
 
    ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab-< resource group is highlighted.](./media/1.2.png "Resource groups list")
 
-3. In the list of resources for your resource group, select the **<inject key="Resource Group Name" enableCopy="false"/>** resource group and then select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** App Service from the list of resources.
+1. In the list of resources for your resource group, select the **<inject key="Resource Group Name" enableCopy="false"/>** resource group and then select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** App Service from the list of resources.
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
-4. On the App Service blade, select **Configuration** under Settings on the left-hand side.
+1. On the App Service blade, select **Configuration** under Settings on the left-hand side.
 
    ![The Configuration item is selected under Settings.](media/1.46.png "Configuration")
 
-5. On the Configuration blade, locate the **Connection strings** section and then select the Pencil (Edit) icon to the right of the `WwiContext` connection string.
+1. On the Configuration blade, locate the **Connection strings** section and then select the Pencil (Edit) icon to the right of the `WwiContext` connection string.
 
    ![In the Connection string section, the pencil icon is highlighted to the right of the WwiContext connection string.](media/1.47.png "Connection Strings")
 
-6. The value of the connection string should look like this:
+1. The value of the connection string should look like this:
 
     
   ``
@@ -147,31 +176,31 @@ In this task, you update the WWI gamer info web application to connect to and ut
    ``
    
 
-7. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> .
+1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> .
 
    ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/images/9.png "Edit Connection String")
 
-8. The updated value should look similar to the following screenshot.
+1. The updated value should look similar to the following screenshot.
 
    ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/1.49.png "Connection string value")
 
-9. Select **OK**.
+1. Select **OK**.
 
-10. Repeat steps 3 - 7, this time for the `WwiReadOnlyContext` connection string.
+1. Repeat steps 3 - 7, this time for the `WwiReadOnlyContext` connection string.
 
-11. Select **Save** at the top of the Configuration blade.
+1. Select **Save** at the top of the Configuration blade.
 
     ![The save button on the Configuration blade is highlighted.](media/1.50.png "Save")
 
-12. When prompted that changes to application settings and connection strings will restart your application, select **Continue**.
+1. When prompted that changes to application settings and connection strings will restart your application, select **Continue**.
 
     ![The prompt warning that the application will be restarted is displayed, and the Continue button is highlighted.](media/1.51.png "Restart prompt")
 
-13. Select **Overview** to the left of the Configuration blade to return to the overview blade of your App Service.
+1. Select **Overview** to the left of the Configuration blade to return to the overview blade of your App Service.
 
     ![Overview is highlighted on the left-hand menu for App Service](media/1.52.png "Overview menu item")
 
-14. At this point, selecting the **URL** for the App Service on the Overview blade still results in an error being returned. The error occurs because SQL Managed Instance has a private IP address in its VNet. To connect an application, you need to configure access to the VNet where Managed Instance is deployed, which you handle in the next exercise.
+1. At this point, selecting the **URL** for the App Service on the Overview blade still results in an error being returned. The error occurs because SQL Managed Instance has a private IP address in its VNet. To connect an application, you need to configure access to the VNet where Managed Instance is deployed, which you handle in the next exercise.
 
     ![An error screen is displayed because the application cannot connect to SQL MI within its private virtual network.](media/1.53.png "Web App error")
 
