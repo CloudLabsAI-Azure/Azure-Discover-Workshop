@@ -1,5 +1,23 @@
 ## Exercise 2: General post-setup tasks
 
+### Task 1: Enable CLR on the SQL Managed Instance 
+
+1. In Microsoft SQL Server Management Studio, select **New Query** from the SSMS toolbar.
+
+    ![The New Query button is highlighted in the SSMS toolbar.](media/1.11.png "SSMS Toolbar")
+    
+1. Next, copy and paste the SQL script below into the new query window. This script enable the Common Language Runtime on Managed Instance.
+
+    ```sql
+    EXEC sp_configure 'clr enabled', 1;
+    GO
+    RECONFIGURE;
+    GO
+    ```
+1. To run the script, select **Execute** from the SSMS toolbar.
+
+    ![The Execute button is highlighted in the SSMS toolbar.](media/1.12.png "SSMS Toolbar")
+    
 ### Task 2: Create an Azure-SSIS integration runtime
 
 1. Navigate to the [Azure portal](https://portal.azure.com), search and select **Data Factories** from the Azure search bar.
