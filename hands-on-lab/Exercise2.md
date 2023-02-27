@@ -18,7 +18,14 @@
 
     ![The Execute button is highlighted in the SSMS toolbar.](media/1.12.png "SSMS Toolbar")
     
-### Task 2: Create an Azure-SSIS integration runtime
+### Task 2: Prepare SSIS Demo
+
+1. In the File Explorer dialog, navigate to the `C:\Labfiles` folder. In the `lab-files` folder, Right click on `ssis.ps1` powershell script and click on **Run with powershell**.
+    
+    ![The Execute button is highlighted in the SSMS toolbar.](media/1.69.png "SSMS Toolbar")
+   
+    
+### Task 3: Create an Azure-SSIS integration runtime
 
 1. Navigate to the [Azure portal](https://portal.azure.com), search and select **Data Factories** from the Azure search bar.
 
@@ -32,13 +39,11 @@
 
     ![Resource groups is highlighted in the Azure services list.](media/1.16.png "Azure services")
 
-1. On the home page, select the **Configure SSIS** tile.
-
-    ![Resource groups is highlighted in the Azure services list.](media/1.17.png "Azure services")
-
 1. In the Azure Data Factory UI, switch to the **Manage** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
     ![Resource groups is highlighted in the Azure services list.](media/1.18.png "Azure services")
+    
+1. Click on the Manage icon->Integration Runtimes. Select SSISIR and click Start. If it cannot be started, delete the SSISIR integration runtime and follow the below steps to create a new SSIS integration runtime.
 
 1. Select **New** to create an Azure-SSIS IR and open the Integration runtime setup pane.
 
@@ -50,35 +55,35 @@
     
 1. On the **General settings** page of Integration runtime setup pane, complete the following steps.
 
-    - Enter Name : **SSISIR**.
-    - Location: **Central US**.
+    - Enter Name : **SSISIR**
+    - Location: **Central US**
+    - Node Size: **D4_v3 (4 Core(s), 16384 MB)**
+    - Node Number: **1**
     - Click on **Continue**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.21.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.70.png "Azure services")
     
 1. On the Deployment settings page of Integration runtime setup pane, you have the options to create **SSISDB**.
 
-    - Subscription: Check whatever you used to perform the steps.
-    - Location: **Central US**
-    - Enter Admin Username: **DemoUser**
-    - Enter Admin Password: **Password.1234567890**
+    - Enter Admin Username: **contosoadmin**
+    - Enter Admin Password: **IAE5fAijit0w^rDM**
     - Click on **Continue**.
                
-    ![Resource groups is highlighted in the Azure services list.](media/1.22.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.71.png "Azure services")
     
 1. In the Advanced settings pane of the Integration runtime setup pane,
 
     - VNet Name: **vnet-sqlmi--cus**
-    - Subnet name: **Management**
+    - Subnet name: **Management1**
     - Click on **VNet Validation**
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.23.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.72.png "Azure services")
     
 1. Click on **Continue**.
 
 1. Leave it as default, and Click on **Create**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.24.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.74.png "Azure services")
 
 1. You will see that **SSISIR** integration runtime is in running status.
 
