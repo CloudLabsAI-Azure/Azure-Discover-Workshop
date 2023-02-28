@@ -124,8 +124,8 @@
     
 1. On the Deployment settings page of Integration runtime setup pane, you have the options to create **SSISDB**.
 
-    - Enter Admin Username: **contosoadmin**
-    - Enter Admin Password: **IAE5fAijit0w^rDM**
+    - Enter Admin Username: `contosoadmin`
+    - Enter Admin Password: `IAE5fAijit0w^rDM`
     - Click on **Continue**.
                
     ![Resource groups is highlighted in the Azure services list.](media/1.71.png "Azure services")
