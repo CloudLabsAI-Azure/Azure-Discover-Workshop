@@ -1,4 +1,4 @@
-## Exercise 2: General post-setup tasks
+## Exercise 2: Migrate your on-premise SSIS using Azure Data Factory
 
 ### Task 1: Review the already Enabled CLR on the SQL Managed Instance
 
@@ -65,23 +65,23 @@
     
 ### Task 2: Prepare SSIS Demo
 
-1. 
+1. Type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
+
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.80.png "SSMS Toolbar")
+
+1. If prompted, click **Yes** to allow the app to make changes to your device.
+
+1. Click on **File** menu and then click on **Open** to open a powershell script.
+
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.82.png "SSMS Toolbar")
+   
+1. Navigate to the `C:\Labfiles` folder, Click on **ssis.ps1** script and then click on **Open**. 
+   
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
+   
+1. Now, change the DID in line 40 with suffix which is present in the environment details and click on **Run script**.
 
 
-
-
-
-
-
-
-
-
-
-
-
-1. In the File Explorer dialog, navigate to the `C:\Labfiles` folder. In the `lab-files` folder, Right click on `ssis.ps1` powershell script and click on **Run with powershell**.
-    
-    ![The Execute button is highlighted in the SSMS toolbar.](media/1.69.png "SSMS Toolbar")
    
     
 ### Task 3: Create an Azure-SSIS integration runtime
