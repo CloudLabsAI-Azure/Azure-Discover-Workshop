@@ -88,7 +88,7 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Please Enter the Admi
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "############################################################################################################"
 
 $adminUsername = "contosoadmin"
-$securePassword = "197032d3-64e7-46a3-aced-1923655c17ab" | ConvertTo-SecureString -AsPlainText -Force
+$securePassword = "IAE5fAijit0w^rDM" | ConvertTo-SecureString -AsPlainText -Force
 $adminPassword = $securePassword
 $SharedRG = "SQLMI-Shared-RG"
 
