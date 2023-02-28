@@ -43,7 +43,7 @@
 
     ![Resource groups is highlighted in the Azure services list.](media/1.18.png "Azure services")
     
-1. Click on the Manage icon->Integration Runtimes. Select SSISIR and click Start. If it cannot be started, delete the SSISIR integration runtime and follow the below steps to create a new SSIS integration runtime.
+1. Select SSISIR and click Start. If it cannot be started, delete the SSISIR integration runtime and follow the below steps to create a new SSIS integration runtime.
 
 1. Select **New** to create an Azure-SSIS IR and open the Integration runtime setup pane.
 
