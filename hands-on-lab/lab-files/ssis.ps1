@@ -12,12 +12,30 @@ Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force
 
 Install-Module -Name Az -Force -AllowClobber
 
+sleep 5
+
+Install-Module SQLServer -Confirm:$False -Repository PSGallery -Force -AllowClobber
+
 ###############################################################################
 # Connect to Azure with Subscription and Tenant
 ###############################################################################
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Connecting Powershell to your Subscription......................................."
-Connect-AzAccount
+#Az Login
+
+. C:\LabFiles\AzureCreds.ps1
+
+$userName = $AzureUserName
+$password = $AzurePassword
+$subscriptionId = $AzureSubscriptionID
+$TenantID = $AzureTenantID
+
+
+$securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
+$cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $userName, $SecurePassword
+
+Connect-AzAccount -Credential $cred | Out-Null
+
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Setting Enviroment Varibales....................................................."
 $subscriptionID = (Get-AzContext).Subscription.id
@@ -30,14 +48,11 @@ else {   `
     $subscriptionMessage = ("Targeting Azure subscription: {0} - {1}." -f $subscriptionID, $subscriptionName)}
 Write-Host -BackgroundColor Black -ForegroundColor Yellow $subscriptionMessage
 
-if ((read-host "Please ensure this is the correct subscription. Press a to abort, any other key to continue.") -eq "a") {Return;}
-Write-Host -BackgroundColor Black -ForegroundColor Yellow "Continuing to build.................................................."
-
 ###############################################################################
 # Set variables for storage account RG 
 ##############################################################################
 
-$labrg = "Azure-Discover-RG-870849"
+$labrg = "Azure-Discover-RG-deploymentidvalue"
 
 
 ###############################################################################
@@ -58,7 +73,7 @@ If(-not (Get-AzStorageContainer -Context $Context -Name build -ErrorAction Ignor
 }
 
 #Create SASUri for Build Container
-$storagePolicyName = “Build-Policy”
+$storagePolicyName = "Build-Policy"
 $expiryTime = (Get-Date).AddYears(1)
 
 If(-not (Get-AzStorageContainerStoredAccessPolicy -Context $Context -Name build)){
@@ -68,7 +83,7 @@ $SASUri = (New-AzStorageContainerSASToken -Name "build" -FullUri -Policy $storag
 
 #Copy Files from github to Local machine
 
-$Temp = (Get-Item -Path Env:Temp).value + "\SQLHACK"
+$Temp = "C:\LabFiles"
 $output = md $Temp -ErrorAction Ignore
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Copying Backups to Blob storage....................................................."
@@ -84,8 +99,7 @@ $output = Get-ChildItem -File -Recurse -Filter "*.bak" |  Set-AzStorageBlobConte
 # Set Variables for SQLMI RG
 ##############################################################################
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "################################# BUILD ENVIROMENT #########################################################"
-Write-Host -BackgroundColor Black -ForegroundColor Yellow "Please Enter the Admin username, password and SHARED resource groups used in the Build"
-Write-Host -BackgroundColor Black -ForegroundColor Yellow "############################################################################################################"
+
 
 $adminUsername = "contosoadmin"
 $securePassword = "IAE5fAijit0w^rDM" | ConvertTo-SecureString -AsPlainText -Force
@@ -95,13 +109,7 @@ $SharedRG = "SQLMI-Shared-RG"
 ###############################################################################
 # Find Managed Instance
 ###############################################################################
-$sqlmiFDQN = (Get-AzSqlInstance -ResourceGroupName $SharedRG).FullyQualifiedDomainName  | Select-object -First 1
-
-if ($sqlmiFDQN -eq $null) {Write-Host -BackgroundColor Red -ForegroundColor White "Managed Instance not found. Please check build to ensure all deployments have completed and retry. Aborting" ; Return;}
-Write-Host -BackgroundColor Black -ForegroundColor Yellow "Found and targeting Managed Instance: $sqlmiFDQN"
-
-if ((read-host "Please ensure this is the correct Managed Instance. Press a to abort, any other key to continue.") -eq "a") {Return;}
-Write-Host -BackgroundColor Black -ForegroundColor Yellow "Continuing to build.................................................."
+$sqlmiFDQN = "sqlmi--cus.cb0c7139b099.database.windows.net"
 
 ###############################################################################
 # Restore Databases
@@ -122,7 +130,7 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
 $Query = "if not exists (select 1 from sys.credentials where name = '" + $SASUri.split('?')[0,2] + "') CREATE CREDENTIAL [" + $SASUri.split('?')[0,2] + "] WITH IDENTITY='Shared Access Signature', SECRET='" + $SASUri.split('?')[1,2] + "'"
 Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Username $adminUsername -Password $Credentials.GetNetworkCredential().Password
 
-# Restore Database 2008DW
+# Restore Database WideWorldImporters
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Attempting restore WideWorldImporters database on Managed Instance $sqlmiFDQN"
 $blob = (Get-AzStorageBlob -Container build -Context $Context -Blob 'WideWorldImporters.bak').ICloudBlob.Uri.AbsoluteUri
 $Query = "if not exists (select 1 from sysdatabases where name = 'WideWorldImporters') RESTORE DATABASE [WideWorldImporters] FROM URL = '$blob'"
