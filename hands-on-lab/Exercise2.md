@@ -98,11 +98,11 @@
 
     ![Resource groups is highlighted in the Azure services list.](media/1.16.png "Azure services")
 
-1. In the Azure Data Factory UI, switch to the **Manage** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
+1. In the Azure Data Factory portal, switch to the **Manage** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.18.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.84.png "Azure services")
     
-1. Select SSISIR and click Start. If it cannot be started, delete the SSISIR integration runtime and follow the below steps to create a new SSIS integration runtime.
+    >**Note**: Select SSISIR and click Start. If it cannot be started, delete the SSISIR integration runtime and follow the below steps to create a new SSIS integration runtime.
 
 1. Select **New** to create an Azure-SSIS IR and open the Integration runtime setup pane.
 
@@ -116,11 +116,11 @@
 
     - Enter Name : **SSISIR**
     - Location: **Central US**
-    - Node Size: **D4_v3 (4 Core(s), 16384 MB)**
+    - Node Size: **D2_v3 (2 Core(s), 8192 MB)**
     - Node Number: **1**
     - Click on **Continue**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.70.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.85.png "Azure services")
     
 1. On the Deployment settings page of Integration runtime setup pane, you have the options to create **SSISDB**.
 
