@@ -89,7 +89,7 @@ $output = md $Temp -ErrorAction Ignore
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Copying Backups to Blob storage....................................................."
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
-Invoke-WebRequest 'https://github.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/blob/main/Hands-on%20lab/lab-files/Database/WideWorldImporters.bak?raw=true' -UseBasicParsing -OutFile "$temp\WideWorldImporters.bak" | Wait-Process
+Invoke-WebRequest 'https://github.com/CloudLabsAI-Azure/Azure-Discover-Workshop/blob/main/hands-on-lab/lab-files/WideWorldImporters.bak?raw=true' -UseBasicParsing -OutFile "$temp\WideWorldImporters.bak" | Wait-Process
 
 # Copy Files to Blob
 cd $Temp
