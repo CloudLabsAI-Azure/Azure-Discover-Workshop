@@ -8,7 +8,7 @@
 
 1. Select the **<inject key="Resource Group Name" enableCopy="false"/>** resource group from the list.
 
-   ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab resource group is highlighted.](./media/1.2.png "Resource groups list")
+   ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab resource group is highlighted.](./media/sad1.jpg "Resource groups list")
 
 1. In the list of resources for your resource group, select the **legacysql2008** VM.
 
@@ -60,7 +60,7 @@
 1. Next, copy and paste the SQL script below into the new query window. This script enable the Common Language Runtime in databases.
 
     ```sql
-    USE [database_name];
+    USE WideWorldImporters;
     GO
     EXEC sp_configure 'clr enabled', 1;
     GO

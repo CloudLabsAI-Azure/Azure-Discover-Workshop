@@ -10,6 +10,18 @@
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.63.png "Azure Cloud Shell")
 
+1. In the You have no storage mounted, Click on  **Show advanced settings**. 
+
+   ![](media/sad2.jpg "Azure Cloud Shell")
+
+1. Provide the following details and click on **Create storage (4)**.
+
+   - Resource group: **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> (1)**
+   - Storage account: **cloudshell<inject key="DeploymentID" enableCopy="false" /> (2)**
+   - File share: **blob (3)**
+
+   ![](media/sad3.jpg "Azure Cloud Shell")
+
 1. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and be presented with a PS Azure prompt.
 
    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
@@ -80,7 +92,9 @@
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
    
 1. Click on **Run script**.
-   
+
+   ![The Execute button is highlighted in the SSMS toolbar.](media/sad4.jpg "SSMS Toolbar")
+  
 ### Task 3: Create an Azure-SSIS integration runtime
 
 1. Navigate to the [Azure portal](https://portal.azure.com), search and select **Data Factories** from the Azure search bar.
