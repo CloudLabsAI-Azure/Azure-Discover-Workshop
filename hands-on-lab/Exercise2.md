@@ -79,11 +79,8 @@
    
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
    
-1. Now, change the DID in line 40 with suffix which is present in the environment details and click on **Run script**.
-
-
+1. Click on **Run script**.
    
-    
 ### Task 3: Create an Azure-SSIS integration runtime
 
 1. Navigate to the [Azure portal](https://portal.azure.com), search and select **Data Factories** from the Azure search bar.
