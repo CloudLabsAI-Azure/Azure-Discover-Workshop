@@ -22,3 +22,16 @@
     
 1. Click on **Save**.
     
+1. Navigate back to Microsoft defender for cloud and Click on **View all recommendations in Defender for Cloud**.
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.86.png "Azure services")
+
+
+1. On the Recommendation page, pay attention to the first part of the page; the summary view. It includes the current progress on the **Recommendations status** (both completed security controls and recommendations), and **Resource health** (by severity).
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.87.png "Azure services")
+
+
+1. From the top menu, click on the **Download CSV report** button – this allows you to get a snapshot of your resources, their health status, and the associated            recommendations. You can use this file for pivoting and reporting.
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.88.png "Azure services")
