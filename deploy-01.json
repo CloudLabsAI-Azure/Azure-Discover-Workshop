@@ -317,7 +317,7 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
               "fileUris": [
-                "https://raw.githubusercontent.com/yashmadan123/Azure-Discover-Workshop/main/sqlvm.ps1",
+                "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/sqlvm.ps1",
                 "https://experienceazure.blob.core.windows.net/templates/cloudlabs-common/cloudlabs-windows-functions.ps1"
               ],
               "commandToExecute": "[concat('powershell.exe -ExecutionPolicy ByPass -File sqlvm.ps1', variables('cloudlabsCommon'))]"
@@ -439,7 +439,7 @@
             "autoUpgradeMinorVersion": true,
             "settings": {
               "fileUris": [
-                "https://raw.githubusercontent.com/yashmadan123/Azure-Discover-Workshop/main/jumpvm.ps1",
+                "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/jumpvm.ps1",
                 "https://experienceazure.blob.core.windows.net/templates/cloudlabs-common/cloudlabs-windows-functions.ps1"
               ],
                 "commandToExecute": "[concat('powershell.exe -ExecutionPolicy ByPass -File jumpvm.ps1', variables('cloudlabsCommon'), variables('Enable-CloudLabsEmbeddedShadow'))]"
