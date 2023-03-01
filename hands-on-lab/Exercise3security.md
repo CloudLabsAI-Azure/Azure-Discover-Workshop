@@ -35,3 +35,16 @@
 1. From the top menu, click on the **Download CSV report** button – this allows you to get a snapshot of your resources, their health status, and the associated            recommendations. You can use this file for pivoting and reporting.
 
     ![Resource groups is highlighted in the Azure services list.](media/1.88.png "Azure services")
+    
+1. To view the recommendation, search and select **Machines should have a vulnerability assessment solution**.
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.89.png "Azure services")
+    
+    
+1. Click to expand **Remediation steps (1)** – then click on the **Quick fix logic (2)** option to expose an automatic remediation script content (ARM template). Once    done, **Close (3)** this window. 
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.90.png "Azure services")
+    
+1. From the Affected resources tab, you will see **no Unhealthy resources** and **no Healthy resources** are there to fix because they all are already fix
+
+    ![Resource groups is highlighted in the Azure services list.](media/1.91.png "Azure services")
