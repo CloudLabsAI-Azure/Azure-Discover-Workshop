@@ -47,11 +47,11 @@
 
    - **Server name**: Enter the fully qualified domain name of your SQL managed instance, which you copied from the Azure Cloud Shell in the previous steps.
    - **Authentication**: Select **SQL Server Authentication**.
-   - **Login**: Enter `sqlmiuser`
-   -  **Password**: Enter `Password.1234567890`
+   - **Login**: Enter `contosoadmin`
+   -  **Password**: Enter `IAE5fAijit0w^rDM`
    - Check the **Remember password** box.
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.77.png "Migration Wizard Select source")
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.167.png "Migration Wizard Select source")
 
 1. Select **Connect**. 
 
