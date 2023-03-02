@@ -125,11 +125,11 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 1. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
 
-   ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/cloud-shell-icon.png "Azure Cloud Shell")
+   ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.142.png "Azure Cloud Shell")
 
 2. In the Cloud Shell window that opens at the bottom of your browser window, select **PowerShell**.
 
-   ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/cloud-shell-select-powershell.png "Azure Cloud Shell")
+   ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.143.png "Azure Cloud Shell")
 
 3. If prompted about not having a storage account mounted, click on **Show advanced settings**. Select Create new under Storage account and provide values as below: 
   
@@ -137,11 +137,11 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
       - **Storage account**: **storage<inject key="Suffix" enableCopy="false"/>**
       - **File Share**: **blob**
 
-   ![This is a screenshot of the cloud shell opened in a browser window. Powershell was selected.](media/b4-image36.png "Azure Cloud Shell")
+   ![This is a screenshot of the cloud shell opened in a browser window. Powershell was selected.](media/1.144.png "Azure Cloud Shell")
 
 4. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and you are presented with a PS Azure prompt.
 
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/cloud-shell-ps-azure-prompt.png "Azure Cloud Shell")
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.145.png "Azure Cloud Shell")
 
 5. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-DID and vm name with: LEGACYSQL2008 VM. 
 
@@ -158,7 +158,7 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 6. Within the output, locate and copy the value of the `ipAddress` property below the `PrivateIPAddresses` field. Paste the value into a text editor, such as Notepad.exe, for later reference.
 
-   ![The output from the az vm list-ip-addresses command is displayed in the Cloud Shell, and the public IP address for the Sql2008VM is highlighted.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/vmip.png "Azure Cloud Shell")
+    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.146.png "Azure Cloud Shell")
 
 7. Leave the Azure Cloud Shell open for the next task.
 
@@ -168,11 +168,11 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
 1. In the Azure portal `https://portal.azure.com`, navigate to the Azure Database Migration Service by selecting **Resource groups** from the left-hand navigation menu, selecting the **<inject key="Resource Group Name" enableCopy="false"/>**  resource group, and then selecting the **wwi-dms** Azure Database Migration Service in the list of resources.
 
-   ![The wwi-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab resource group.](media/resource-group-dms-resource.png "Resources")
+   ![The wwi-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab resource group.](media/1.147.png "Resources")
 
 2. On the Azure Database Migration Service blade, select **+New Migration Project**.
 
-   ![On the Azure Database Migration Service blade, +New Migration Project is highlighted in the toolbar.](media/dms-add-new-migration-project.png "Azure Database Migration Service New Project")
+   ![On the Azure Database Migration Service blade, +New Migration Project is highlighted in the toolbar.](media/1.148.png "Azure Database Migration Service New Project")
 
 3. On the New migration project blade, enter the following:
 
@@ -181,7 +181,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - **Target server type**: Select **Azure SQL Database Managed Instance (2)**.
    - **Choose type of activity**: Select **Online data migration (3)**.
 
-      ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/sqlnndbdbdbd.png "New migration project")
+      ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/1.149.png "New migration project")
 
 4. Select **Create and run activity (4)**.
 
@@ -193,7 +193,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - **Password**: Enter `Password.1234567890`
    - **Connection properties**: Check both Encrypt connection and Trust server certificate.
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/dms-migration-wizard-select-source.png "Migration Wizard Select source")
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.150.png "Migration Wizard Select source")
 
 6. Select **Next : Select target**.
 
@@ -207,13 +207,13 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - **SQL Username**: Enter `contosoadmin`
    - **Password**: Enter `IAE5fAijit0w^rDM`
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/latestupdate1.1.png "Migration Wizard Select source")
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.151.png "Migration Wizard Select source")
    
 8. Select **Next : Select databases**.
 
 9. On the Migration Wizard **Select databases** tab, select `WideWorldImporters`.
 
-   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/dms-migration-wizard-select-databases.png "Migration Wizard Select databases")
+   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.152.png "Migration Wizard Select databases")
 
 10. Select **Next : Configure migration settings**.
 
