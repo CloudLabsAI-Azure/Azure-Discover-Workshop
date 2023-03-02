@@ -252,17 +252,19 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 1. In the Azure portal's migration status window and select **WideWorldImporters** under database name to view further details about the database migration.
 
-   ![The WideWorldImporters database name is highlighted in the migration status window.](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/dms-migration-wizard-database-name.png)
+    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.157.png "Migration Wizard Select databases")
+
 
 2. On the WideWorldImporters screen, note the status of **Restored** for the `WideWorldImporters.bak` file.
 
-   ![On the WideWorldImporters blade, a status of Restored is highlighted next to the WideWorldImporters.bak file in the list of active backup files.](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/dms-migration-wizard-database-restored.png)
+    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.158.png "Migration Wizard Select databases")
+
 
 3. To demonstrate log shipping and how transactions made on the source database during the migration process are added to the target SQL MI database, you will add a record to one of the database tables.
 
 4. Return to SSMS on your LEGACYSQL2008 VM and select **New Query** from the toolbar.
 
-   ![The New Query button is highlighted in the SSMS toolbar.](media/ssms-new-query.png "SSMS Toolbar")
+   ![The New Query button is highlighted in the SSMS toolbar.](media/1.159.png "SSMS Toolbar")
 
 5. Paste the following SQL script, which inserts a record into the `Game` table, into the new query window:
 
@@ -276,7 +278,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 6. Execute the query by selecting **Execute** in the SSMS toolbar.
 
-   ![The Execute button is highlighted in the SSMS toolbar.](media/ssms-execute.png "SSMS Toolbar")
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.160.png "SSMS Toolbar")
 
 7. After adding the new record to the `Games` table, back up the transaction logs. DMS detects any new backups and ships them to the migration service. Select **New Query** again in the toolbar, and paste the following script into the new query window:
 
@@ -294,7 +296,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 9. Return to the migration status page in the Azure portal. On the WideWorldImporters screen, select **Refresh**, and you should see the **WideWorldImportersLog.trn** file appear with a status of **Queued**.
 
-   ![On the WideWorldImporters blade, the Refresh button is highlighted. A status of Uploaded is highlighted next to the WideWorldImportersLog.trn file in the list of active backup files.](media/dms-migration-wizard-transaction-log-queued.png "Migration wizard")
+   ![On the WideWorldImporters blade, the Refresh button is highlighted. A status of Uploaded is highlighted next to the WideWorldImportersLog.trn file in the list of active backup files.](media/1.161.png "Migration wizard")
 
    > **Note**
    >
@@ -304,19 +306,20 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 11. After the transaction logs are uploaded, they are restored to the database. Once again, continue selecting **Refresh** every 10-15 seconds until you see the status change to **Restored**, which can take a minute or two.
 
-    ![A status of Restored is highlighted next to the WideWorldImportersLog.trn file in the list of active backup files.](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/dms-migration-wizard-transaction-log-restored.png)
+    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.162.png "Migration Wizard Select databases")
+
 
 12. After verifying the transaction log status of **Restored**, select **Start Cutover**.
 
-    ![The Start Cutover button is displayed.](media/dms-migration-wizard-start-cutover.png "DMS Migration Wizard")
+    ![The Start Cutover button is displayed.](media/1.163.png "DMS Migration Wizard")
 
 13. On the Complete cutover dialog, verify pending log backups is `0`, check **Confirm**, and then select **Apply**.
 
-    ![In the Complete cutover dialog, 0 is highlighted next to Pending log backups, and the Confirm checkbox is checked.](media/dms-migration-wizard-complete-cutover-apply.png "Migration Wizard")
+    ![In the Complete cutover dialog, 0 is highlighted next to Pending log backups, and the Confirm checkbox is checked.](media/1.164.png "Migration Wizard")
 
 14. A progress bar below the Apply button in the Complete cutover dialog provides updates on the cutover status. When the migration finishes, the status changes to **Completed**.
 
-    ![A status of Completed is displayed in the Complete cutover dialog.](media/dms-migration-wizard-complete-cutover-completed.png "Migration Wizard")
+    ![A status of Completed is displayed in the Complete cutover dialog.](media/1.165.png "Migration Wizard")
 
     > **Note**
     >
@@ -324,7 +327,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 15. To return to the WwiMigration blade, close the Complete cutover dialog by selecting the "X" in the upper right corner of the dialog, and do the same thing for the WideWorldImporters blade. Select **Refresh**, and you should see a status of **Completed** from the WideWorldImporters database.
 
-    ![On the Migration job blade, the status of Completed is highlighted.](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/dms-migration-wizard-status-complete.png)
+    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.166.png "Migration Wizard Select databases")
 
 16. You have successfully migrated the `WideWorldImporters` database to Azure SQL Managed Instance.
 
