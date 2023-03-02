@@ -6,7 +6,7 @@ In this exercise, you use the **Azure Database Migration Service** here `https:/
 
 ### Task 1: Create an SMB network share on the LEGACYSQL2008 VM
 
-In this task, you create a new SMB network share on the <inject key="SQLVM Name" enableCopy="false"/> VM. DMS uses this shared folder for retrieving backups of the `WideWorldImporters` database during the database migration process.
+In this task, you create a new SMB network share on the legacysql2008 VM. DMS uses this shared folder for retrieving backups of the `WideWorldImporters` database during the database migration process.
 
 1. On the LEGACYSQL2008 VM, open **Windows Explorer** by selecting its icon on the Windows Taskbar.
 
@@ -71,6 +71,8 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
 To perform online data migrations, DMS looks for database and transaction log backups in the shared SMB backup folder on the source database server. In this task, you create a backup of the `WideWorldImporters` database using SSMS and write it to the ```\\SQL2008-SUFFIX\dms-backups``` SMB network share you made in a previous task. The backup file needs to include a checksum, so you add that during the backup steps.
 
+>**Note**: If you already connected with SSMS through legacysql2008 VM skip the steps and continue from step 3.
+
 1. On the LEGACYSQL2008 VM, open **Microsoft SQL Server Management Studio 17** by entering "sql server" into the search bar in the Windows Start menu.
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.132.png "Windows start menu search")
@@ -119,7 +121,7 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
 ### Task 4: Retrieve SQL MI and SQL Server 2008 VM connection information
 
-In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your <inject key="SQLVM Name" enableCopy="false"/> VM from DMS.
+In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
 
 1. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
 
@@ -129,25 +131,14 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.143.png "Azure Cloud Shell")
 
-3. If prompted about not having a storage account mounted, click on **Show advanced settings**. Select Create new under Storage account and provide values as below: 
-  
-      - **Resource Group**: Select **Use existing** then <inject key="Resource Group Name" enableCopy="false"/>
-      - **Storage account**: **storage<inject key="Suffix" enableCopy="false"/>**
-      - **File Share**: **blob**
 
-   ![This is a screenshot of the cloud shell opened in a browser window. Powershell was selected.](media/1.144.png "Azure Cloud Shell")
-
-4. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and you are presented with a PS Azure prompt.
-
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.145.png "Azure Cloud Shell")
-
-5. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-DID and vm name with: LEGACYSQL2008 VM. 
+5. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and vm name with: LEGACYSQL2008. 
 
 
-   ```powershell
-   $resourceGroup = "<your-resource-group-name>"
-   az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
-   ```
+      ```powershell
+      $resourceGroup = "<your-resource-group-name>"
+      az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
+      ```
 
    > **Note**
    > Copy the powershell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
@@ -164,7 +155,7 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 In this task, you create a new online data migration project in DMS for the `WideWorldImporters` database.
 
-1. In the Azure portal `https://portal.azure.com`, navigate to the Azure Database Migration Service by selecting **Resource groups** from the left-hand navigation menu, selecting the **<inject key="Resource Group Name" enableCopy="false"/>**  resource group, and then selecting the **wwi-dms** Azure Database Migration Service in the list of resources.
+1. In the Azure portal `https://portal.azure.com`, navigate to the Azure Database Migration Service by selecting **Resource groups** from the left-hand navigation menu, selecting the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />**  resource group, and then selecting the **wwi-dms** Azure Database Migration Service in the list of resources.
 
    ![The wwi-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab resource group.](media/1.147.png "Resources")
 
@@ -185,7 +176,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
 5. On the Migration Wizard **Select source** tab, enter the following:
 
-   - **Source SQL Server instance name**: Enter the IP address of your **LEGACYSQL2008 VM** that you copied into a text editor in the previous task. For example, `40.65.112.26`.
+   - **Source SQL Server instance name**: Enter the IP address of your LEGACYSQL2008 VM that you copied into a text editor in the previous task. For example, `10.0.236.0`.
    - **Authentication type**: Select SQL Authentication.
    - **Username**: Enter `DemoUser`
    - **Password**: Enter `Password.1234567890`
@@ -216,9 +207,8 @@ In this task, you create a new online data migration project in DMS for the `Wid
 10. Select **Next : Configure migration settings**.
 
 11. On the Migration Wizard **Configure migration settings** tab, enter the following configuration:
-    > Note: Make sure to replace the SUFFIX value with <inject key="Suffix" />
 
-    - **Network share location**: Populate this field with the path to the SMB network share you created previously by entering ```\\LEGACYSQL2008\dms-backups```.
+    - **Network share location**: Populate this field with the path to the SMB network share you created previously by entering ```\\private ip adress\dms-backups```.
     - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: Enter ```LEGACYSQL2008\demouser```.
     - **Password**: Enter `Password.1234567890`
     - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
@@ -230,7 +220,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
     - **WideWorldImporters**: Enter **WideWorldImporters-DID** 
 
  
-      ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
+         ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
 
 12. Select **Next : Summary**.
 
@@ -296,9 +286,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
    ![On the WideWorldImporters blade, the Refresh button is highlighted. A status of Uploaded is highlighted next to the WideWorldImportersLog.trn file in the list of active backup files.](media/1.161.png "Migration wizard")
 
-   > **Note**
-   >
-   > If you don't see it the transaction logs entry, continue selecting refresh every 10-15 seconds until it appears.
+   > **Note**: If you don't see it the transaction logs entry, continue selecting refresh every 10-15 seconds until it appears.
 
 10. Continue selecting **Refresh**, and you should see the **WideWorldImportersLog.trn** status change to **Uploaded**.
 
@@ -333,6 +321,8 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 In this task, you connect to the SQL MI database using SSMS and quickly verify the migration.
 
+>**Note**: If you already connected with SSMS through SQL MI skip the steps and continue from step 9.
+
 1. First, use the Azure Cloud Shell to retrieve the fully qualified domain name of your SQL MI database. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.62.png "Azure Cloud Shell")
@@ -360,7 +350,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
    ![The output from the az sql mi list command is displayed in the Cloud Shell, and the fullyQualifiedDomainName property and value are highlighted.](media/1.65.png "Azure Cloud Shell")
 
-1. Return to SSMS on your **<inject key="SQLVM Name" enableCopy="false"/>** VM, and then select **Connect** and **Database Engine** from the Object Explorer menu.
+1. Return to SSMS on your **legacysql2008** VM, and then select **Connect** and **Database Engine** from the Object Explorer menu.
 
    ![In the SSMS Object Explorer, Connect is highlighted in the menu, and Database Engine is highlighted in the Connect context menu.](media/1.76.png "SSMS Connect")
 
@@ -376,7 +366,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
 8. Select **Connect**. 
 
-9. The SQL MI connection appears below the LEGACYSQL2008 VM connection. Expand Databases the SQL MI connection and select the WideWorldImportersDID database.
+9. The SQL MI connection appears below the LEGACYSQL2008 VM connection. Expand Databases the SQL MI connection and select the WideWorldImporters<inject key="DeploymentID" enableCopy="false" /> database.
 
    ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.168.png "Migration Wizard Select source")
 
@@ -385,12 +375,11 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 11. In the new query window, enter the following SQL script:
     > Note: Make sure to replace the SUFFIX value with <inject key="Suffix" />
 
- ```sql
-  USE WideWorldImportersSUFFIX;
+   ```sql
+   USE WideWorldImportersSUFFIX;
      GO
-
-    SELECT * FROM Game
-  ```  
+   SELECT * FROM Game
+   ```  
 
 12. Select **Execute** on the SSMS toolbar to run the query. Observe the records contained within the `Game` table, including the new `Space Adventure` game you added after initiating the migration process.
 
@@ -438,7 +427,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
     ![In the Publish dialog, Azure App Service (Windows) is selected and highlighted in the Specific Target box. The Next button is highlighted.](media/1.171.png "Publish API App to Azure")
 
-1. Finally, in the **App Service** box, select your subscription, expand the **hands-on-lab-<inject key="Suffix" enableCopy="false"/>** resource group, and select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** Web App, Click on **Finish**.
+1. Finally, in the **App Service** box, select your subscription, expand the **Azure-Discover-RG-<inject key="Suffix" enableCopy="false"/>** resource group, and select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** Web App, Click on **Finish**.
 
     ![In the Publish dialog, The wwi-web-UNIQUEID Web App is selected and highlighted under the hands-on-lab- resource group.](media/1.170.png "Publish API App to Azure")
     
@@ -460,33 +449,6 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 ### Task 9: Update App Service configuration
 
-1. First, use the Azure Cloud Shell to retrieve the fully qualified domain name of your SQL MI database. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
-
-   ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.62.png "Azure Cloud Shell")
-
-1. In the Cloud Shell window that opens at the bottom of your browser window, select **PowerShell**.
-
-   ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.63.png "Azure Cloud Shell")
-
-1. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and be presented with a PS Azure prompt.
-
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
-
-1. At the prompt, retrieve information about SQL MI in the SQLMI-Shared-RG resource group by entering the following PowerShell command.
-
-   ```powershell
-   $resourceGroup = "SQLMI-Shared-RG"
-   az sql mi list --resource-group $resourceGroup
-   ```
-
-   > **Note**
-   >
-   > If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions. Copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
-
-1. Within the above command's output, locate and copy the value of the `fullyQualifiedDomainName` property. Paste the value into a text editor, such as Notepad.exe, for reference below.
-
-   ![The output from the az sql mi list command is displayed in the Cloud Shell, and the fullyQualifiedDomainName property and value are highlighted.](media/1.65.png "Azure Cloud Shell")
-
 1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the Azure services list.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.1.png "Azure services")
@@ -495,7 +457,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
    ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab-< resource group is highlighted.](./media/1.2.png "Resource groups list")
 
-1. In the list of resources for your resource group, select the **<inject key="Resource Group Name" enableCopy="false"/>** resource group and then select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** App Service from the list of resources.
+1. In the list of resources for your resource group, select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group and then select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** App Service from the list of resources.
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
@@ -509,11 +471,9 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 1. The value of the connection string should look like this:
 
-    
-  ``
-  Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=sqlmiuser;Password=Password.1234567890;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
+    ``
+   Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=sqlmiuser;Password=Password.1234567890;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
    ``
-   
 
 1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `sqlmiuser` and Password with `Password.1234567890`.
 
@@ -547,7 +507,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 In this task, you add the networking configuration to your App Service to enable communication with resources in the VNet.
 
-1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the left-hand menu, select the **<inject key="Resource Group Name" enableCopy="false"/>** resource group and then select the **wwi-web-UNIQUEID** App Service from the list of resources.
+1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the left-hand menu, select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group and then select the **wwi-web-UNIQUEID** App Service from the list of resources.
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
@@ -568,7 +528,6 @@ In this task, you add the networking configuration to your App Service to enable
    - **Virtual Network**: Select the vnet-sqlmi--cus.
    - **Subnet**: Select the existing subnet. and select any subnet from the drop down menu. 
 
-
       ![image](media/1.57.png "App Service")
 
       > **Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet.
@@ -577,7 +536,7 @@ In this task, you add the networking configuration to your App Service to enable
    - Select the create new subnet option and enter name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e, 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping other subnet's address.
  	 	> **Note**: If the address space is overlapping with other subnets, change the virtual network address block by selecting a different virtual network address block i.e, 10.1.0.0/16 or 10.2.0.0/16 from the drop-down. In the subnet address block, enter 10.1.xx.0/23 or 10.2.xx.0/23 according to the virtual network address block you have selected and make sure it is not overlapping the other subnet's address.
 
-   	![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
+   	   ![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
 
 5. Within a few minutes, the VNet is added, and your App Service is restarted to apply the changes. Select Refresh to confirm whether the Vnet is connected or not.
 
