@@ -14,7 +14,7 @@
 
    ![The SqlServer2008 VM is highlighted in the list of resources.](media/1.3.png "Resource list")
 
-1. On the **<inject key="SQLVM Name" enableCopy="false"/>** VM blade in the Azure portal, select **Overview** from the left-hand menu, and then select **Connect** and **RDP** on the top menu, as you've done previously.
+1. On the **legacysql2008** VM blade in the Azure portal, select **Overview** from the left-hand menu, and then select **Connect** and **RDP** on the top menu, as you've done previously.
 
    ![The SqlServer2008 VM blade is displayed, with the Connect button highlighted in the top menu.](./media/1.4.png "Connect to SqlServer2008 VM")
 
@@ -73,14 +73,4 @@
 1. To run the script, select **Execute** from the SSMS toolbar.
 
     ![The Execute button is highlighted in the SSMS toolbar.](media/1.12.png "SSMS Toolbar")
-    
-1. To verify that CLR is enabled for the database, you can run the following Transact-SQL code and Click on **Execute**.
-
-    ```sql
-    EXEC sp_configure 'clr enabled';
-    GO
-    ```
-    >**Note:** The output should display the current configuration value of the clr enabled option, which should be 1 if CLR is enabled for the database.
-
-   ![The Execute button is highlighted in the SSMS toolbar.](media/1.13.png "SSMS Toolbar")
    
