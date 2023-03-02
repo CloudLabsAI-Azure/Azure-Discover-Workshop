@@ -75,48 +75,49 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
 1. On the LEGACYSQL2008 VM, open **Microsoft SQL Server Management Studio 17** by entering "sql server" into the search bar in the Windows Start menu.
 
-   ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/start-menu-ssms-17.png "Windows start menu search")
+   ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.132.png "Windows start menu search")
 
-2. In the SSMS **Connect to Server** dialog, enter **LEGACYSQL2008** into the Server name box, ensure **Windows Authentication** is selected, and then select **Connect**.
-
-   ![The SQL Server Connect to Search dialog is displayed, with SQL2008 entered into the Server name and Windows Authentication selected.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/ssms.png "Connect to Server")
+2. In the SSMS **Connect to Server** dialog, enter **legacysql2008** into the Server name box, ensure **Windows Authentication** is selected, and then select **Connect**.
+   
+    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.133.png "Windows start menu search")
+   
 
 3. Once connected, expand **Databases** under **LEGACYSQL2008** in the Object Explorer, and then right-click the **WideWorldImporters** database. In the context menu, select **Tasks** and then **Back Up**.
 
-   ![In the SSMS Object Explorer, the context menu for the WideWorldImporters database is displayed, with Tasks and Back Up... highlighted.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/dm5.png "SSMS Backup")
+   ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.134.png "Windows start menu search")
 
 4. In the Back Up Database dialog, you should see `C:\WideWorldImporters.bak` listed in the Destinations box. This device is no longer needed, so select it and then select **Remove**.
 
-   ![In the General tab of the Back Up Database dialog, C:\WideWorldImporters.bak is selected, and the Remove button is highlighted under destinations.](media/ssms-back-up-database-general-remove.png)
+   ![In the General tab of the Back Up Database dialog, C:\WideWorldImporters.bak is selected, and the Remove button is highlighted under destinations.](media/1.135.png)
 
 5. Next, select **Add** to add the SMB network share as a backup destination.
 
-   ![In the General tab of the Back Up Database dialog, the Add button is highlighted under destinations.](media/ssms-back-up-database-general.png "Back Up Database")
+   ![In the General tab of the Back Up Database dialog, the Add button is highlighted under destinations.](media/1.136.png "Back Up Database")
 
 6. In the Select Backup Destination dialog, select the Browse (`...`) button.
 
-   ![The Browse button is highlighted in the Select Backup Destination dialog.](media/ssms-select-backup-destination.png "Select Backup Destination")
+   ![The Browse button is highlighted in the Select Backup Destination dialog.](media/1.137.png "Select Backup Destination")
 
 7. In the Location Database Files dialog, select the `C:\dms-backups` folder, enter `WideWorldImporters.bak` into the File name field, and then select **OK**.
 
-   ![In the Select the file pane, the C:\dms-backups folder is selected and highlighted, and WideWorldImporters.bak is entered into the File name field.](media/ssms-locate-database-files.png "Location Database Files")
+   ![In the Select the file pane, the C:\dms-backups folder is selected and highlighted, and WideWorldImporters.bak is entered into the File name field.](media/1.138.png "Location Database Files")
 
 8. Select **OK** to close the Select Backup Destination dialog.
 
-   ![The OK button is highlighted on the Select Backup Destination dialog and C:\dms-backups\WideWorldImporters.bak is entered in the File name textbox.](media/ssms-backup-destination.png "Backup Destination")
+   ![The OK button is highlighted on the Select Backup Destination dialog and C:\dms-backups\WideWorldImporters.bak is entered in the File name textbox.](media/1.139.png "Backup Destination")
 
 9. In the Back Up Database dialog, select **Media Options** in the Select a page pane, and then set the following:
 
    - Select **Back up to the existing media set** and then select **Overwrite all existing backup sets**.
    - Under Reliability, check the box for **Perform checksum before writing to media**. A checksum is required by DMS when using the backup to restore the database to SQL MI.
 
-   ![In the Back Up Database dialog, the Media Options page is selected, and Overwrite all existing backup sets and Perform checksum before writing to media are selected and highlighted.](media/ssms-back-up-database-media-options.png "Back Up Database")
+   ![In the Back Up Database dialog, the Media Options page is selected, and Overwrite all existing backup sets and Perform checksum before writing to media are selected and highlighted.](media/1.140.png "Back Up Database")
 
 10. Select **OK** to perform the backup.
 
 11. You will receive a message when the backup is complete. Select **OK**.
 
-    ![Screenshot of the dialog confirming the database backup was completed successfully.](media/ssms-backup-complete.png "Backup complete")
+    ![Screenshot of the dialog confirming the database backup was completed successfully.](media/1.141.png "Backup complete")
 
 ### Task 4: Retrieve SQL MI and SQL Server 2008 VM connection information
 
