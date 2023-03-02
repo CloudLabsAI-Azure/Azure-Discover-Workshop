@@ -73,4 +73,3 @@
 1. To run the script, select **Execute** from the SSMS toolbar.
 
     ![The Execute button is highlighted in the SSMS toolbar.](media/1.12.png "SSMS Toolbar")
-   
