@@ -41,7 +41,7 @@
 
    ![The output from the az sql mi list command is displayed in the Cloud Shell, and the fullyQualifiedDomainName property and value are highlighted.](media/1.65.png "Azure Cloud Shell")
 
-1. Return to SSMS on your **<inject key="SQLVM Name" enableCopy="false"/>** VM, and then select **Connect** and **Database Engine** from the Object Explorer menu.
+1. Return to SSMS on your **legacysql2008** VM, and then select **Connect** and **Database Engine** from the Object Explorer menu.
 
    ![In the SSMS Object Explorer, Connect is highlighted in the menu, and Database Engine is highlighted in the Connect context menu.](media/1.76.png "SSMS Connect")
 
@@ -77,7 +77,7 @@
     
 ### Task 2: Prepare SSIS Demo
 
-1. Type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
+1. Navigate back to Jumpboc, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.80.png "SSMS Toolbar")
 
