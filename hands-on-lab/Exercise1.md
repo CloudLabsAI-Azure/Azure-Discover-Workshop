@@ -1,6 +1,6 @@
 ## Exercise 1: Check legacy server
 
-### Task 1: Connect to the SQL Server
+### Task 1: Connect to the WideWorldImporters database on the legancysql2008 VM
 
 1. Navigate to the [Azure portal](https://portal.azure.com) and select **Resource groups** from the Azure services list.
 
