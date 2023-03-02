@@ -14,6 +14,10 @@
       {
           "RawFilePath": "https://raw.githubusercontent.com/yashmadan123/Azure-Discover-Workshop/main/hands-on-lab/Exercise3.md",
           "Order": 3
+      },
+       {
+          "RawFilePath": "https://raw.githubusercontent.com/yashmadan123/Azure-Discover-Workshop/main/hands-on-lab/Exercise4.md",
+          "Order": 4
       }
     ]
   }
