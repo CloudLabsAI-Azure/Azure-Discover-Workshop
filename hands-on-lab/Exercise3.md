@@ -366,20 +366,21 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
 8. Select **Connect**. 
 
-9. The SQL MI connection appears below the LEGACYSQL2008 VM connection. Expand Databases the SQL MI connection and select the WideWorldImporters<inject key="DeploymentID" enableCopy="false" /> database.
+9.  Expand Databases in the SQL MI connection and select the WideWorldImporters<inject key="DeploymentID" enableCopy="false" /> database.
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.168.png "Migration Wizard Select source")
+      ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.168.png "Migration Wizard Select source")
 
 10. With the **<inject key="Database Name" enableCopy="false"/>** database selected, select **New Query** on the SSMS toolbar to open a new query window.
 
 11. In the new query window, enter the following SQL script:
-    > Note: Make sure to replace the SUFFIX value with <inject key="Suffix" />
 
-   ```sql
-   USE WideWorldImportersSUFFIX;
-     GO
-   SELECT * FROM Game
-   ```  
+      >**Note:** Make sure to replace the SUFFIX value with <inject key="Suffix" />
+
+      ```sql
+      USE WideWorldImportersSUFFIX;
+      GO
+      SELECT * FROM Game
+      ```  
 
 12. Select **Execute** on the SSMS toolbar to run the query. Observe the records contained within the `Game` table, including the new `Space Adventure` game you added after initiating the migration process.
 
@@ -482,6 +483,8 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 1. The updated value should look similar to the following screenshot.
 
    ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/1.49.png "Connection string value")
+   
+   ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/1.173.png "Connection string value")
 
 1. Select **OK**.
 
