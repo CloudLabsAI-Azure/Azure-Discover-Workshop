@@ -555,7 +555,7 @@ In this task, you verify your web application now loads, and you can see the hom
 
 1. Select **Overview** in the left-hand menu of your App Service and select the **URL** of your App service to launch the website. This link opens the URL in a browser window.
 
-   ![The App service URL is highlighted.](media/1.60.png "App service URL")
+   ![The App service URL is highlighted.](media/1.174.png "App service URL")
 
 2. Verify that the website and data are loaded correctly. The page should look similar to the following:
 
