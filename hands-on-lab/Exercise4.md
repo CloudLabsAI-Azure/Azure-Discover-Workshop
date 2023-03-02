@@ -321,7 +321,6 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
 
 4. Run the `SELECT` query below, and observe the results. Specifically, inspect the output in the `LoginEmail` field. For reference, the query is below.
 
-
     >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
