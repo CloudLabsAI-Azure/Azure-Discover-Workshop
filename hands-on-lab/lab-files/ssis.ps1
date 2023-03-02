@@ -62,7 +62,7 @@ $labrg = "Azure-Discover-RG-deploymentidvalue"
 # First find and setup the Storage acocunt
 
 # Setup Storage Conext
-$StorageAccount = (get-AzStorageAccount -ResourceGroupName "$labrg").StorageAccountName  | Select-object -First 1
+$StorageAccount = "sqlhacksadeploymentidvalue"
 $StorageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName "$labrg" -Name $StorageAccount
 $Key0 = $StorageAccountKeys | Select-Object -First 1 -ExpandProperty Value
 $Context = New-AzStorageContext -StorageAccountName $StorageAccount -StorageAccountKey $Key0
