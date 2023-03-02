@@ -226,25 +226,25 @@ In this task, you create a new online data migration project in DMS for the `Wid
     - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
     - **Storage account**: Select the **sqlmistore** storage account.
 
-    ![The Migration Wizard Configure migration settings tab is displayed, with the values specified above entered into the appropriate fields.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/dm12.png "Migration Wizard Configure migration settings")
+      ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
  
- - Click on **Advance Settings**. 
- - **WideWorldImporters**: Enter **WideWorldImporters-DID** 
+    - Click on **Advance Settings**. 
+    - **WideWorldImporters**: Enter **WideWorldImporters-DID** 
 
  
-    ![The Migration Wizard Configure migration settings blade is displayed, with the values specified above entered into the appropriate fields.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/dm14.png "Migration Wizard Configure migration settings")
+      ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
 
 12. Select **Next : Summary**.
 
 13. On the Migration Wizard **Summary** tab, enter `WwiMigration` as the **Activity name**.
 
-    ![](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/dms-migration-wizard-migration-summary.png)
-
+    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.155.png "Migration Wizard Select databases")
+    
 14. Select **Start migration**.
 
 15. Monitor the migration on the status screen that appears. You can select the refresh icon in the toolbar to retrieve the latest status. Continue selecting **Refresh** every 5-10 seconds until you see the status change to **Log shipping in progress**. When that status appears, move on to the next task.
 
-    ![In the migration monitoring window, a status of Log shipping in progress is highlighted.](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/dms-migration-wizard-status-log-files-uploading.png)
+    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.156.png "Migration Wizard Select databases")
 
 ### Task 6: Perform migration cutover
 
