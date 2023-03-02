@@ -12,35 +12,35 @@ In this task, you create a new SMB network share on the <inject key="SQLVM Name"
 
 1. On the LEGACYSQL2008 VM, open **Windows Explorer** by selecting its icon on the Windows Taskbar.
 
-   ![The Windows Explorer icon is highlighted in the Windows Taskbar.](media/windows-task-bar.png "Windows Taskbar")
+   ![The Windows Explorer icon is highlighted in the Windows Taskbar.](media/1.121.png "Windows Taskbar")
 
 2. In the Windows Explorer window, expand **Computer** in the tree view, select **Windows (C:)**, and then select **New folder** in the top menu.
 
-   ![In Windows Explorer, Windows (C:) is selected under Computer in the left-hand tree view, and New folder is highlighted in the top menu.](media/windows-explorer-new-folder.png "Windows Explorer")
+   ![In Windows Explorer, Windows (C:) is selected under Computer in the left-hand tree view, and New folder is highlighted in the top menu.](media/1.122.png "Windows Explorer")
 
 3. Name the new folder **dms-backups**, then right-click the folder and select **Share with** and **Specific people** in the context menu.
 
-   ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/windows-explorer-folder-share-with.png "Windows Explorer")
+   ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/1.123.png "Windows Explorer")
 
 4. In the File Sharing dialog, ensure the **DemoUser** is listed with a **Read/Write** permission level, and then select **Share**.
 
-   ![In the File Sharing dialog, the sqlmiuser is highlighted and assigned a permission level of Read/Write.](https://raw.githubusercontent.com/microsoft/MCW-Migrating-SQL-databases-to-Azure/master/Hands-on%20lab/media/file-sharing.png)
+   ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/1.124.png "Windows Explorer")
 
 5. In the **Network discovery and file sharing** dialog, select the default value of **No, make the network that I am connected to a private network**.
 
-   ![In the Network discovery and file sharing dialog, No, make the network that I am connected to a private network is highlighted.](media/network-discovery-and-file-sharing.png "Network discovery and file sharing")
+   ![In the Network discovery and file sharing dialog, No, make the network that I am connected to a private network is highlighted.](media/1.125.png "Network discovery and file sharing")
 
 6. Back on the File Sharing dialog, note the shared folder's path, ```\\LEGACYSQL2008\dms-backups```, and select **Done** to complete the sharing process.
 
-   ![The Done button is highlighted on the File Sharing dialog.](media/file-sharing-done.png "File Sharing")
+   ![The Done button is highlighted on the File Sharing dialog.](media/1.126.png "File Sharing")
 
 ### Task 2: Change MSSQLSERVER service to run under sqlmiuser account
 
-In this task, you use the SQL Server Configuration Manager to update the service account used by the SQL Server (MSSQLSERVER) service to the `sqlmiuser` account. Changing the account used for this service ensures it has the appropriate permissions to write backups to the shared folder.
+In this task, you use the SQL Server Configuration Manager to update the service account used by the SQL Server (MSSQLSERVER) service to the `DemoUser` account. Changing the account used for this service ensures it has the appropriate permissions to write backups to the shared folder.
 
 1. On your LEGACYSQL2008 VM, select the **Start menu**, enter "sql configuration" into the search bar, and then select **SQL Server Configuration Manager** from the search results.
 
-   ![In the Windows Start menu, "sql configuration" is entered into the search box, and SQL Server Configuration Manager is highlighted in the search results.](media/windows-start-sql-configuration-manager.png "Windows search")
+   ![In the Windows Start menu, "sql configuration" is entered into the search box, and SQL Server Configuration Manager is highlighted in the search results.](media/1.127.png "Windows search")
 
    > **Note**
    >
@@ -48,24 +48,24 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
 2. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, then right-click **SQL Server (MSSQLSERVER)** in the list of services and select **Properties** from the context menu.
 
-   ![SQL Server Services is selected and highlighted in the tree view of the SQL Server Configuration Manager. In the Services pane, SQL Server (MSSQLSERVER) is selected and highlighted. Properties is highlighted in the context menu.](media/sql-server-configuration-manager-services.png "SQL Server Configuration Manager")
+   ![SQL Server Services is selected and highlighted in the tree view of the SQL Server Configuration Manager. In the Services pane, SQL Server (MSSQLSERVER) is selected and highlighted. Properties is highlighted in the context menu.](media/1.128.png "SQL Server Configuration Manager")
 
 3. In the SQL Server (MSSQLSERVER) Properties dialog, select **This account** under Log on as, and enter the following:
 
    - **Account name**: `DemoUser`
    - **Password**: `Password.1234567890`
 
-   ![In the SQL Server (MSSQLSERVER) Properties dialog, This account is selected under Log on as, and the sqlmiuser account name and password are entered.](media/sql-server-service-properties.png "SQL Server (MSSQLSERVER) Properties")
+   ![In the SQL Server (MSSQLSERVER) Properties dialog, This account is selected under Log on as, and the sqlmiuser account name and password are entered.](media/1.129.png "SQL Server (MSSQLSERVER) Properties")
 
 4. Select **OK**.
 
 5. Select **Yes** in the Confirm Account Change dialog.
 
-   ![The Yes button is highlighted in the Confirm Account Change dialog.](media/confirm-account-change.png "Confirm Account Change")
+   ![The Yes button is highlighted in the Confirm Account Change dialog.](media/1.130.png "Confirm Account Change")
 
 6. Observe that the **Log On As** value for the SQL Server (MSSQLSERVER) service changed to `.\demouser`.
 
-   ![In the list of SQL Server Services, the SQL Server (MSSQLSERVER) service is highlighted.](media/sql-server-service.png "SQL Server Services")
+   ![In the list of SQL Server Services, the SQL Server (MSSQLSERVER) service is highlighted.](media/1.131.png "SQL Server Services")
 
 7. Close the SQL Server Configuration Manager.
 
