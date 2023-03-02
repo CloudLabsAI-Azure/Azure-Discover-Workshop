@@ -119,10 +119,28 @@ $WebClient.DownloadFile("https://raw.githubusercontent.com/CloudLabsAI-Azure/Azu
 #adding deploymentid
 $deploymentid = $env:DeploymentID
 
-$deploymentid = 874061
-
 $path = "C:\LabFiles"
 (Get-Content -Path "$path\ssis.ps1") | ForEach-Object {$_ -Replace "deploymentidvalue", "$DeploymentID"} | Set-Content -Path "$path\ssis.ps1"
+(Get-Content -Path "$path\ssis.ps1") | ForEach-Object {$_ -Replace "deploymentidvalue", "$DeploymentID"} | Set-Content -Path "$path\ssis.ps1"
+
+
+
+sleep 5
+
+Invoke-WebRequest 'https://experienceazure.blob.core.windows.net/templates/migrating-sql-database-to-azure(2)/MCW.zip' -OutFile 'C:\MCW.zip'
+Expand-Archive -LiteralPath 'C:\MCW.zip' -DestinationPath 'C:\hands-on-lab' -Force
+
+$directoryInfo = Get-ChildItem "C:\hands-on-lab\MCW-Migrating-SQL-databases-to-Azure-master" | Measure-Object
+$dir = $directoryInfo.count
+
+If ($dir -eq 0)
+{
+Remove-Item "C:\MCW.zip"
+Invoke-WebRequest 'https://experienceazure.blob.core.windows.net/templates/migrating-sql-database-to-azure(2)/MCW.zip' -OutFile 'C:\MCW.zip'#Condition to check if the lab files are present
+
+    Expand-Archive -LiteralPath 'C:\MCW.zip' -DestinationPath 'C:\hands-on-lab' -Force
+
+}
 
 sleep 5
 
