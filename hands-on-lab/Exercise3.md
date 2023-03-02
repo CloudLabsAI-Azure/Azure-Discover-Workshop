@@ -513,11 +513,11 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
     
   ``
-  Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=contosoadmin;Password=IAE5fAijit0w^rDM;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
+  Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=sqlmiuser;Password=Password.1234567890;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
    ``
    
 
-1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> .
+1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `sqlmiuser` and Password with `Password.1234567890`.
 
    ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/images/9.png "Edit Connection String")
 
@@ -569,16 +569,17 @@ In this task, you add the networking configuration to your App Service to enable
 
    - **Virtual Network**: Select the vnet-sqlmi--cus.
    - **Subnet**: Select the existing subnet. and select any subnet from the drop down menu. 
+
+
       ![image](media/1.57.png "App Service")
 
-   		> **Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet.
-
+      > **Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet.
 
   		> **Note**: If you are not able to select any existing subnet, then follow the below steps.
    - Select the create new subnet option and enter name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e, 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping other subnet's address.
  	 	> **Note**: If the address space is overlapping with other subnets, change the virtual network address block by selecting a different virtual network address block i.e, 10.1.0.0/16 or 10.2.0.0/16 from the drop-down. In the subnet address block, enter 10.1.xx.0/23 or 10.2.xx.0/23 according to the virtual network address block you have selected and make sure it is not overlapping the other subnet's address.
 
-   		![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
+   	![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
 
 5. Within a few minutes, the VNet is added, and your App Service is restarted to apply the changes. Select Refresh to confirm whether the Vnet is connected or not.
 
