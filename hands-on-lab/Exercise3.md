@@ -123,7 +123,7 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
 In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
 
-1. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
+1. On the JUMPBOX VM, In the Azure portal select the Azure Cloud Shell icon from the top menu.
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.142.png "Azure Cloud Shell")
 
@@ -135,10 +135,10 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 5. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and vm name with: LEGACYSQL2008. 
 
 
-      ```powershell
-      $resourceGroup = "<your-resource-group-name>"
-      az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
-      ```
+     ```powershell
+     $resourceGroup = "<your-resource-group-name>"
+     az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
+     ```
 
    > **Note**
    > Copy the powershell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
@@ -217,10 +217,10 @@ In this task, you create a new online data migration project in DMS for the `Wid
       ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
  
     - Click on **Advance Settings**. 
-    - **WideWorldImporters**: Enter **WideWorldImporters-DID** 
+    - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="false" />** 
 
  
-         ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
+       ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
 
 12. Select **Next : Summary**.
 
