@@ -6,7 +6,7 @@
 
    ![Resource groups is highlighted in the Azure services list.](media/1.1.png "Azure services")
 
-1. Select the **Azure-Discover-RG** resource group from the list.
+1. Select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group from the list.
 
    ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab resource group is highlighted.](./media/sad1.jpg "Resource groups list")
 
@@ -73,3 +73,7 @@
 1. To run the script, select **Execute** from the SSMS toolbar.
 
     ![The Execute button is highlighted in the SSMS toolbar.](media/1.12.png "SSMS Toolbar")
+
+1. The output will look like below
+
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.175.png "SSMS Toolbar")
