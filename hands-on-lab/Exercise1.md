@@ -1,4 +1,4 @@
-## Exercise 1: Check legacy server
+## Exercise 1: Review and enable CLR on legacy server
 
 ### Task 1: Connect to the WideWorldImporters database on the legancysql2008 VM
 
