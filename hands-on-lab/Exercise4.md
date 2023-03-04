@@ -1,4 +1,4 @@
-## Exercise 4: Security
+## Exercise 4: Securing Azure SQLMI DB
 
 ### Task 1: Review the already enabled Security of Microsoft Defender for Cloud.
 
