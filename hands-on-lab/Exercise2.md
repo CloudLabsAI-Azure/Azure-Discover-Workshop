@@ -59,7 +59,7 @@
 
     ![The New Query button is highlighted in the SSMS toolbar.](media/1.78.png "SSMS Toolbar")
     
-1. Next, copy and paste the SQL script below into the new query window. This script verify that CLR is enabled for the manged instance.
+1. Next, copy and paste the SQL script below into the new query window. This script verifies that CLR is enabled for the manged instance.
 
     ```sql
     EXEC sp_configure 'clr enabled';
@@ -81,11 +81,11 @@
 
 1. If prompted, click **Yes** to allow the app to make changes to your device.
 
-1. Click on **File** menu and then click on **Open** to open a powershell script.
+1. Click on **File** menu and then click on **Open** to open a PowerShell script.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.82.png "SSMS Toolbar")
    
-1. Navigate to the `C:\Labfiles` folder, Click on **ssis.ps1** script and then click on **Open**. 
+1. Navigate to the `C:\Labfiles` folder, click on **ssis.ps1** script and then click on **Open**. 
    
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
    
@@ -149,7 +149,7 @@
     
 1. Click on **Continue**.
 
-1. Leave it as default, and Click on **Create**.
+1. Leave it as default and Click on **Create**.
 
     ![Resource groups is highlighted in the Azure services list.](media/1.74.png "Azure services")
 
@@ -166,7 +166,7 @@
 
     ![Resource groups is highlighted in the Azure services list.](media/openproj.png "Azure services")
 
-1. Once Visual studio is open, you will see that the project is unsupported an visual studio will migrate the project automatically, click ok to proceed.
+1. Once Visual studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click ok to proceed.
 
     ![Resource groups is highlighted in the Azure services list.](media/projectupdate.png "Azure services")
 
@@ -178,7 +178,7 @@
     
     ![Resource groups is highlighted in the Azure services list.](media/wizard.png "Azure services")
     
-1. Click on Next on the upgrade wizard, on **Package managment option** page select the below options and click on next.
+1. Click on Next on the upgrade wizard, on **Package management option** page select the below options and click on next.
    
       • Update connection strings to use new provider names.
       • Continue upgrade process when a package upgrade fails.
@@ -200,7 +200,7 @@
     
 ### Task 4: Convert to Project Deployment mode & update connection string
     In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
-1. Now click on the **PopulateDW.dtsx** and click ok on **Synchronise Connection Strings** to acknowldge the connection.
+1. Now click on the **PopulateDW.dtsx** and click ok on **Synchronise Connection Strings** to acknowledge the connection.
 
     ![Resource groups is highlighted in the Azure services list.](media/populate.png "Azure services")
     
@@ -210,11 +210,11 @@
   
     ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
     
-1. Click on next untill the end of the convert page and click on **convert** button to complete the project convertion. 
+1. Click on next until the end of the convert page and click on **convert** button to complete the project covert. 
     
      ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 
-1. Review the summary of project convertion and click on **close** to close the convert window.
+1. Review the summary of project covert and click on **close** to close the convert window.
 
     ![Resource groups is highlighted in the Azure services list.](media/closeconvert.png "Azure services")
     
