@@ -2,7 +2,7 @@
 
 In this exercise, you use the **Azure Database Migration Service** here `https://azure.microsoft.com/services/database-migration/` (DMS) to migrate the `WideWorldImporters` database from an on-premises SQL Server 2008 R2 database into Azure SQL Managed Instance (SQL MI). WWI mentioned the importance of their gamer information web application in driving revenue, so for this migration, the online migration option is used to minimize downtime. Targeting the **Business Critical service tier** here `https://docs.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview#managed-instance-service-tiers` allows WWI to meet its customer's high-availability requirements.
 
-> The Business Critical service tier is designed for business applications with the highest performance and high-availability (HA) requirements. To learn more, read the Managed Instance service tiers documentation.
+> The Business-Critical service tier is designed for business applications with the highest performance and high-availability (HA) requirements. To learn more, read the Managed Instance service tiers documentation.
 
 ### Task 1: Create an SMB network share on the LEGACYSQL2008 VM
 
@@ -61,7 +61,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    ![The Yes button is highlighted in the Confirm Account Change dialog.](media/1.130.png "Confirm Account Change")
 
-6. Observe that the **Log On As** value for the SQL Server (MSSQLSERVER) service changed to `.\demouser`.
+6. Observe that the **Log on As** value for the SQL Server (MSSQLSERVER) service changed to `.\demouser`.
 
    ![In the list of SQL Server Services, the SQL Server (MSSQLSERVER) service is highlighted.](media/1.131.png "SQL Server Services")
 
@@ -408,7 +408,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
     ![On the Visual Studio welcome screen, the Sign in button is highlighted.](media/1.66.png "Visual Studio")
     
-1. Once you Signed in, Click on **Start Visual Studio**.
+1. Once you Signed in, click on **Start Visual Studio**.
 
      ![A Visual Studio security warning is displayed, and the Ask me for every project in this solution checkbox is unchecked and highlighted.](media/1.68.png "Visual Studio")
 
@@ -563,4 +563,3 @@ In this task, you verify your web application now loads, and you can see the hom
    > **Note**: It can often take several minutes for the network configuration to be reflected in the web app. If you get an error screen, try selecting Refresh a few times in the browser window. If that does not work, try selecting **Restart** on the Azure Web App's toolbar.
 
 3. Congratulations, you successfully connected your application to the new SQL MI database.
-
