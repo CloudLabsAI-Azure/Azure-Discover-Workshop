@@ -76,3 +76,10 @@ In this exercise, you will be accessing the already restored database inside the
 1. The output will look like below
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.175.png "SSMS Toolbar")
+   
+1. You have successfully enabled the CLR on the legacy server, now click on the Next button present in the bottom-right corner of this lab guide.
+
+## Summary
+
+In this exercise, you have connected to you on-prem sql server and enable CLR
+   
