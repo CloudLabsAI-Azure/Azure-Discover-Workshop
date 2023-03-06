@@ -38,7 +38,7 @@ In this exercise, you will be accessing the already restored database inside the
 
    ![In the Remote Desktop Connection dialog box, a warning states that the remote computer's identity cannot be verified and asks if you want to continue anyway. At the bottom, the Yes button is circled.](./media/1.7.png "Remote Desktop Connection dialog")
 
-### Task 2: Connect to the SSMS.
+### Task 2: Enable CLR on Legacry server.
 
 1. Once logged in, open **Microsoft SQL Server Management Studio 17** (SSMS) by entering "sql server" into the search bar in the Windows Start menu and selecting **Microsoft SQL Server Management Studio 17** from the search results.
 
