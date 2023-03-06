@@ -1,4 +1,4 @@
-## Exercise 2: Migrate your on-premises SSIS using Azure Data Factory
+## Exercise 3: Migrate your on-premises SSIS using Azure Data Factory
 
 ### Task 1: Review the enabled CLR on the SQL Managed Instance
 
