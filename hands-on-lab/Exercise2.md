@@ -70,7 +70,7 @@
 
     ![The Execute button is highlighted in the SSMS toolbar.](media/1.79.png "SSMS Toolbar")
    
-1. The output should display the CLR is enabled for the manged instance.
+1. The output should display that the CLR is enabled for the managed instance.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.13.png "SSMS Toolbar")
    
@@ -86,7 +86,7 @@
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.82.png "SSMS Toolbar")
    
-1. Navigate to the `C:\Labfiles` folder, click on **ssis.ps1** script and then click on **Open**.
+1. Navigate to the `C:\Labfiles` folder, and click on **ssis.ps1** script and then click on **Open**.
    
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
    
@@ -108,7 +108,7 @@
 
    ![Resource groups are highlighted in the Azure services list.](media/1.16.png "Azure services")
 
-1. In the Azure Data Factory portal, switch to the **Manage** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
+1. In the Azure Data Factory portal, switch to the **Manage** tab and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.84.png "Azure services")
    
@@ -132,7 +132,7 @@
 
    ![Resource groups is highlighted in the Azure services list.](media/1.85.png "Azure services")
    
-1. On the Deployment Settings page of the Integration Runtime Setup Pane, you have the options to create **SSISDB**.
+1. On the Deployment Settings page of the Integration Runtime Setup Pane, you have the option to create **SSISDB**.
 
    - Enter Admin Username: `contosoadmin`
    - Enter Admin Password: `IAE5fAijit0w^rDM`
@@ -181,7 +181,7 @@
 1. Click on Next on the upgrade wizard, and on **Package management option** page select the below options and click on next.
    
    • Update connection strings to use new provider names.
-   • Continue upgrade process when a package upgrade fails.
+   • Continue the upgrade process when a package upgrade fails.
    • Ignore configurations.
    
    ![Resource groups is highlighted in the Azure services list.](media/1.180.png "Azure services")
@@ -208,19 +208,19 @@
    
    ![Resource groups is highlighted in the Azure services list.](media/syncon.png "Azure services")
    
-1. Now right click on the solution and click on **Convert to project deployment model** to convert the project.  
+1. Now right-click on the solution and click on **Convert to project deployment model** to convert the project.  
 
    ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
    
-1. Click on next until the end of the convert page and click on **convert** button to complete the project covert.
+1. Click on next until the end of the convert page and click on the **convert** button to complete the project covert.
    
    ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 
-1. Review the summary of project covert and click on **close** to close the convert window.
+1. Review the summary of the project covert and click on **close** to close the convert window.
 
    ![Resource groups is highlighted in the Azure services list.](media/closeconvert.png "Azure services")
    
-1. Now double click on the **SQL Server** under connection manager windows.
+1. Now double-click on the **SQL Server** under the connection manager windows.
      
    ![Resource groups is highlighted in the Azure services list.](media/cncnmngr.png "Azure services")
      
@@ -238,7 +238,7 @@
    
    ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
    
-1. Now right click on the **SQL Server** connect and click on **Convert to Project Connection**    
+1. Now right-click on the **SQL Server** connect and click on **Convert to Project Connection**    
 
    ![Resource groups is highlighted in the Azure services list.](media/credconvert.png "Azure services")
    
@@ -250,7 +250,7 @@
 
 In this task, we will be deploying the fixed package onto the SSIS integration runtime and SSISDB held within the Managed Instance.
 
-1. Right click on the solution and click on properties to change the target server type to 2017 as 2019 is not yet supported.
+1. Right-click on the solution and click on properties to change the target server type to 2017 as 2019 is not yet supported.
 
    ![Resource groups is highlighted in the Azure services list.](media/projctcncn.png "Azure services")  
    
@@ -262,13 +262,13 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
    
    ![Resource groups is highlighted in the Azure services list.](media/notoall.png "Azure services")  
    
-1. Now right click on the solution and click on **Deploy**.
+1. Now right-click on the solution and click on **Deploy**.
 
    ![Resource groups is highlighted in the Azure services list.](media/deployproj.png "Azure services")    
 
 1. Click on Next on the **Introduction** page on **Integration Services Deployment Wizard**
 
-1. Click Next on the **Select source** page with default value.
+1. Click Next on the **Select source** page with the default value.
 
    ![Resource groups is highlighted in the Azure services list.](media/selectsource.png "Azure services")
    
@@ -286,7 +286,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
    
    ![Resource groups is highlighted in the Azure services list.](media/destsqlmi.png "Azure services")
    
-1. Review the values and click on **Deploy** button to start the project deployment.    
+1. Review the values and click on the **Deploy** button to start the project deployment.    
    
    ![Resource groups is highlighted in the Azure services list.](media/deploypackage.png "Azure services")
    
