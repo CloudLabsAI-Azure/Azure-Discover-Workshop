@@ -6,7 +6,7 @@
 
 2. To get lab environment details, click on the **Environment Details** tab located next to the *Lab Guide* tab. 	
 
-   ![](media/1.192.png)	
+   ![](media/1.200.png)	
 
 ## Log in to Azure Portal
 
