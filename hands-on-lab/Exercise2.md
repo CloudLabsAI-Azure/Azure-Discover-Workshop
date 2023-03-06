@@ -287,7 +287,6 @@ Since you performed an "online data migration," the migration wizard continuousl
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.162.png "Migration Wizard Select databases")
 
-
 1. After verifying the transaction log status of **Restored**, select **Start Cutover**.
 
     ![The Start Cutover button is displayed.](media/1.163.png "DMS Migration Wizard")
