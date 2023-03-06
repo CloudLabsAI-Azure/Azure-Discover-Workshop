@@ -104,7 +104,6 @@
    ![Resource groups is highlighted in the Azure services list.](media/1.15.png "Azure services")
 
 
-
 1. In the **Overview** section, Click on **Launch Studio**.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.16.png "Azure services")
@@ -159,7 +158,7 @@
  
    ![Resource groups is highlighted in the Azure services list.](media/1.25.png "Azure services")
 
-### Task 3: Upgrade the package using the Upgrade Wizard
+### Task 4: Upgrade the package using the Upgrade Wizard
 
 In this section, we will be upgrading the Legacy SSIS package so that it can be migrated to Azure.
 
@@ -199,7 +198,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
    ![Resource groups is highlighted in the Azure services list.](media/1.183.png "Azure services")
 
-### Task 4: Convert to Project Deployment mode and update the connection string
+### Task 5: Convert to Project Deployment mode and update the connection string
 
 In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
 
@@ -247,7 +246,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/projctcncn.png "Azure services")
 
-### Task 4: Deploy packages to the SSISDB on the Managed Instance
+### Task 6: Deploy packages to the SSISDB on the Managed Instance
 
 In this task, we will be deploying the fixed package onto the SSIS integration runtime and SSISDB held within the Managed Instance.
 
@@ -291,4 +290,6 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/deploypackage.png "Azure services")
 
-### Task 5:  Verify Deployment and Test-Run Package
+### Task 7:  Verify Deployment and Test-Run Package
+
+1. 
