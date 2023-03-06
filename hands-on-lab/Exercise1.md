@@ -1,4 +1,7 @@
-## Exercise 1: Review and enable CLR on the legacy server
+## Exercise 1: Review the on-prem database and enable CLR on the legacy server
+Duration: 20 minutes
+
+In this exercise, you will be accessing the already restored database inside the legacy server and will be enabling the CLR on legacy server.
 
 ### Task 1: Connect to the WideWorldImporters database on the legancysql2008 VM
 
