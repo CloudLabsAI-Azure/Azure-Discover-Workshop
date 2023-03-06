@@ -57,16 +57,14 @@
    
 1. Next, copy and paste the SQL script below into the new query window. This script enables the Common Language Runtime in databases.
 
-```sql
+    ```sql
     USE WideWorldImporters;
-    GO
-    EXEC sp_configure 'clr enabled', 1;
-    GO
-    RECONFIGURE;
-    GO
-```
-
-   >**Note:** Replace [database_name] with the name of the database in which you want to enable CLR.
+    GO
+    EXEC sp_configure 'clr enabled', 1;
+    GO
+    RECONFIGURE;
+    GO
+    ```
 
 1. To run the script, select **Execute** from the SSMS toolbar.
 
