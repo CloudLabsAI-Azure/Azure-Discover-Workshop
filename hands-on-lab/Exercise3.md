@@ -40,9 +40,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    ![In the Windows Start menu, "SQL configuration" is entered into the search box, and SQL Server Configuration Manager is highlighted in the search results.](media/1.127.png "Windows search")
 
-   > **Note**
-   
-   > Be sure to choose **SQL Server Configuration Manager**, and not **SQL Server 2017 Configuration Manager**, which does not work for the installed SQL Server 2008 R2 database.
+   > **Note**: Be sure to choose **SQL Server Configuration Manager**, and not **SQL Server 2017 Configuration Manager**, which does not work for the installed SQL Server 2008 R2 database.
 
 1. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, then right-click **SQL Server (MSSQLSERVER)** in the list of services and select **Properties** from the context menu.
 
@@ -530,10 +528,11 @@ In this task, you add the networking configuration to your App Service to enable
    ![image](media/1.57.png "App Service")
 
    >**Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet.  
+
    >**Note**: If you are not able to select any existing subnet, then follow the below steps.
    
    - Select the create new subnet option and enter name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e., 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping other subnet's address.
-     
+  
    > **Note**: If the address space is overlapping with other subnets, change the virtual network address block by selecting a different virtual network address block i.e., 10.1.0.0/16 or 10.2.0.0/16 from the drop-down. In the subnet address block, enter 10.1.xx.0/23 or 10.2.xx.0/23 according to the virtual network address block you have selected and make sure it is not overlapping the other subnet's address.
 
    ![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
