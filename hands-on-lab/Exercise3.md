@@ -110,7 +110,7 @@
 
 In this section, we will be upgrading the Legacy SSIS package so that it can be migrated to Azure.
 
-1. On the JumpBox VM, navigate to `C:\hands-on-lab` and open **SSISDW.sln** in VS 2017
+1. On the JumpBox VM, navigate to `C:\Labfiles` and open **SSISDW.sln** in VS 2017
 
    ![Resource groups is highlighted in the Azure services list.](media/1.176.png "Azure services")
 
