@@ -52,7 +52,6 @@
 
    ![Resource groups is highlighted in the Azure services list.](media/1.15.png "Azure services")
 
-
 1. In the **Overview** section, Click on **Launch Studio**.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.16.png "Azure services")
