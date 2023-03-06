@@ -2,59 +2,7 @@
 
 ### Task 1: Review the enabled CLR on the SQL Managed Instance
 
-1. First, use the Azure Cloud Shell to retrieve the fully qualified domain name of your SQL MI database. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
-
-   ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.62.png "Azure Cloud Shell")
-
-1. In the Cloud Shell window that opens at the bottom of your browser window, select **PowerShell**.
-
-   ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.63.png "Azure Cloud Shell")
-
-1. In the You have no storage mounted, click on **Show advanced settings**.
-
-   ![](media/sad2.jpg "Azure Cloud Shell")
-
-1. Provide the following details and click on **Create storage (4)**.
-
-   - Resource group: **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> (1)**
-   - Storage account: **cloudshell<inject key="DeploymentID" enableCopy="false" /> (2)**
-   - File share: **blob (3)**
-
-   ![](media/sad3.jpg "Azure Cloud Shell")
-
-1. After a moment, a message is displayed that you have successfully requested a Cloudshell and be presented with a PS Azure prompt.
- 
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
-
-1. At the prompt, retrieve information about SQL MI in the SQLMI-Shared-RG resource group by entering the following PowerShell command.
-
-   ```powershell
-    $resourceGroup = "SQLMI-Shared-RG" az sql mi list --resource-group $resourceGroup
-   ```
-
-   >**Note**: If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions. Copy the Subscription ID of the account you are using for this lab, and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
-
-1. Within the above command's output, locate and copy the value of the `fullyQualifiedDomainName` property. Paste the value into a text editor, such as Notepad.exe, for reference below.
-
-   ![The output from the az sql mi list command is displayed in the Cloud Shell, and the fullyQualifiedDomainName property and value are highlighted.](media/1.65.png "Azure Cloud Shell")
-
-1. Return to SSMS on your **legacysql2008** VM, and then select **Connect** and **Database Engine** from the Object Explorer menu.
-
-   ![In the SSMS Object Explorer, Connect is highlighted in the menu, and Database Engine is highlighted in the Connect context menu.](media/1.76.png "SSMS Connect")
-
-1. In the Connect to Server dialog, enter the following:
-
-   - **Server name**: Enter the fully qualified domain name of your SQL managed instance, which you copied from the Azure Cloud Shell in the previous steps.
-   - **Authentication**: Select **SQL Server Authentication**.
-   - **Login**: Enter `contosoadmin`
-   -  **Password**: Enter `IAE5fAijit0w^rDM`
-   - Check the **Remember password** box.
-
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.167.png "Migration Wizard Select source")
-
-1. Select **Connect**.
-
-1. In Microsoft SQL Server Management Studio, select **New Query** from the SSMS toolbar.
+1. On the legacysql2008 VM, Open Microsoft SQL Server Management Studio, click on **New Query** from the SSMS toolbar.
 
    ![The New Query button is highlighted in the SSMS toolbar.](media/1.78.png "SSMS Toolbar")
 
@@ -279,7 +227,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 1. Now, under **Destination** enter the below details and click on **Connect**.
 
    - Server Name: Enter the SQLMI FQDN noted from the previous task
-   - Authentication: **SQL Server Authentication**
+   - Authentication: **SQL Server Authentication**.
    - Username: **Contosoadmin**
    - Password: **IAE5fAijit0w^rDM**
    - Path: **/SSISDB/demo/SSISDW**
@@ -304,7 +252,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.109.png "Connect to Server")
    
-1. Navigate to the Integration Services Catalogs, you will see that SSISDB is present.
+1. Navigate to the Integration Services Catalogs, you will see that SSISDB is listed here.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.185.png "Azure services")
 
