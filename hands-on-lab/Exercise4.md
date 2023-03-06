@@ -1,4 +1,7 @@
 ## Exercise 4: Securing Azure SQLMI DB
+Duration: 30 minutes
+
+In this exercise, you enable set up some of the advanced security features of SQL MI and explore some of the security benefits that come with running your database in Azure. Azure Defender for SQL provides advanced SQL security capabilities, including functionality for surfacing and mitigating potential database vulnerabilities and detecting anomalous activities that could indicate a threat to your database. Also, Data Discovery and Classification allows you to discover and classify sensitive data within the database.
 
 ### Task 1: Review the already enabled Security of Microsoft Defender for Cloud.
 
