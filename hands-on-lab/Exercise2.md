@@ -162,11 +162,11 @@
 
    In this section we will be upgrading the Legacy SSIS package so that it can be migrated to Azure.
 
-1. On the JumpBox VM, Navigate to C:\labfiles and open SSISDW.sln in VS 2017
+1. On the JumpBox VM, Navigate to C:\labfiles and open **SSISDW.sln** in VS 2017
 
     ![Resource groups is highlighted in the Azure services list.](media/1.176.png "Azure services")
 
-1. Once Visual studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click ok to proceed.
+1. Once Visual studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click Ok to proceed.
 
     ![Resource groups is highlighted in the Azure services list.](media/1.177.png "Azure services")
 
@@ -233,8 +233,8 @@
     
     * Server Name: Enter the SQLMI FQDN noted from the previous task
     * Authentication: **SQL Server Authentication**
-    * Username: **Contosoadmin**
-    * Password: **IAE5fAijit0w^rDM**
+    * Username: `Contosoadmin`
+    * Password: `IAE5fAijit0w^rDM`
     * Database Name: Select **2008DWSUFFIX** from the drop-down and click **ok**
     
     ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
@@ -259,7 +259,7 @@
 
     ![Resource groups is highlighted in the Azure services list.](media/targetpackgeproject.png "Azure services")  
     
-1. If you do get the “Do you want to reload” message, click No to All.   
+1. If you do get the “Do you want to reload” message, click **No to All**.   
     
     ![Resource groups is highlighted in the Azure services list.](media/notoall.png "Azure services")  
     
