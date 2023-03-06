@@ -17,7 +17,7 @@ In this exercise, you will be accessing the already restored database inside the
 
    ![The SqlServer2008 VM is highlighted in the list of resources.](media/1.3.png "Resource list")
 
-1. On the **legacysql2008** VM blade in the Azure portal, select **Overview** from the left-hand menu, and then select **Connect** and **RDP** on the top menu, as you've done previously.
+1. On the **legacysql2008** VM blade, select **Overview** from the left-hand menu, and then select **Connect** and **RDP** on the top menu, as you've done previously.
 
    ![The SqlServer2008 VM blade is displayed, with the Connect button highlighted in the top menu.](./media/1.4.png "Connect to SqlServer2008 VM")
 
@@ -81,5 +81,5 @@ In this exercise, you will be accessing the already restored database inside the
 
 ## Summary
 
-In this exercise, you have connected to you on-prem sql server and enable CLR
+In this exercise, you have connected to on-prem sql server, checked imported database, and enabled CLR in the server.
    

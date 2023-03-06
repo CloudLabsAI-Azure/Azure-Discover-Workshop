@@ -17,15 +17,15 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![In Windows Explorer, Windows (C:) is selected under Computer in the left-hand tree view, and New folder is highlighted in the top menu.](media/1.122.png "Windows Explorer")
 
-1. Name the new folder **dms-backups**, then right-click the folder and select **Share with** and **Specific people** in the context menu.
+1. Name the new folder as **dms-backups**. Right-click the folder, select **Share with**, and then select **Specific people** in the context menu.
 
    ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/1.123.png "Windows Explorer")
 
-1. In the File Sharing dialog, ensure the **DemoUser** is listed with a **Read/Write** permission level, and then select **Share**.
+1. In the File Sharing dialog, ensure the **DemoUser** is listed with **Read/Write** permission level, and then select **Share**.
 
    ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/1.124.png "Windows Explorer")
 
-1. In the **Network discovery and file sharing** dialog, select the default value of **No, make the network that I am connected to a private network**.
+1. In the **Network discovery and file sharing** dialog, select the default value **No, make the network that I am connected to a private network**.
 
    ![In the Network discovery and file sharing dialog, No, make the network that I am connected to a private network is highlighted.](media/1.125.png "Network discovery and file sharing")
 
@@ -43,7 +43,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    > **Note**: Be sure to choose **SQL Server Configuration Manager**, and not **SQL Server 2017 Configuration Manager**, which does not work for the installed SQL Server 2008 R2 database.
 
-1. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, then right-click **SQL Server (MSSQLSERVER)** in the list of services and select **Properties** from the context menu.
+1. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, right-click **SQL Server (MSSQLSERVER)** in the list of services, and then select **Properties** from the context menu.
 
    ![SQL Server Services is selected and highlighted in the tree view of the SQL Server Configuration Manager. In the Services pane, SQL Server (MSSQLSERVER) is selected and highlighted. Properties is highlighted in the context menu.](media/1.128.png "SQL Server Configuration Manager")
 
@@ -54,7 +54,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    ![In the SQL Server (MSSQLSERVER) Properties dialog, This account is selected under Log on as, and the sqlmiuser account name and password are entered.](media/1.129.png "SQL Server (MSSQLSERVER) Properties")
 
-1. Select **OK**.
+1. Click on **OK** button.
 
 1. Select **Yes** in the Confirm Account Change dialog.
 
@@ -76,7 +76,7 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.132.png "Windows start menu search")
 
-1. In the SSMS **Connect to Server** dialog, enter **legacysql2008** into the Server name box, ensure **Windows Authentication** is selected, and then select **Connect**.
+1. In the SSMS **Connect to Server** dialog, enter **legacysql2008** into the Server name box, ensure that **Windows Authentication** is selected, and then select **Connect**.
    
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.133.png "Windows start menu search")
    
@@ -136,17 +136,15 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
       az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
       ```
 
-   > **Note**:
-
-   > Copy the PowerShell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
+   > **Note**: Copy the PowerShell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
    
    > If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions, then copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
 
 1. Within the output, locate and copy the value of the `ipAddress` property below the `PrivateIPAddresses` field. Paste the value into a text editor, such as Notepad.exe, for later reference.
 
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.146.png "Azure Cloud Shell")
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.146.png "Azure Cloud Shell")   
 
-1. Leave the Azure Cloud Shell open for the next task.
+1. Leave the Azure Cloudshell open for the next task.
 
 ### Task 5: Create and run an online data migration project
 
@@ -226,7 +224,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    
 1. Select **Start migration**.
 
-1. Monitor the migration on the status screen that appears. You can select the refresh icon in the toolbar to retrieve the latest status. Continue selecting **Refresh** every 5-10 seconds until you see the status change to **Log shipping in progress**. When that status appears, move on to the next task.
+1. Monitor the migration on the status screen that appears. You can select the refresh icon in the toolbar to retrieve the latest status. Click on **Refresh** button every 5-10 seconds until you see the status change to **Log shipping in progress**. When that status appears, move on to the next task.
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.156.png "Migration Wizard Select databases")
 
@@ -248,7 +246,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
    ![The New Query button is highlighted in the SSMS toolbar.](media/1.159.png "SSMS Toolbar")
 
-1. Paste the following SQL script, which inserts a record into the `Game` table, into the new query window:
+1. Paste the following SQL scriptinto in a new query window, which inserts the record into the `Game` table.
 
    ```sql
    USE WideWorldImporters;
@@ -282,7 +280,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
    > **Note**: If you don't see it the transaction logs entry, continue selecting refresh every 10-15 seconds until it appears.
 
-1. Continue selecting **Refresh**, and you should see the **WideWorldImportersLog.trn** status change to **Uploaded**.
+1. You should see the **WideWorldImportersLog.trn** status changed to **Uploaded** state.
 
 1. After the transaction logs are uploaded, they are restored to the database. Once again, continue selecting **Refresh** every 10-15 seconds until you see the status change to **Restored**, which can take a minute or two.
 
@@ -300,9 +298,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
     ![A status of Completed is displayed in the Complete cutover dialog.](media/1.165.png "Migration Wizard")
 
-    > **Note**
-    >
-    > If the progress bar has not moved after a few minutes, you can proceed to the next step and monitor the cutover progress on the WwiMigration blade by selecting refresh.
+    > **Note**: If the progress bar has not moved after a few minutes, you can proceed to the next step and monitor the cutover progress on the WwiMigration blade by selecting refresh.
 
 1. To return to the WwiMigration blade, close the Complete cutover dialog by selecting the "X" in the upper right corner of the dialog, and do the same thing for the WideWorldImporters blade. Select **Refresh**, and you should see a status of **Completed** from the WideWorldImporters database.
 
@@ -335,9 +331,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
    az sql mi list --resource-group $resourceGroup
    ```
 
-   > **Note**
-   >
-   > If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions. Copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
+   >**Note**: If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions. Copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
 
 1. Within the above command's output, locate and copy the value of the `fullyQualifiedDomainName` property. Paste the value into a text editor, such as Notepad.exe, for reference below.
 
@@ -396,6 +390,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
     ![In the Visual Studio version selector, Visual Studio 2019 is selected and highlighted.](media/1.35.png "Visual Studio")
 
 1. Select **Sign in** and enter the following Azure account credentials when prompted:
+
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    * Password: <inject key="AzureAdUserPassword"></inject>
 
