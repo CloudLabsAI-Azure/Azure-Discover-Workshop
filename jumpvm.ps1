@@ -144,6 +144,14 @@ Invoke-WebRequest 'https://experienceazure.blob.core.windows.net/templates/migra
 
 sleep 5
 
+#Download SQL repo files
+Invoke-WebRequest 'https://github.com/sk-bln/SQL-Hackathon/archive/refs/heads/master.zip' -OutFile 'C:\sql.zip'
+Expand-Archive -LiteralPath 'C:\sql.zip' -DestinationPath 'C:\hands-on-lab' -Force
+
+Expand-Archive -LiteralPath 'C:\hands-on-lab\SQL-Hackathon-master\Hands-On Lab\02 SSIS Migration\02-SSIS Migration.zip' -DestinationPath 'C:\LabFiles' -Force
+
+sleep 5
+
 # Download and install Data Mirgation Assistant
 Invoke-WebRequest 'https://download.microsoft.com/download/C/6/3/C63D8695-CEF2-43C3-AF0A-4989507E429B/DataMigrationAssistant.msi' -OutFile 'C:\DataMigrationAssistant.msi'
 Start-Process -file 'C:\DataMigrationAssistant.msi' -arg '/qn /l*v C:\dma_install.txt' -passthru | wait-process
