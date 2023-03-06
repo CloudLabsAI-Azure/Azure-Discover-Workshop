@@ -164,19 +164,19 @@
 
 1. On the JumpBox VM, Navigate to C:\labfiles and open SSISDW.sln in VS 2017
 
-    ![Resource groups is highlighted in the Azure services list.](media/openproj.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.176.png "Azure services")
 
 1. Once Visual studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click ok to proceed.
 
-    ![Resource groups is highlighted in the Azure services list.](media/projectupdate.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.177.png "Azure services")
 
 1. Once the project is migrated, a new browser window will open and you should be able to see the migration report, you can review the report and close the tab.
 
-    ![Resource groups is highlighted in the Azure services list.](media/projectmigration.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.178.png "Azure services")
     
 1. Navigate back to Visual studio, and you should be able to see SSIS Package Upgrade Wizard.
     
-    ![Resource groups is highlighted in the Azure services list.](media/wizard.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.179.png "Azure services")
     
 1. Click on Next on the upgrade wizard, on **Package management option** page select the below options and click on next.
    
@@ -184,22 +184,25 @@
       • Continue upgrade process when a package upgrade fails.
       • Ignore configurations.
     
-    ![Resource groups is highlighted in the Azure services list.](media/packageoption.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.180.png "Azure services")
     
 1. Now review the information and click on finish button to complete the package upgrade wizard.
 
-     ![Resource groups is highlighted in the Azure services list.](media/finishpackage.png "Azure services")
+     ![Resource groups is highlighted in the Azure services list.](media/1.181.png "Azure services")
     
 1. Once the upgrade is completed you can click on close button, you should be able to see the below output upon completion of the package upgrade process.
     
-    ![Resource groups is highlighted in the Azure services list.](media/completepackage.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.182.png "Azure services")
     
 1. Now as the solution is upgraded you should be able to load the project without any issues.
     
-    ![Resource groups is highlighted in the Azure services list.](media/ppopen.png "Azure services")
+    ![Resource groups is highlighted in the Azure services list.](media/1.183.png "Azure services")
     
 ### Task 4: Convert to Project Deployment mode & update connection string
-    In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
+
+ In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
+ 
+ 
 1. Now click on the **PopulateDW.dtsx** and click ok on **Synchronise Connection Strings** to acknowledge the connection.
 
     ![Resource groups is highlighted in the Azure services list.](media/populate.png "Azure services")
@@ -224,7 +227,7 @@
      
 1. On the **Connection Manager** window, select **Native ODL DB/SQL Server Native Client 11.0** from the drop-down.
 
-  ![Resource groups is highlighted in the Azure services list.](media/providerssn.png "Azure services")
+     ![Resource groups is highlighted in the Azure services list.](media/providerssn.png "Azure services")
 
 1. Now enter the below details for the target SQLMI as below:   
     
@@ -245,7 +248,8 @@
     ![Resource groups is highlighted in the Azure services list.](media/projctcncn.png "Azure services")  
     
 ### Task 4: Deploy Package to the SSISDB on the Managed Instance
-      In this task, we will be deploying the fixed package onto the SSIS integration runtime and SSISDB held within the Managed Instance.
+
+  In this task, we will be deploying the fixed package onto the SSIS integration runtime and SSISDB held within the Managed Instance.
 
 1. Right click on the solution and click on properties to change the target server type to 2017 as 2019 is not yet supported.
 
