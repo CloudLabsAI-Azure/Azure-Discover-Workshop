@@ -290,12 +290,10 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/deploypackage.png "Azure services")
    
-1. Once the results is passed, click on **Close**.
+1. Once the Results is passed, click on **Close**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.184.png "Azure services")
-
-### Task 7:  Verify Deployment and Test-Run Package
-
+   
 1. On your **JumpBox** VM, Open **Microsoft SQL Server Management Studio 17** from the Start menu and enter the following information in the **Connect to Server** dialog and click on **Connect**.
 
    - **Server name**: Enter the fully qualified domain name of your SQL managed instance, which you copied from the Azure Cloud Shell in a previous Exercise.
@@ -306,25 +304,8 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.109.png "Connect to Server")
    
-1. Navigate to the Integration Services Catalogs, select the project.
+1. Navigate to the Integration Services Catalogs, you will see that SSISDB is present.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.185.png "Azure services")
 
-1. Right click on SSISDW package, click on **Execute**.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.186.png "Azure services")
-
-1. Within the Execute Package window, ensure the package **PopulateDW.dtsx** is selected and Click on **OK**.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.187.png "Azure services")
-
-
-1. Click on **Yes** to view the execution report.
-
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.188.png "Azure services")
-
-1. Once the execution report has loaded, click on **Refresh** until the package has completed
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.189.png "Azure services")
 
