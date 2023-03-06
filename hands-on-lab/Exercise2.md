@@ -130,11 +130,10 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and VM name with: LEGACYSQL2008.
 
-
-     ```powershell
-     $resourceGroup = "<your-resource-group-name>"
-     az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
-     ```
+      ```powershell
+      $resourceGroup = "<your-resource-group-name>"
+      az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
+      ```
 
    > **Note**:
 
@@ -214,7 +213,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
 
    - Click on **Advance Settings**.
-   -**WideWorldImporters**: Enter **WideWorldImporters<injectkey="SUFFIX"enableCopy="false" />**
+   - **WideWorldImporters**: Enter **WideWorldImportersDID
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
 
