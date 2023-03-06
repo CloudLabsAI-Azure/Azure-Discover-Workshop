@@ -136,3 +136,12 @@ $blob = (Get-AzStorageBlob -Container build -Context $Context -Blob 'WideWorldIm
 $Query = "if not exists (select 1 from sysdatabases where name = 'WideWorldImporters') RESTORE DATABASE [WideWorldImporters] FROM URL = '$blob'"
 Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Username $adminUsername -Password $Credentials.GetNetworkCredential().Password
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
+
+# Restore Database 2008DW
+Invoke-WebRequest 'https://github.com/sk-bln/SQL-Hackathon/blob/master/Build/SQL%20SSIS%20Databases/2008DW.bak?raw=true' -UseBasicParsing -OutFile "$temp\2008DW.bak" | Wait-Process
+
+Write-Host -BackgroundColor Black -ForegroundColor Yellow "Attempting restore 2008DW database on Managed Instance $sqlmiFDQN"
+$blob = (Get-AzStorageBlob -Container build -Context $Context -Blob '2008DW.bak').ICloudBlob.Uri.AbsoluteUri
+$Query = "if not exists (select 1 from sysdatabases where name = '2008DWdeploymentidvalue') RESTORE DATABASE [2008DW] FROM URL = '$blob'"
+Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Username $adminUsername -Password $Credentials.GetNetworkCredential().Password
+Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
