@@ -116,7 +116,7 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
    ![Screenshot of the dialog confirming the database backup was completed successfully.](media/1.141.png "Backup complete")
 
-### Task 4: Retrieve SQL MI and SQL Server 2008 VM connection information
+### Task 4: Retrieve legacy SQL Server 2008 VM connection information
 
 In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
 
