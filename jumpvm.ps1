@@ -156,6 +156,12 @@ Start-Process -FilePath 'C:\SSMS-Setup-ENU.exe' -ArgumentList $params -Wait
 
 sleep 5
 
+# Download and install Visual Studio 2017 with data tools
+Invoke-WebRequest -Uri https://aka.ms/vs/15/release/vs_community.exe -OutFile "$env:TEMP\vs_community.exe"
+Start-Process -FilePath "$env:TEMP\vs_community.exe" -ArgumentList '--add', 'Microsoft.VisualStudio.Workload.DataStorage', '--wait', '--norestart' -PassThru | Wait-Process
+
+sleep 5
+
 choco install visualstudio2017community -y -force
 sleep 5
 choco install visualstudio2017sql
