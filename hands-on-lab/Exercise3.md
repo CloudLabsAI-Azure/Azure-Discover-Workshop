@@ -257,3 +257,10 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
    ![Resource groups is highlighted in the Azure services list.](media/1.185.png "Azure services")
 
 
+1. Congratulations, you successfully migrated your SSIS packages to the Azure SQLMI database, now click on the Next button present in the bottom-right corner of this lab guide.
+
+
+## Summary
+
+In this exercise, you have Migrated you SSIS packges to the Azure SQLMI using Azure data factory.
+
