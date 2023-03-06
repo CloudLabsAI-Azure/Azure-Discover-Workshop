@@ -4,56 +4,55 @@
 
 1. Search and select **SQL Managed instance** from the Azure search bar.
     
-    ![Resource groups is highlighted in the Azure services list.](media/1.26.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.26.png "Azure services")
 
 1. Select your **Managed instance**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.27.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.27.png "Azure services")
     
 1. Under the Security, select **Microsoft Defender for Cloud**.
     
-    ![Resource groups is highlighted in the Azure services list.](media/1.28.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.28.png "Azure services")
     
 1. At the top of the page click on the **Configure** link next to the Azure Defender for SQL: Enabled at the server-level header.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.30.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.30.png "Azure services")
         
 1. Under the VULNERABILITY ASSESSMENT SETTINGS, check your **Subscription** and check defender is linked to a **Storage account**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.29.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.29.png "Azure services")
     
 1. Click on **Save**.
     
 1. Navigate back to Microsoft defender for cloud and click on **View all recommendations in Defender for Cloud**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.86.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.86.png "Azure services")
 
 1. On the Recommendation page, pay attention to the first part of the page; the summary view. It includes the current progress on the **Recommendations status** (both completed security controls and recommendations), and **Resource health** (by severity).
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.87.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.87.png "Azure services")
 
-1. From the top menu, click on the **Download CSV report** button – this allows you to get a snapshot of your resources, their health status, and the associated            recommendations. You can use this file for pivoting and reporting.
+1. From the top menu, click on the **Download CSV report** button – this allows you to get a snapshot of your resources, their health status, and the associated recommendations. You can use this file for pivoting and reporting.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.88.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.88.png "Azure services")
     
 1. On the resource pane, review the virtual machine information alongside the recommendation list.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.92.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.92.png "Azure services")
     
-    > **Note**: You can click on any of the Severity and explore on this.
+   > **Note**: You can click on any of the Severity and explore on this.
     
 1. To view the recommendation, search and select **Machines should have a vulnerability assessment solution**.
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.89.png "Azure services")
-    
-    
+   ![Resource groups is highlighted in the Azure services list.](media/1.89.png "Azure services")
+     
 1. Click to expand **Remediation steps (1)** – then click on the **Quick fix logic (2)** option to expose an automatic remediation script content (ARM template). Once    done, **Close (3)** this window. 
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.90.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.90.png "Azure services")
     
 1. From the Affected resources tab, you will see **no Unhealthy resources** and **no Healthy resources** are there to fix because they all are already fix
 
-    ![Resource groups is highlighted in the Azure services list.](media/1.91.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.91.png "Azure services")
     
     
 ### Task 2: Configure Data Discovery and Classification
@@ -100,19 +99,19 @@
 
 1. Other recommendations you can review are the **HumanResources - Employee** fields for **NationIDNumber** and **BirthDate**. Note that the recommendation service flagged these fields as **Confidential - GDPR**. WWI maintains data about gamers from around the world, including Europe, so having a tool that helps them discover data that may be relevant to GDPR compliance is very helpful.
 
-    ![GDPR information is highlighted in the list of recommendations](media/1.100.png "Data Discovery & Classification")
+   ![GDPR information is highlighted in the list of recommendations](media/1.100.png "Data Discovery & Classification")
 
 1. Check the **Select all** checkbox at the top of the list to select all the remaining recommended classifications, and then select **Accept selected recommendations**.
 
-    ![All the recommended classifications are checked, and the Accept selected recommendations button is highlighted.](media/1.101.png "Data Discovery & Classification")
+   ![All the recommended classifications are checked, and the Accept selected recommendations button is highlighted.](media/1.101.png "Data Discovery & Classification")
 
 1. Select **Save** on the toolbar of the Data Classification window. It may take several minutes for the save to complete.
 
-    ![Save the updates to the classified columns list.](media/1.102.png "Save")
+   ![Save the updates to the classified columns list.](media/1.102.png "Save")
 
 1. When the save completes, select the **Overview** tab on the Data Discovery & Classification blade to view a report with a full summary of the database classification state.
 
-    ![The View Report button is highlighted on the toolbar.](media/1.103.png "View report")
+   ![The View Report button is highlighted on the toolbar.](media/1.103.png "View report")
     
     
 ### Task 3: Review an Azure Defender for SQL Vulnerability Assessment
@@ -159,7 +158,7 @@ In this task, you review an assessment report generated by Azure Defender for th
 
 1. In SSMS, select **New Query** from the toolbar and paste the following SQL script into the new query window.
 
-    >Note: Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >Note: Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE WideWorldImportersSUFFIX;
@@ -172,34 +171,33 @@ In this task, you review an assessment report generated by Azure Defender for th
 
 1. Select **Execute** from the SSMS toolbar. After a few seconds, you will see a message that "Commands completed successfully."
 
-10. You can verify the encryption state and view information on the associated encryption keys by using the [sys.dm_database_encryption_keys view](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-encryption-keys-transact-sql). Select **New Query** on the SSMS toolbar again, and paste the following query into the new query window:
+1. You can verify the encryption state and view information on the associated encryption keys by using the [sys.dm_database_encryption_keys view](https://docs.microsoft.com/sql/relational-databases/system-dynamic-management-views/sys-dm-database-encryption-keys-transact-sql). Select **New Query** on the SSMS toolbar again, and paste the following query into the new query window:
 
     ```sql
     SELECT * FROM sys.dm_database_encryption_keys
     ```
 
-    ![The query above is pasted into a new query window in SSMS.](media/1.110.png "New query")
+   ![The query above is pasted into a new query window in SSMS.](media/1.110.png "New query")
 
 1. Select **Execute** from the SSMS toolbar. You will see two records in the Results window, which provide information about the encryption state and keys used for encryption.
 
-    ![The Execute button on the SSMS toolbar is highlighted, and in the Results pane the two records about the encryption state and keys for the WideWorldImporters database are highlighted.](media/1.111.png "Results")
+   ![The Execute button on the SSMS toolbar is highlighted, and in the Results pane the two records about the encryption state and keys for the WideWorldImporters database are highlighted.](media/1.111.png "Results")
 
-    > By default, service-managed transparent data encryption is used. A transparent data encryption certificate is automatically generated for the server that contains the database.
+   > By default, service-managed transparent data encryption is used. A transparent data encryption certificate is automatically generated for the server that contains the database.
 
 1. Return to the Azure portal and the Azure Defender for SQL's Vulnerability Assessment blade of the `WideWorldImportersSUFFIX` managed database. On the toolbar, select **Scan** to start a new assessment of the database.
 
-    ![The Vulnerability assessment scan button is selected in the toolbar.](media/1.112.png "Scan")
+   ![The Vulnerability assessment scan button is selected in the toolbar.](media/1.112.png "Scan")
 
 1. When the scan completes, select the **Findings** tab, enter **VA1219** into the search filter box, and observe that the previous failure is no longer in the findings list.
 
-    ![The Findings tab is highlighted, and VA1219 is entered into the search filter. The list displays no results.](media/1.113.png "Scan Findings List")
+   ![The Findings tab is highlighted, and VA1219 is entered into the search filter. The list displays no results.](media/1.113.png "Scan Findings List")
 
 1. Now, select the **Passed** tab, and observe the **VA1219** check is listed with a status of **PASS**.
 
-    ![The Passed tab is highlighted, and VA1219 is entered into the search filter. VA1219 with a status of PASS is highlighted in the results.](media/1.114.png "Passed")
+   ![The Passed tab is highlighted, and VA1219 is entered into the search filter. VA1219 with a status of PASS is highlighted in the results.](media/1.114.png "Passed")
 
-    > Using the SQL Vulnerability Assessment, it is simple to identify and remediate potential database vulnerabilities, allowing you to improve your database security proactively.
-
+   > Using the SQL Vulnerability Assessment, it is simple to identify and remediate potential database vulnerabilities, allowing you to improve your database security proactively.
 
 ### Task 4: Information Protection using Dynamic Data Masking
 
@@ -233,7 +231,7 @@ In this task, you review an assessment report generated by Azure Defender for th
 
 6. With the new user created, run a quick query to observe the results. Select **New Query** again and paste the following into the new query window.
     
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -250,7 +248,7 @@ In this task, you review an assessment report generated by Azure Defender for th
 
 8. You now apply DDM on the `CardNumber` field to prevent it from being viewed in query results. Select **New Query** from the SSMS toolbar, paste the following query into the query window to apply a mask to the `CardNumber` field and then select **Execute**.
 
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -262,7 +260,7 @@ In this task, you review an assessment report generated by Azure Defender for th
 
 9. Run the `SELECT` query you opened in step 6 above again and observe the results. Specifically, inspect the output in the `CardNumber` field. For reference, the query is below.
 
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -283,7 +281,7 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
 
 1. For this, you target the `LoginEmail` field in the `[dbo].[Gamer]` table. Open a new query window and execute the following script:
 
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -296,7 +294,7 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
 
 2. Now, as you did above, grant the `DDMUser` `SELECT` rights on the [dbo].[Gamer]. In a new query window and enter the following script, and then select **Execute**:
 
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -307,7 +305,7 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
 
 3. Next, apply DDM on the `LoginEmail` field to prevent it from being viewed in full in query results. Select **New Query** from the SSMS toolbar, paste the following query into the query window to apply a mask to the `LoginEmail` field, and then select **Execute**.
 
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -317,11 +315,11 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
    ALTER COLUMN [LoginEmail] NVARCHAR(250) MASKED WITH (FUNCTION = 'Email()');
    ```
 
-   > **Note**: Observe the use of the built-in `Email()` masking function above. This masking function is one of several pre-defined masks available in SQL Server databases.
+   >**Note**: Observe the use of the built-in `Email()` masking function above. This masking function is one of several pre-defined masks available in SQL Server databases.
 
 4. Run the `SELECT` query below and observe the results. Specifically, inspect the output in the `LoginEmail` field. For reference, the query is below.
 
-    >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
+   >**Note:** Make sure to replace the SUFFIX with value <inject key="Suffix" />
 
    ```sql
    USE [WideWorldImportersSUFFIX];
@@ -333,4 +331,3 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
    ```
 
    ![The email addresses are masked in the query results.](media/1.120.png "Query results")
-

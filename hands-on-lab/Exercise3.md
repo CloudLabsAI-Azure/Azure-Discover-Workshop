@@ -1,8 +1,8 @@
-## Exercise 3: Migrate and run you webapp on Azure using Database Migration Service
+## Exercise 3: Migrate and run your webapp on Azure using the Database Migration Service
 
-In this exercise, you use the **Azure Database Migration Service** here `https://azure.microsoft.com/services/database-migration/` (DMS) to migrate the `WideWorldImporters` database from an on-premises SQL Server 2008 R2 database into Azure SQL Managed Instance (SQL MI). WWI mentioned the importance of their gamer information web application in driving revenue, so for this migration, the online migration option is used to minimize downtime. Targeting the **Business Critical service tier** here `https://docs.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview#managed-instance-service-tiers` allows WWI to meet its customer's high-availability requirements.
+In this exercise, you use the **Azure Database Migration Service** here `https://azure.microsoft.com/services/database-migration/` (DMS) to migrate the `WideWorldImporters` database from an on-premises SQL Server 2008 R2 database into an Azure SQL Managed Instance (SQL MI). WWI mentioned the importance of their gamer information web application in driving revenue, so for this migration, the online migration option is used to minimize downtime. Targeting the **Business critical service tier** here `https://docs.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview#managed-instance-service-tiers` allows WWI to meet its customers' high-availability requirements.
 
-> The Business-Critical service tier is designed for business applications with the highest performance and high-availability (HA) requirements. To learn more, read the Managed Instance service tiers documentation.
+> The Business-Critical service tier is designed for business applications with the highest performance and high-availability (HA) requirements. To learn more, read the Managed Instance service Tiers documentation.
 
 ### Task 1: Create an SMB network share on the LEGACYSQL2008 VM
 
@@ -32,16 +32,16 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![The Done button is highlighted on the File Sharing dialog.](media/1.126.png "File Sharing")
 
-### Task 2: Change MSSQLSERVER service to run under sqlmiuser account
+### Task 2: Change the MSSQLSERVER service to run under the sqlmiuser account
 
 In this task, you use the SQL Server Configuration Manager to update the service account used by the SQL Server (MSSQLSERVER) service to the `DemoUser` account. Changing the account used for this service ensures it has the appropriate permissions to write backups to the shared folder.
 
 1. On your LEGACYSQL2008 VM, select the **Start menu**, enter "sql configuration" into the search bar, and then select **SQL Server Configuration Manager** from the search results.
 
-   ![In the Windows Start menu, "sql configuration" is entered into the search box, and SQL Server Configuration Manager is highlighted in the search results.](media/1.127.png "Windows search")
+   ![In the Windows Start menu, "SQL configuration" is entered into the search box, and SQL Server Configuration Manager is highlighted in the search results.](media/1.127.png "Windows search")
 
    > **Note**
-   >
+   
    > Be sure to choose **SQL Server Configuration Manager**, and not **SQL Server 2017 Configuration Manager**, which does not work for the installed SQL Server 2008 R2 database.
 
 1. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, then right-click **SQL Server (MSSQLSERVER)** in the list of services and select **Properties** from the context menu.
@@ -71,17 +71,16 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
 To perform online data migrations, DMS looks for database and transaction log backups in the shared SMB backup folder on the source database server. In this task, you create a backup of the `WideWorldImporters` database using SSMS and write it to the ```\\SQL2008-SUFFIX\dms-backups``` SMB network share you made in a previous task. The backup file needs to include a checksum, so you add that during the backup steps.
 
->**Note**: If you already connected with SSMS through legacysql2008 VM skip the steps and continue from step 3.
+>**Note**: If you are already connected to SSMS through legacysql2008 VM skip these steps and continue from step 3.
 
-1. On the LEGACYSQL2008 VM, open **Microsoft SQL Server Management Studio 17** by entering "sql server" into the search bar in the Windows Start menu.
+1. On the LEGACYSQL2008 VM, open **Microsoft SQL Server Management Studio 17** by entering "SQL server" into the search bar in the Windows Start menu.
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.132.png "Windows start menu search")
 
 1. In the SSMS **Connect to Server** dialog, enter **legacysql2008** into the Server name box, ensure **Windows Authentication** is selected, and then select **Connect**.
    
-    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.133.png "Windows start menu search")
+   ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.133.png "Windows start menu search")
    
-
 1. Once connected, expand **Databases** under **LEGACYSQL2008** in the Object Explorer, and then right-click the **WideWorldImporters** database. In the context menu, select **Tasks** and then **Back Up**.
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.134.png "Windows start menu search")
@@ -117,13 +116,13 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
 1. You will receive a message when the backup is complete. Select **OK**.
 
-    ![Screenshot of the dialog confirming the database backup was completed successfully.](media/1.141.png "Backup complete")
+   ![Screenshot of the dialog confirming the database backup was completed successfully.](media/1.141.png "Backup complete")
 
 ### Task 4: Retrieve SQL MI and SQL Server 2008 VM connection information
 
 In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
 
-1. On the JUMPBOX VM, In the Azure portal select the Azure Cloud Shell icon from the top menu.
+1. On the JUMPBOX VM, navigate to Azure portal select the Azure Cloud Shell icon from the top menu.
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.142.png "Azure Cloud Shell")
 
@@ -131,8 +130,7 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.143.png "Azure Cloud Shell")
 
-
-1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and vm name with: LEGACYSQL2008. 
+1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and VM name with: LEGACYSQL2008.
 
 
      ```powershell
@@ -140,14 +138,15 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
      az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
      ```
 
-   > **Note**
-   > Copy the powershell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
+   > **Note**:
+
+   > Copy the PowerShell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
    
    > If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions, then copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
 
 1. Within the output, locate and copy the value of the `ipAddress` property below the `PrivateIPAddresses` field. Paste the value into a text editor, such as Notepad.exe, for later reference.
 
-    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.146.png "Azure Cloud Shell")
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.146.png "Azure Cloud Shell")
 
 1. Leave the Azure Cloud Shell open for the next task.
 
@@ -170,7 +169,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - **Target server type**: Select **Azure SQL Database Managed Instance (2)**.
    - **Choose type of activity**: Select **Online data migration (3)**.
 
-      ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/1.149.png "New migration project")
+   ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/1.149.png "New migration project")
 
 1. Select **Create and run activity (4)**.
 
@@ -208,26 +207,25 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
 1. On the Migration Wizard **Configure migration settings** tab, enter the following configuration:
 
-    - **Network share location**: Populate this field with the path to the SMB network share you created previously by entering ```\\private ip adress\dms-backups```.
-    - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: Enter ```LEGACYSQL2008\demouser```.
-    - **Password**: Enter `Password.1234567890`
-    - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
-    - **Storage account**: Select the **sqlmistore** storage account.
+   - **Network share location**: Populate this field with the path to the SMB network share you created previously by entering ```\\private ip adress\dms-backups```.
+   - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: Enter ```LEGACYSQL2008\demouser```.
+   - **Password**: Enter `Password.1234567890`
+   - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
+   - **Storage account**: Select the **sqlmistore** storage account.
 
-      ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
- 
-    - Click on **Advance Settings**. 
-    - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="false" />** 
+   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
 
- 
-       ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
+   - Click on **Advance Settings**.
+   -**WideWorldImporters**: Enter **WideWorldImporters<injectkey="SUFFIX"enableCopy="false" />**
+
+   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
 
 1. Select **Next: Summary**.
 
 1. On the Migration Wizard **Summary** tab, enter `WwiMigration` as the **Activity name**.
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.155.png "Migration Wizard Select databases")
-    
+   
 1. Select **Start migration**.
 
 1. Monitor the migration on the status screen that appears. You can select the refresh icon in the toolbar to retrieve the latest status. Continue selecting **Refresh** every 5-10 seconds until you see the status change to **Log shipping in progress**. When that status appears, move on to the next task.
@@ -242,11 +240,9 @@ Since you performed an "online data migration," the migration wizard continuousl
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.157.png "Migration Wizard Select databases")
 
-
 1. On the WideWorldImporters screen, note the status of **Restored** for the `WideWorldImporters.bak` file.
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.158.png "Migration Wizard Select databases")
-
 
 1. To demonstrate log shipping and how transactions made on the source database during the migration process are added to the target SQL MI database, you will add a record to one of the database tables.
 
@@ -364,7 +360,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
    ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.167.png "Migration Wizard Select source")
 
-1. Select **Connect**. 
+1. Select **Connect**.
 
 1.  Expand Databases in the SQL MI connection and select the WideWorldImporters<inject key="DeploymentID" enableCopy="false" /> database.
 
@@ -392,7 +388,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
 In this task, you will use JumpBox VM and then, using Visual Studio on the JumpBox, deploy the `WideWorldImporters` web application into the App Service in Azure.
 
-1. You have already logged-in to JumpBox VM, use this VM to continue with the lab. 
+1. You have already logged-in to JumpBox VM, use this VM to continue with the lab.
 
 1. In the File Explorer dialog, navigate to the `C:\hands-on-lab` folder and then drill down to `Migrating-SQL-databases-to-Azure-master\Hands-on lab\lab-files`. In the `lab-files` folder, double-click `WideWorldImporters.sln` to open the solution in Visual Studio.
 
@@ -407,7 +403,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
    * Password: <inject key="AzureAdUserPassword"></inject>
 
     ![On the Visual Studio welcome screen, the Sign in button is highlighted.](media/1.66.png "Visual Studio")
-    
+   
 1. Once you Signed in, click on **Start Visual Studio**.
 
      ![A Visual Studio security warning is displayed, and the Ask me for every project in this solution checkbox is unchecked and highlighted.](media/1.68.png "Visual Studio")
@@ -431,7 +427,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 1. Finally, in the **App Service** box, select your subscription, expand the **Azure-Discover-RG-<inject key="Suffix" enableCopy="false"/>** resource group, and select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** Web App, Click on **Finish**.
 
     ![In the Publish dialog, The wwi-web-UNIQUEID Web App is selected and highlighted under the hands-on-lab- resource group.](media/1.170.png "Publish API App to Azure")
-    
+   
 1. You will see that Publish profile creation progress, click on **Close**.
 
    ![In the Publish dialog, The wwi-web-UNIQUEID Web App is selected and highlighted under the hands-on-lab- resource group.](media/1.172.png "Publish API App to Azure")
@@ -529,24 +525,24 @@ In this task, you add the networking configuration to your App Service to enable
 1. On the Network Feature Status dialog, enter the following and click **OK**.
 
    - **Virtual Network**: Select the vnet-sqlmi--cus.
-   - **Subnet**: Select the existing subnet. and select any subnet from the drop down menu. 
+   - **Subnet**: Select the existing subnet. and select any subnet from the drop down menu.
 
-      ![image](media/1.57.png "App Service")
+   ![image](media/1.57.png "App Service")
 
-      > **Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet   
-  		> **Note**: If you are not able to select any existing subnet, then follow the below steps.
-  	
-    - Select the create new subnet option and enter name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e, 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping other subnet's address.
+   >**Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet.  
+   >**Note**: If you are not able to select any existing subnet, then follow the below steps.
+   
+   - Select the create new subnet option and enter name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e., 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping other subnet's address.
      
- 	 > **Note**: If the address space is overlapping with other subnets, change the virtual network address block by selecting a different virtual network address block i.e, 10.1.0.0/16 or 10.2.0.0/16 from the drop-down. In the subnet address block, enter 10.1.xx.0/23 or 10.2.xx.0/23 according to the virtual network address block you have selected and make sure it is not overlapping the other subnet's address.
+   > **Note**: If the address space is overlapping with other subnets, change the virtual network address block by selecting a different virtual network address block i.e., 10.1.0.0/16 or 10.2.0.0/16 from the drop-down. In the subnet address block, enter 10.1.xx.0/23 or 10.2.xx.0/23 according to the virtual network address block you have selected and make sure it is not overlapping the other subnet's address.
 
-   	![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
+   ![The values specified above are entered into the Network Feature Status dialog.](media/1.58.png "App Service")
 
-1. Within a few minutes, the VNet is added, and your App Service is restarted to apply the changes. Select Refresh to confirm whether the Vnet is connected or not.
+1. Within a few minutes, the Vnet is added, and your App Service is restarted to apply the changes. Select Refresh to confirm whether the Vnet is connected or not.
 
-   ![The details of the VNet Configuration are displayed. The Certificate Status, Certificates in sync, is highlighted.](media/1.59.png "App Service")
+   ![The details of the Vnet Configuration are displayed. The Certificate Status, Certificates in sync, is highlighted.](media/1.59.png "App Service")
 
-   > **Note**: If you receive a message adding the Virtual Network to Web App failed, select **Disconnect** on the VNet Configuration blade, and repeat steps 3 - 5 above.
+   > **Note**: If you receive a message adding the Virtual Network to Web App failed, select **Disconnect** on the Vnet Configuration blade, and repeat steps 3 - 5 above.
 
 ### Task 11: Open the web application
 
@@ -556,7 +552,7 @@ In this task, you verify your web application now loads, and you can see the hom
 
    ![The App service URL is highlighted.](media/1.174.png "App service URL")
 
-1. Verify that the website and data are loaded correctly. The page should look similar to the following:
+1. Verify that the website and data are loaded correctly. The page should look like the following:
 
    ![Screenshot of the WideWorldImporters Operations Web App.](media/1.61.png "WideWorldImporters Web")
 
