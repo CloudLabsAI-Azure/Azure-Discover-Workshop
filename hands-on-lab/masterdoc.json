@@ -4,6 +4,10 @@
     "Language": "English",
     "Files":[
       {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/overview.md",
+        "Order": 1
+      },
+             {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/Exercise1.md",
         "Order": 1
       },
