@@ -1,4 +1,4 @@
-## Exercise 2: Migrate your on-premise SSIS using Azure Data Factory
+## Exercise 2: Migrate your on-premises SSIS using Azure Data Factory
 
 ### Task 1: Review the already Enabled CLR on the SQL Managed Instance
 
@@ -10,7 +10,7 @@
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.63.png "Azure Cloud Shell")
 
-1. In the You have no storage mounted, Click on  **Show advanced settings**. 
+1. In the You have no storage mounted, click on **Show advanced settings**. 
 
    ![](media/sad2.jpg "Azure Cloud Shell")
 
@@ -22,7 +22,7 @@
 
    ![](media/sad3.jpg "Azure Cloud Shell")
 
-1. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and be presented with a PS Azure prompt.
+1. After a moment, a message is displayed that you have successfully requested a Cloud Shell and be presented with a PS Azure prompt.
 
    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
 
@@ -75,7 +75,7 @@
     
 ### Task 2: Prepare SSIS Demo
 
-1. Navigate back to Jumpbox, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
+1. Navigate back to JumpBox, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.80.png "SSMS Toolbar")
 
@@ -123,7 +123,7 @@
     
 1. On the **General settings** page of Integration runtime setup pane, complete the following steps.
 
-    - Enter Name : **SSISIR**
+    - Enter Name: **SSISIR**
     - Location: **Central US**
     - Node Size: **D2_v3 (2 Core(s), 8192 MB)**
     - Node Number: **1**
@@ -149,7 +149,7 @@
     
 1. Click on **Continue**.
 
-1. Leave it as default and Click on **Create**.
+1. Leave it as default and click on **Create**.
 
     ![Resource groups is highlighted in the Azure services list.](media/1.74.png "Azure services")
 
@@ -239,7 +239,7 @@
     
     ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
     
-1. Now right click on the **SQL Server** connect and click on **Convert to Porject Connection**    
+1. Now right click on the **SQL Server** connect and click on **Convert to Project Connection**    
 
     ![Resource groups is highlighted in the Azure services list.](media/credconvert.png "Azure services")
     
@@ -283,7 +283,7 @@
     * Authentication: **SQL Server Authentication**
     * Username: **Contosoadmin**
     * Password: **IAE5fAijit0w^rDM**
-    * Path : **/SSISDB/demo/SSISDW**
+    * Path: **/SSISDB/demo/SSISDW**
    
     ![Resource groups is highlighted in the Azure services list.](media/destsqlmi.png "Azure services") 
     
