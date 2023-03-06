@@ -182,7 +182,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
    - Authentication: **SQL Server Authentication**
    - Username: `Contosoadmin`
    - Password: `IAE5fAijit0w^rDM`
-   - Database Name: Select **2008DWSUFFIX** from the drop-down and click **ok**
+   - Database Name: Select **2008DWSUFFIX** from the drop-down and click **OK**
 
    ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
 
@@ -200,9 +200,9 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
 1. Right click on the solution and click on properties to change the target server type to 2017 as 2019 is not yet supported.
 
-   ![Resource groups is highlighted in the Azure services list.](media/projctcncn.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.190.png "Azure services")
 
-1. On the solution properties, select General under **Configuration Properties** and select **TargetServerVersion** as **SQL Server 2017** from drop-down menu and click on Apply and **ok**.
+1. On the solution properties, select General under **Configuration Properties** and select **TargetServerVersion** as **SQL Server 2017** from drop-down menu and click on Apply and **OK**.
 
    ![Resource groups is highlighted in the Azure services list.](media/targetpackgeproject.png "Azure services")
 
