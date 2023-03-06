@@ -555,4 +555,9 @@ In this task, you verify your web application now loads, and you can see the hom
 
    > **Note**: It can often take several minutes for the network configuration to be reflected in the web app. If you get an error screen, try selecting Refresh a few times in the browser window. If that does not work, try selecting **Restart** on the Azure Web App's toolbar.
 
-1. Congratulations, you successfully connected your application to the new SQL MI database.
+1. Congratulations, you successfully connected your application to the new SQL MI database, now click on the Next button present in the bottom-right corner of this lab guide.
+
+
+## Summary
+
+In this exercise, you have Migrated you webapp database and webapplication to Azure and successfully connected the application the Azure SQLMI database and to the network.
