@@ -263,15 +263,15 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 1. After adding the new record to the `Games` table, back up the transaction logs. DMS detects any new backups and ships them to the migration service. Select **New Query** again in the toolbar, and paste the following script into the new query window:
 
-   ```sql
-   USE master;
-   GO
+      ```sql
+      USE master;
+      GO
 
-   BACKUP LOG WideWorldImporters
-   TO DISK = 'c:\dms-backups\WideWorldImportersLog.trn'
-   WITH CHECKSUM
-   GO
-   ```
+      BACKUP LOG WideWorldImporters
+      TO DISK = 'c:\dms-backups\WideWorldImportersLog.trn'
+      WITH CHECKSUM
+      GO
+      ```
 
 1. Execute the query by selecting **Execute** in the SSMS toolbar.
 
