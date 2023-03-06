@@ -122,7 +122,7 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
 In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
 
-1. On the JUMPBOX VM, navigate to Azure portal select the Azure Cloud Shell icon from the top menu.
+1. On the JUMPBOX VM, navigate to the Azure portal and select the Azure Cloud Shell icon from the top menu.
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.142.png "Azure Cloud Shell")
 
@@ -154,7 +154,7 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 In this task, you create a new online data migration project in DMS for the `WideWorldImporters` database.
 
-1. In the Azure portal `https://portal.azure.com`, navigate to the Azure Database Migration Service by selecting **Resource groups** from the left-hand navigation menu, selecting the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group, and then selecting the **wwi-dms** Azure Database Migration Service in the list of resources.
+1. In the Azure portal `https://portal.azure.com`, navigate to the Azure Database Migration Service by selecting **Resource groups** from the left-hand navigation menu, selecting the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group, and then select the **wwi-dms** Azure Database Migration Service in the list of resources.
 
    ![The wwi-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab resource group.](media/1.147.png "Resources")
 
@@ -190,7 +190,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - **Application ID**: <inject key="Application/Client ID" />
    - **Key**:  <inject key="Application Secret Key" />
    - **Skip the Application ID Contributor level access check on the subscription**: Leave this unchecked.
-   - **Subscription**: Select the subscription you are using for this hand-on lab.
+   - **Subscription**: Select the subscription you are using for this hands-on lab.
    - **Target Azure SQL Managed Instance**: Select the sqlmi--cus instance.
    - **SQL Username**: Enter `contosoadmin`
    - **Password**: Enter `IAE5fAijit0w^rDM`
@@ -317,7 +317,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 In this task, you connect to the SQL MI database using SSMS and quickly verify the migration.
 
->**Note**: If you already connected with SSMS through SQL MI skip the steps and continue from step 9.
+>**Note**: If you are already connected with SSMS through SQL MI skip the steps and continue from step 9.
 
 1. First, use the Azure Cloud Shell to retrieve the fully qualified domain name of your SQL MI database. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
 
@@ -352,7 +352,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
 1. In the Connect to Server dialog, enter the following:
 
-   - **Server name**: Enter the fully qualified domain name of your SQL managed instance, which you copied from the Azure Cloud Shell in the previous steps.
+   - **Server name**: Enter the fully qualified domain name of your SQL-managed instance, which you copied from the Azure Cloud Shell in the previous steps.
    - **Authentication**: Select **SQL Server Authentication**.
    - **Login**: Enter `contosoadmin`
    -  **Password**: Enter `IAE5fAijit0w^rDM`
