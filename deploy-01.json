@@ -403,10 +403,10 @@
             }
           },
           "imageReference": {
-            "publisher": "microsoftvisualstudio",
-                        "offer": "visualstudio2022",
-                        "sku": "vs-2022-comm-latest-ws2022",
-                        "version": "latest"
+            "publisher": "MicrosoftWindowsServer",
+                        "offer": "WindowsServer",
+                        "sku": "2022-datacenter-g2",
+                        "version": "latest"
           }
         },
         "networkProfile": {
