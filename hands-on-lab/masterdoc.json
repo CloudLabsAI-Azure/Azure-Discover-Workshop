@@ -4,12 +4,16 @@
     "Language": "English",
     "Files":[
       {
-        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/overview.md",
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/gettingstarted.md",
         "Order": 1
       },
-             {
+      {
+        "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/overview.md",
+        "Order": 2
+      },
+      {
         "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/Exercise1.md",
-        "Order": 1
+        "Order": 3
       },
       {
           "RawFilePath": "https://raw.githubusercontent.com/CloudLabsAI-Azure/Azure-Discover-Workshop/main/hands-on-lab/Exercise2.md",
