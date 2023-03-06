@@ -336,3 +336,10 @@ From the findings of the Data Discovery & Classification report in ADS, you saw 
    ```
 
    ![The email addresses are masked in the query results.](media/1.120.png "Query results")
+
+1. Congratulations, you successfully secured Azure SQLMI database and explored on multiple other security services offered by Azure SQLMI.
+
+
+## Summary
+
+You have completed the Hands-on Lab, in this Hands-on Lab you explored on migrating the database, web app and SSIS packages to Azure with the help of ADF and DMS. You also have explored on mutiple services offered for securing the Azure SQLMI Database.
