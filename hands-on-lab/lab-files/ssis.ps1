@@ -29,12 +29,25 @@ $userName = $AzureUserName
 $password = $AzurePassword
 $subscriptionId = $AzureSubscriptionID
 $TenantID = $AzureTenantID
+$DID = $DeploymentID
 
 
 $securePassword = $password | ConvertTo-SecureString -AsPlainText -Force
 $cred = new-object -typename System.Management.Automation.PSCredential -argumentlist $userName, $SecurePassword
 
 Connect-AzAccount -Credential $cred | Out-Null
+Write-Host "Installing Microsoft Integration Services Projects" -ForegroundColor Cyan
+
+$vsixPath = "C:\data-tools.exe"
+Write-Host "Downloading VS extension package..."
+(New-Object Net.WebClient).DownloadFile('https://download.microsoft.com/download/0/4/f/04f1e61f-3f4d-4447-8a8a-12a23fb2e8b9/SSDT-Setup-ENU.exe', $vsixPath)
+
+
+
+Start-Process "C:\data-tools.exe" 
+
+
+
 
 
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Setting Enviroment Varibales....................................................."
@@ -143,6 +156,6 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
 # Restore Database 2008DW
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Attempting restore 2008DW database on Managed Instance $sqlmiFDQN"
 $blob = (Get-AzStorageBlob -Container build -Context $Context -Blob '2008DW.bak').ICloudBlob.Uri.AbsoluteUri
-$Query = "if not exists (select 1 from sysdatabases where name = '2008DW880762') RESTORE DATABASE [2008DW] FROM URL = '$blob'"
+$Query = "if not exists (select 1 from sysdatabases where name = '2008DW$DID') RESTORE DATABASE [2008DW] FROM URL = '$blob'"
 Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Username $adminUsername -Password $Credentials.GetNetworkCredential().Password
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
