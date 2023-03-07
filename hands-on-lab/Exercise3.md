@@ -46,11 +46,11 @@ Now that the databases for the Tailspin Application have been migrated, there is
    
 1. While the script is running, you will see a new SSIS packges install window, click on **Modify** button to configure the SSIS installation on the server.
 
-    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis .jpg "SSMS Toolbar")  
+   ![The Execute button is highlighted in the SSMS toolbar.](media/installssis.png "SSMS Toolbar")  
     
 1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
- ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.jpg "SSMS Toolbar")
+   ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.png "SSMS Toolbar")
  
 
 ### Task 3: Review the already created Azure-SSIS integration runtime.  
