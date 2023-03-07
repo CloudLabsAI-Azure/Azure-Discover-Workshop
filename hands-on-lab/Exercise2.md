@@ -212,17 +212,16 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
    ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/sad9.jpg "Migration Wizard Select source")
 
-1. On the Migration Wizard **Select databases** tab, select `WideWorldImporters` and click on **Next: Configure migration settings**..
+1. On the Migration Wizard **Select databases** tab, select `WideWorldImporters` **(1)** and click on **Next: Configure migration settings** **(2)**.
 
-   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.152.png "Migration Wizard Select databases")
+   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/sad10.jpg "Migration Wizard Select databases")
 
 1. On the Migration Wizard **Configure migration settings** tab, enter the following configuration:
 
-   - **Network share location**: Populate this field with the path to the SMB network share you created previously by entering ```\\private ip adress\dms-backups```.
-   - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: Enter ```LEGACYSQL2008\demouser```.
-   - **Password**: Enter `Password.1234567890`
+   - **Network share location**: ```\\private ip adress\dms-backups``` **(1)**, replace **private ip adress** with **private IP address** legacy server which you copied in previous task. 
+   - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: **LEGACYSQL2008\<inject key="SQL Server VM Username" />** 
+   - **Password**: **<inject key="SQL Server VM Password" />** 
    - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
-   - **Storage account**: Select the **sqlmistore** storage account.
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
    
@@ -345,8 +344,6 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
    az sql mi list --resource-group $resourceGroup
    ```
 
-   >**Note**: If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions. Copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
-
 1. Within the above command's output, locate and copy the value of the `fullyQualifiedDomainName` property. Paste the value into a text editor, such as Notepad.exe, for reference below.
 
    ![The output from the az sql mi list command is displayed in the Cloud Shell, and the fullyQualifiedDomainName property and value are highlighted.](media/1.65.png "Azure Cloud Shell")
@@ -359,8 +356,8 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
    - **Server name**: Enter the fully qualified domain name of your SQL-managed instance, which you copied from the Azure Cloud Shell in the previous steps.
    - **Authentication**: Select **SQL Server Authentication**.
-   - **Login**: Enter `contosoadmin`
-   -  **Password**: Enter `IAE5fAijit0w^rDM`
+   - **Login**: **<inject key="SQL MI Username" />** **(5)**
+   - **Password**: **<inject key="SQL MI Password" />** **(6)**
    - Check the **Remember password** box.
 
    ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.167.png "Migration Wizard Select source")
