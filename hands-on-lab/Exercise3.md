@@ -44,65 +44,24 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/sad4.jpg "SSMS Toolbar")
 
-### Task 3: Create an Azure-SSIS integration runtime
+### Task 3: Review the already created Azure-SSIS integration runtime in SQL MI
 
-1. Navigate to the [Azure portal](https://portal.azure.com), search and select **Data Factories** from the Azure search bar.
+1. Navigate to the Azure portal, search and select **data factories** from the Azure search bar.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.14.png "Azure services")
 
 1. Select your **Data Factory**.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.15.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.202.png "Azure services")
 
 1. In the **Overview** section, Click on **Launch Studio**.
 
-   ![Resource groups are highlighted in the Azure services list.](media/1.16.png "Azure services")
+   ![Resource groups are highlighted in the Azure services list.](media/1.203.png "Azure services")
 
-1. In the Azure Data Factory portal, switch to the **Manage** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
+1. In the Azure Data Factory portal, switch to the **Monitor** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
-   ![Resource groups are highlighted in the Azure services list.](media/1.84.png "Azure services")
+   ![Resource groups are highlighted in the Azure services list.](media/1.205.png "Azure services")
 
-   >**Note**: Select SSISIR and click Start. If it cannot be started, delete the SSISIR integration runtime and follow the below steps to create a new SSIS integration runtime.
-
-1. Select **New** to create an Azure-SSIS IR and open the Integration runtime setup pane.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.19.png "Azure services")
-
-1. In the Integration runtime setup pane, select the **Lift-and-shift existing SSIS packages to execute in Azure tile**, and then select **Continue**.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.20.png "Azure services")
-
-1. On the **General settings** page of the Integration runtime setup pane, complete the following steps.
-
-   - Enter Name: **SSISIR**
-   - Location: **Central US**
-   - Node Size: **D2_v3 (2 Core(s), 8192 MB)**
-   - Node Number: **1**
-   - Click on **Continue**.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.85.png "Azure services")
-
-1. On the Deployment Settings page of the Integration Runtime Setup Pane, you have the options to create **SSISDB**.
-
-   - Enter Admin Username: `contosoadmin`
-   - Enter Admin Password: `IAE5fAijit0w^rDM`
-   - Click on **Continue**.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.71.png "Azure services")
-
-1. In the Advanced settings pane of the Integration runtime setup pane,
-
-   - VNet Name: **vnet-sqlmi--cus**
-   - Subnet name: **Management1**
-   - Click on **VNet Validation**
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.72.png "Azure services")
-
-1. Click on **Continue**.
-
-1. Leave it as default and click on **Create**.
-
-   ![Resource groups is highlighted in the Azure services list.](media/1.74.png "Azure services")
 
 1. You will see that the **SSISIR** integration runtime is in running status.
  
@@ -112,7 +71,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
 In this section, we will be upgrading the Legacy SSIS package so that it can be migrated to Azure.
 
-1. On the JumpBox VM, navigate to `C:\Labfiles` and open **SSISDW.sln** in VS 2017
+1. On the JumpBox VM, navigate to `C:\Labfiles\SSISDW` and open **SSISDW.sln** in VS 2017
 
    ![Resource groups is highlighted in the Azure services list.](media/1.176.png "Azure services")
 
