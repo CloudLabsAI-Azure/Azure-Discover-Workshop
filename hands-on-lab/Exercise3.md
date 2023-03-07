@@ -53,7 +53,6 @@ In this task, you will be running a powershell script that will restore a SSIS p
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.png "SSMS Toolbar")
 
- 
 
 ### Task 3: Review the already created Azure-SSIS integration runtime.  
 
@@ -138,11 +137,11 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
 
-1. Click on **next** button till you get on convert page and click on **convert** button to complete the project covert.
+1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project covert.
 
    ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 
-1. Review the summary of project covert and click on **close** to close the convert window.
+1. Review the summary of project covert and click on **Close** to close the convert window.
 
    ![Resource groups is highlighted in the Azure services list.](media/sad12.jpg "Azure services")
 
