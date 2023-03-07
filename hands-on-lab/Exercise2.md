@@ -135,8 +135,8 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 1. Provide the following details and click on **Create storage (4)**.
 
-   - Resource group: **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> (1)**
-   - Storage account: **cloudshell<inject key="DeploymentID" enableCopy="false" /> (2)**
+   - Resource group: **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" /> (1)**
+   - Storage account: **cloudshell<inject key="SUFFIX" enableCopy="false" /> (2)**
    - File share: **blob (3)**
 
       ![](media/sad3.jpg "Azure Cloud Shell")
@@ -145,7 +145,7 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
  
    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
 
-1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and VM name with: LEGACYSQL2008.
+1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" /> and VM name with: LEGACYSQL2008.
 
       ```powershell
       $resourceGroup = "<your-resource-group-name>"
