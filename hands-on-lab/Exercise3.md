@@ -66,7 +66,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
  
    ![Resource groups is highlighted in the Azure services list.](media/1.25.png "Azure services")
   
-1. If the SSISIR is in stopped state, click on **ellipsis** button and then click on **Start**.
+1. If the SSISIR integration runtime is in stopped state, click on **ellipsis** button and then click on **Start**.
 
 ### Task 4: Upgrade the package using the Upgrade Wizard
 
