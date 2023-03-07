@@ -164,9 +164,9 @@ Start-Process -FilePath 'C:\SSMS-Setup-ENU.exe' -ArgumentList $params -Wait
 
 sleep 5
 
-choco install visualstudio2017community -y -force
+choco install visualstudio2022community -y 
 sleep 5
-choco install visualstudio2017sql
+choco install visualstudio2017sql -y
 
 sleep 5
 # Download and install Data Mirgation Assistant
