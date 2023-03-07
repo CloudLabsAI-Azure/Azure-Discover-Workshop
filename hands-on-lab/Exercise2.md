@@ -226,9 +226,10 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - **Storage account**: Select the **sqlmistore** storage account.
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.153.png "Migration Wizard Select databases")
-
+   
+   - **Storage account**: Select the **sqlmistoreus** storage account.
    - Click on **Advance Settings**.
-   - **WideWorldImporters**: Enter **WideWorldImportersSUFFIX**
+   - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="false" />**
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
 
