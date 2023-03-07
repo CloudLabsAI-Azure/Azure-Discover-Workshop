@@ -23,6 +23,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 1. The output should display the CLR is enabled for the manged instance.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.13.png "SSMS Toolbar")
+   
 
 ### Task 2: Prepare SSIS Demo
 
