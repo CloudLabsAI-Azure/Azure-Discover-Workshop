@@ -29,7 +29,7 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![In the Network discovery and file sharing dialog, No, make the network that I am connected to a private network is highlighted.](media/1.125.png "Network discovery and file sharing")
 
-1. Back on the File Sharing dialog, note the shared folder's path, ```\\LEGACYSQL2008\dms-backups```, and select **Done** to complete the sharing process.
+1. Back on the File Sharing dialog select **Done** to complete the sharing process.
 
    ![The Done button is highlighted on the File Sharing dialog.](media/1.126.png "File Sharing")
 
@@ -68,7 +68,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
 ### Task 3: Create a backup of the WideWorldImporters database
 
-To perform online data migrations, DMS looks for database and transaction log backups in the shared SMB backup folder on the source database server. In this task, you create a backup of the `WideWorldImporters` database using SSMS and write it to the ```\\Private-ip-address\dms-backups``` SMB network share you made in a previous task. The backup file needs to include a checksum, so you add that during the backup steps.
+To perform online data migrations, DMS looks for database and transaction log backups in the shared SMB backup folder on the source database server. In this task, you create a backup of the `WideWorldImporters` database using SSMS and write it to the ```\\Private-ip-address\dms-backups```. The backup file needs to include a checksum, so you add that during the backup steps.
 
 >**Note**: If you are already connected to SSMS through legacysql2008 VM skip these steps and continue from step 3.
 
@@ -128,6 +128,22 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 1. In the Cloud Shell window that opens at the bottom of your browser window, select **PowerShell**.
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.143.png "Azure Cloud Shell")
+   
+1. In the You have no storage mounted, click on **Show advanced settings**.
+
+   ![](media/sad2.jpg "Azure Cloud Shell")
+
+1. Provide the following details and click on **Create storage (4)**.
+
+   - Resource group: **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> (1)**
+   - Storage account: **cloudshell<inject key="DeploymentID" enableCopy="false" /> (2)**
+   - File share: **blob (3)**
+
+      ![](media/sad3.jpg "Azure Cloud Shell")
+
+1. After a moment, a message is displayed that you have successfully requested a Cloudshell and be presented with a PS Azure prompt.
+ 
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
 
 1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" /> and VM name with: LEGACYSQL2008.
 
