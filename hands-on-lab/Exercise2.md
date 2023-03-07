@@ -513,7 +513,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 In this task, you add the networking configuration to your App Service to enable communication with resources in the VNet.
 
-1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the left-hand menu, select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group and then select the **wwi-web-UNIQUEID** App Service from the list of resources.
+1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the left-hand menu, select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group and then select the **wwi-web-<inject key="SUFFIX" enableCopy="false" />** App Service from the list of resources.
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
