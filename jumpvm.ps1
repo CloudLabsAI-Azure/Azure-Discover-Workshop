@@ -168,11 +168,6 @@ choco install visualstudio2022community -y
 sleep 5
 choco install visualstudio2017sql -y
 
-sleep 5
-# Download and install Data Mirgation Assistant
-Invoke-WebRequest 'https://download.microsoft.com/download/0/4/f/04f1e61f-3f4d-4447-8a8a-12a23fb2e8b9/SSDT-Setup-ENU.exe' -OutFile 'C:\SSDT-Setup-ENU.exe'
-sleep 5
-$params = " /Install /Quiet SSMSInstallRoot=$install_path"
-Start-Process -FilePath 'C:\SSDT-Setup-ENU.exe' -ArgumentList $params -Wait
+
 
 Restart-Computer
