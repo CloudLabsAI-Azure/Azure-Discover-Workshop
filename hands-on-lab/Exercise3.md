@@ -40,7 +40,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
 
-1. Click on **Run script**. This script creates backup of data files in an existing and also restore the databases in the SQL Managed Instance.
+1. Click on **Run script**.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/sad4.jpg "SSMS Toolbar")
 
@@ -65,6 +65,8 @@ Now that the databases for the Tailspin Application have been migrated, there is
 1. You will see that the **SSISIR** integration runtime is in running status.
  
    ![Resource groups is highlighted in the Azure services list.](media/1.25.png "Azure services")
+  
+1. If the SSISIR is in stopped state, click on **ellipsis** button and then click on **Start**.
 
 ### Task 4: Upgrade the package using the Upgrade Wizard
 
@@ -184,19 +186,23 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/ssdf.png "Azure services")
 
-1. Now, under **Destination** enter the below details and click on **Connect**.
+1. Now, under **Destination** enter the below details.
 
    - Server Name: Enter the SQLMI FQDN noted from the previous task
-   - Authentication: **SQL Server Authentication**.
+   - Authentication: **SQL Server Authentication** 
    - Username: **Contosoadmin**
    - Password: **IAE5fAijit0w^rDM**
-   - Path: **/SSISDB/demo/SSISDW**
+   - click on **Connect**.
 
-   ![Resource groups is highlighted in the Azure services list.](media/destsqlmi.png "Azure services")
+      ![Resource groups is highlighted in the Azure services list.](media/destsqlmi.png "Azure services")
+   
+1. For Path, click on **Browse** and create a folder name as **TeamUserSUFFIX**, click on **OK**.
+
+   ![Resource groups is highlighted in the Azure services list.](media/1.206.png "Azure services") 
 
 1. Review the values and click on **Deploy** button to start the project deployment.
 
-   ![Resource groups is highlighted in the Azure services list.](media/deploypackage.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.207.png "Azure services")
    
 1. Once the Results is passed, click on **Close**.
 
