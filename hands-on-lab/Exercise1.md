@@ -29,8 +29,8 @@ In this exercise, you will be accessing the already restored database inside the
 
 1. Enter the following credentials when prompted, and then select **OK**:
 
-   - **Username**: `DemoUser`
-   - **Password**: `Password.1234567890`
+   - **Username**: **<inject key="SQL Server VM Username" enableCopy="false" />**
+   - **Password**: **<inject key="SQL Server VM Password" enableCopy="false" />**
 
    ![The credentials specified above are entered into the Enter your credentials dialog.](media/1.6.png "Enter your credentials")
 
