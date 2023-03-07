@@ -192,35 +192,40 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
    - Authentication: **SQL Server Authentication** 
    - Username: **Contosoadmin**
    - Password: **IAE5fAijit0w^rDM**
-   - click on **Connect**.
+   - Click on **Connect**.
 
       ![Resource groups is highlighted in the Azure services list.](media/destsqlmi.png "Azure services")
    
-1. For Path, click on **Browse** and create a folder name as **TeamUserSUFFIX**, click on **OK**.
+1. For Path, click on **Browse** and create a folder name as **ODLUSER<inject key="SUFFIX" enableCopy="false" />**, click on **OK**.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.206.png "Azure services") 
+   ![Resource groups is highlighted in the Azure services list.](media/1.208.png "Azure services") 
 
 1. Review the values and click on **Deploy** button to start the project deployment.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.207.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.213.png "Azure services")
    
 1. Once the Results is passed, click on **Close**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.184.png "Azure services")
    
-1. On your **JumpBox** VM, Open **Microsoft SQL Server Management Studio 17** from the Start menu and enter the following information in the **Connect to Server** dialog and click on **Connect**.
+1. On your **JumpBox** VM, Open **Microsoft SQL Server Management Studio 17** from the Start menu and enter the following information in the **Connect to Server** dialog
 
    - **Server name**: Enter the fully qualified domain name of your SQL managed instance, which you copied from the Azure Cloud Shell in a previous Exercise.
    - **Authentication**: Select **SQL Server Authentication**.
    - **Login**: Enter `contosoadmin`
    - **Password**: Enter `IAE5fAijit0w^rDM`
    - Check the **Remember password** box.
+   - Click on **Options**
 
-   ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.109.png "Connect to Server")
+   ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.209.png "Connect to Server")
    
-1. Navigate to the Integration Services Catalogs, you will see that SSISDB is listed here.
+1. Under the Connection Properties, change the connect to database as **SSISDB**.
+   
+   ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.214.png "Connect to Server")
+   
+1. Navigate to the Integration Services Catalogs, you will see that under projects SSISDW is listed here.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.185.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.212.png "Azure services")
 
 1. Congratulations, you successfully migrated your SSIS packages to the Azure SQLMI database, now click on the Next button present in the bottom-right corner of this lab guide.
 
