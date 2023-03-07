@@ -384,8 +384,6 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
     ![In the new query window, the query above has been entered, and in the results pane, the new Space Adventure game is highlighted.](media/1.169.png "SSMS Query")
 
-1. You are done using the **legacysql2008** VM. Close any open windows and log off the VM. The JumpBox VM is used for the remaining tasks of this hands-on lab.
-
 ### Task 8: Deploy the web app to Azure
 
 In this task, you will use JumpBox VM and then, using Visual Studio on the JumpBox, deploy the `WideWorldImporters` web application into the App Service in Azure.
