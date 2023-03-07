@@ -9,7 +9,7 @@ In this exercise, you enable set up some of the advanced security features of SQ
     
    ![Resource groups is highlighted in the Azure services list.](media/1.26.png "Azure services")
 
-1. Select your **Managed instance**.
+1. Select your **Managed instance** named as **sqlmi--cus**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.27.png "Azure services")
     
