@@ -147,7 +147,7 @@ In this task, you use the Azure Cloud Shell to retrieve the information necessar
 
 1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, 
 
-   >**Note**: Replace `<your-resource-group-name>`** with **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** and `<VM name>` with **LEGACYSQL2008**.
+   >**Note**: Replace `<your-resource-group-name>` with **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** and `<VM name>` with **LEGACYSQL2008**.
 
       ```powershell
       $resourceGroup = "<your-resource-group-name>"
