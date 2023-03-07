@@ -51,6 +51,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.png "SSMS Toolbar")
+
  
 
 ### Task 3: Review the already created Azure-SSIS integration runtime.  
@@ -84,6 +85,11 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 1. On the JumpBox VM, navigate to `C:\Labfiles\SSISDW` and open **SSISDW.sln** in VS 2017
 
    ![Resource groups is highlighted in the Azure services list.](media/sad11.jpg "Azure services")
+
+   >**Note**: Incase if sign-in prompt appears, Select **Sign in** and enter the following Azure account credentials when prompted:
+
+   * Email/Username: <inject key="AzureAdUserEmail"></inject>
+   * Password: <inject key="AzureAdUserPassword"></inject>   
 
 1. Once Visual Studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click Ok to proceed.
 
@@ -131,13 +137,13 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
 
-1. Click on next until the end of the convert page and click on **convert** button to complete the project covert.
+1. Click on **next** button till you get on convert page and click on **convert** button to complete the project covert.
 
    ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 
 1. Review the summary of project covert and click on **close** to close the convert window.
 
-   ![Resource groups is highlighted in the Azure services list.](media/closeconvert.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/sad12.jpg "Azure services")
 
 1. Now double click on the **SQL Server** under connection manager windows.
 
@@ -151,8 +157,8 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    - Server Name: Enter the SQLMI FQDN noted from the previous task
    - Authentication: **SQL Server Authentication**
-   - Username: `Contosoadmin`
-   - Password: `IAE5fAijit0w^rDM`
+   - **User name**: **<inject key="SQL MI Username" />**
+   - **Password**: **<inject key="SQL MI Password" />** 
    - Database Name: Select **2008DW** from the drop-down and click **OK**
 
    ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
@@ -199,8 +205,8 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    - Server Name: Enter the SQLMI FQDN noted from the previous task
    - Authentication: **SQL Server Authentication** 
-   - Username: **Contosoadmin**
-   - Password: **IAE5fAijit0w^rDM**
+   - **User name**: **<inject key="SQL MI Username" />**
+   - **Password**: **<inject key="SQL MI Password" />**
    - Click on **Connect**.
 
       ![Resource groups is highlighted in the Azure services list.](media/destsqlmi.png "Azure services")
@@ -221,8 +227,8 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    - **Server name**: Enter the fully qualified domain name of your SQL managed instance, which you copied from the Azure Cloud Shell in a previous Exercise.
    - **Authentication**: Select **SQL Server Authentication**.
-   - **Login**: Enter `contosoadmin`
-   - **Password**: Enter `IAE5fAijit0w^rDM`
+   - **Login**: **<inject key="SQL MI Username" />**
+   - **Password**: **<inject key="SQL MI Password" />** 
    - Check the **Remember password** box.
    - Click on **Options**
 
