@@ -82,4 +82,6 @@ In this exercise, you will be accessing the already restored database inside the
 ## Summary
 
 In this exercise, you have connected to on-prem sql server, checked imported database, and enabled CLR in the server.
+
+Click on the **Next** button present in the bottom-right corner of the lab guide to move next exercise of the lab.
    
