@@ -228,7 +228,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.209.png "Connect to Server")
    
-1. Under the Connection Properties, change the connect to database as **SSISDB**.
+1. Under the Connection Properties, change the connect to database as **SSISDB** and click on **Connect**.
    
    ![The SQL managed instance details specified above are entered into the Connect to Server dialog.](media/1.214.png "Connect to Server")
    
