@@ -40,7 +40,7 @@ In this exercise, you will be accessing the already restored database inside the
 
 ### Task 2: Connect to the Legacry server using SSMS.
 
-1. Once logged in, open **Microsoft SQL Server Management Studio 17** (SSMS) by entering "sql server" into the search bar in the Windows Start menu and selecting **Microsoft SQL Server Management Studio 17** from the search results.
+1. Once logged in, open **Microsoft SQL Server Management Studio 17** (SSMS) by entering "sql server" in the search bar in the Windows Start menu and selecting **Microsoft SQL Server Management Studio 17** from the search results.
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.8.png "Windows start menu search")
 
