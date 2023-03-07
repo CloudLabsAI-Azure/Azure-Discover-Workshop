@@ -40,7 +40,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
 
-1. Click on **Run script**.
+1. Click on **Run script**. This script creates backup of data files in an existing and also restore the databases in the SQL Managed Instance.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/sad4.jpg "SSMS Toolbar")
 
