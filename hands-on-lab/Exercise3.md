@@ -44,7 +44,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/sad4.jpg "SSMS Toolbar")
 
-### Task 3: Review the already created Azure-SSIS integration runtime in SQL MI
+### Task 3: Review the already created Azure-SSIS integration runtime.
 
 1. Navigate to the Azure portal, search and select **data factories** from the Azure search bar.
 
@@ -61,7 +61,6 @@ Now that the databases for the Tailspin Application have been migrated, there is
 1. In the Azure Data Factory portal, switch to the **Monitor** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.205.png "Azure services")
-
 
 1. You will see that the **SSISIR** integration runtime is in running status.
  
