@@ -44,7 +44,7 @@ In this exercise, you will be accessing the already restored database inside the
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.8.png "Windows start menu search")
 
-1. In the SSMS **Connect to Server** dialog, enter LEGACYSQL2008 into the Server name box, ensure **Windows Authentication** is selected, and then select **Connect**.
+1. In the SSMS **Connect to Server** dialog, enter **LEGACYSQL2008** as the Server name, ensure **Windows Authentication** is selected, and then select **Connect**.
 
    ![The SQL Server Connect to Search dialog is displayed, with SQL2008-entered into the Server name and Windows Authentication selected.](media/1.9.png "Connect to Server")
 
