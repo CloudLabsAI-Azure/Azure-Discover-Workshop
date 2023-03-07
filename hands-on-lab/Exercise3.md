@@ -3,7 +3,7 @@ Duration: 90 minutes
 
 Now that the databases for the Tailspin Application have been migrated, there is a set of additional SSIS packages on the LEGACYSQL2008 server that also require migration to the SQL Managed Instance for the central Data Warehouse. In this exercise you will migrating the SSIS packages to SQLMi using SSDT tools and Azure data factory SSIS integration runtime. 
 
-### Task 1: Review the enabled CLR on the SQL Managed Instance
+### Task 1: Review the already enabled CLR on the SQL Managed Instance
 
 1. On the legacysql2008 VM, Open Microsoft SQL Server Management Studio, click on **New Query** from the SSMS toolbar.
 
@@ -50,7 +50,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![Resource groups is highlighted in the Azure services list.](media/1.14.png "Azure services")
 
-1. Select your **Data Factory**.
+1. Select your **Data Factory** names as **Data-Factory-Shared**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.202.png "Azure services")
 
@@ -58,7 +58,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![Resource groups are highlighted in the Azure services list.](media/1.203.png "Azure services")
 
-1. In the Azure Data Factory portal, switch to the **Monitor** tab, and then switch to the **Integration runtimes** tab to view existing integration runtimes in your data factory.
+1. In the Azure Data Factory portal, switch to the **Monitor** tab, and then select the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.205.png "Azure services")
 
