@@ -26,7 +26,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
 ### Task 2: Prepare SSIS Demo
 
-    In this task, you will be running a powershell script that will restore a SSIS packages DB into the SQLMI and install the required SSIS tool for the packages migration. 
+In this task, you will be running a powershell script that will restore a SSIS packages DB into the SQLMI and install the required SSIS tool for the packages migration. 
 
 1. Navigate back to JumpBox, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
 
