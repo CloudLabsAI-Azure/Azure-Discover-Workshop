@@ -58,7 +58,7 @@ In this exercise, you will be accessing the already restored database inside the
 
    ![The New Query button is highlighted in the SSMS toolbar.](media/1.11.png "SSMS Toolbar")
    
-1. Next, copy and paste the SQL script below into the new query window. This script enables the Common Language Runtime in databases.
+1. Next, copy and paste the SQL script below in a new query window. This script enables the Common Language Runtime in databases.
 
     ```sql
     USE WideWorldImporters;
