@@ -327,8 +327,6 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 In this task, you connect to the SQL MI database using SSMS and quickly verify the migration.
 
->**Note**: If you are already connected with SSMS through SQL MI skip the steps and continue from step 9.
-
 1. First, use the Azure Cloud Shell to retrieve the fully qualified domain name of your SQL MI database. In the Azure portal `https://portal.azure.com`, select the Azure Cloud Shell icon from the top menu.
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.62.png "Azure Cloud Shell")
@@ -370,7 +368,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
 1. Select **Connect**.
 
-1.  Expand Databases in the SQL MI connection and select the WideWorldImporters<inject key="DeploymentID" enableCopy="false" /> database.
+1.  Expand Databases in the SQL MI connection and select the WideWorldImporters<inject key="SUFFIX" enableCopy="false" /> database.
 
       ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.168.png "Migration Wizard Select source")
 
