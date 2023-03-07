@@ -52,7 +52,7 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow $subscriptionMessage
 # Set variables for storage account RG 
 ##############################################################################
 
-$labrg = "Azure-Discover-RG-deploymentidvalue"
+$labrg = "Azure-Discover-RG-880762"
 
 
 ###############################################################################
@@ -62,7 +62,7 @@ $labrg = "Azure-Discover-RG-deploymentidvalue"
 # First find and setup the Storage acocunt
 
 # Setup Storage Conext
-$StorageAccount = "sqlhacksadeploymentidvalue"
+$StorageAccount = "sqlhacksa880762"
 $StorageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName "$labrg" -Name $StorageAccount
 $Key0 = $StorageAccountKeys | Select-Object -First 1 -ExpandProperty Value
 $Context = New-AzStorageContext -StorageAccountName $StorageAccount -StorageAccountKey $Key0
@@ -90,6 +90,9 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Copying Backups to Bl
 
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 Invoke-WebRequest 'https://github.com/CloudLabsAI-Azure/Azure-Discover-Workshop/blob/main/hands-on-lab/lab-files/WideWorldImporters.bak?raw=true' -UseBasicParsing -OutFile "$temp\WideWorldImporters.bak" | Wait-Process
+
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+Invoke-WebRequest 'https://github.com/sk-bln/SQL-Hackathon/blob/master/Build/SQL%20SSIS%20Databases/2008DW.bak?raw=true' -UseBasicParsing -OutFile "$temp\2008DW.bak" | Wait-Process
 
 # Copy Files to Blob
 cd $Temp
@@ -138,10 +141,8 @@ Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Usern
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
 
 # Restore Database 2008DW
-Invoke-WebRequest 'https://github.com/sk-bln/SQL-Hackathon/blob/master/Build/SQL%20SSIS%20Databases/2008DW.bak?raw=true' -UseBasicParsing -OutFile "$temp\2008DW.bak" | Wait-Process
-
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Attempting restore 2008DW database on Managed Instance $sqlmiFDQN"
 $blob = (Get-AzStorageBlob -Container build -Context $Context -Blob '2008DW.bak').ICloudBlob.Uri.AbsoluteUri
-$Query = "if not exists (select 1 from sysdatabases where name = '2008DWdeploymentidvalue') RESTORE DATABASE [2008DW] FROM URL = '$blob'"
+$Query = "if not exists (select 1 from sysdatabases where name = '2008DW880762') RESTORE DATABASE [2008DW] FROM URL = '$blob'"
 Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Username $adminUsername -Password $Credentials.GetNetworkCredential().Password
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."

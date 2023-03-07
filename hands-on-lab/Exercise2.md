@@ -17,7 +17,7 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![In Windows Explorer, Windows (C:) is selected under Computer in the left-hand tree view, and New folder is highlighted in the top menu.](media/1.122.png "Windows Explorer")
 
-1. Name the new folder as **dms-backups**. Right-click the folder, select **Share with**, and then select **Specific people** in the context menu.
+1. Name the new folder as **dms-backups**. Right-click on the folder, select **Share with**, and then select **Specific people** in the context menu.
 
    ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/1.123.png "Windows Explorer")
 
@@ -43,14 +43,14 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    > **Note**: Be sure to choose **SQL Server Configuration Manager**, and not **SQL Server 2017 Configuration Manager**, which does not work for the installed SQL Server 2008 R2 database.
 
-1. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, right-click **SQL Server (MSSQLSERVER)** in the list of services, and then select **Properties** from the context menu.
+1. In the SQL Server Configuration Managed dialog, select **SQL Server Services** from the tree view on the left, right-click on the **SQL Server (MSSQLSERVER)** in the list of services, and then select **Properties** from the context menu.
 
    ![SQL Server Services is selected and highlighted in the tree view of the SQL Server Configuration Manager. In the Services pane, SQL Server (MSSQLSERVER) is selected and highlighted. Properties is highlighted in the context menu.](media/1.128.png "SQL Server Configuration Manager")
 
 1. In the SQL Server (MSSQLSERVER) Properties dialog, select **This account** under Log on as, and enter the following:
 
-   - **Account name**: `DemoUser`
-   - **Password**: `Password.1234567890`
+   - **Account Name**: **<inject key="SQL Server VM Username" />**
+   - **Password**: **<inject key="SQL Server VM Password" />**
 
    ![In the SQL Server (MSSQLSERVER) Properties dialog, This account is selected under Log on as, and the sqlmiuser account name and password are entered.](media/1.129.png "SQL Server (MSSQLSERVER) Properties")
 
@@ -76,11 +76,11 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.132.png "Windows start menu search")
 
-1. In the SSMS **Connect to Server** dialog, enter **legacysql2008** into the Server name box, ensure that **Windows Authentication** is selected, and then select **Connect**.
+1. In the SSMS **Connect to Server** dialog, enter **legacysql2008** as the Server name, ensure that **Windows Authentication** is selected, and then select **Connect**.
    
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.133.png "Windows start menu search")
    
-1. Once connected, expand **Databases** under **LEGACYSQL2008** in the Object Explorer, and then right-click the **WideWorldImporters** database. In the context menu, select **Tasks** and then **Back Up**.
+1. Once connected, expand **Databases** under **LEGACYSQL2008** in the Object Explorer, and then right-click on the **WideWorldImporters** database. In the context menu, select **Tasks** and then **Back Up**.
 
    ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.134.png "Windows start menu search")
 
@@ -96,48 +96,48 @@ To perform online data migrations, DMS looks for database and transaction log ba
 
    ![The Browse button is highlighted in the Select Backup Destination dialog.](media/1.137.png "Select Backup Destination")
 
-1. In the Location Database Files dialog, select the `C:\dms-backups` folder, enter `WideWorldImporters.bak` into the File name field, and then select **OK**.
+1. In the Location Database Files dialog, select the `C:\dms-backups` folder, enter `WideWorldImporters.bak` as the File name, and then click on **OK**.
 
    ![In the Select the file pane, the C:\dms-backups folder is selected and highlighted, and WideWorldImporters.bak is entered into the File name field.](media/1.138.png "Location Database Files")
 
-1. Select **OK** to close the Select Backup Destination dialog.
+1. Click on **OK** button to close the Select Backup Destination dialog.
 
    ![The OK button is highlighted on the Select Backup Destination dialog and C:\dms-backups\WideWorldImporters.bak is entered in the File name textbox.](media/1.139.png "Backup Destination")
 
 1. In the Back Up Database dialog, select **Media Options** in the Select a page pane, and then set the following:
 
    - Select **Back up to the existing media set** and then select **Overwrite all existing backup sets**.
-   - Under Reliability, check the box for **Perform checksum before writing to media**. A checksum is required by DMS when using the backup to restore the database to SQL MI.
+   - Under Reliability, select the **Perform checksum before writing to media** check box. A checksum is required by DMS when using the backup to restore the database to SQL MI.
 
    ![In the Back Up Database dialog, the Media Options page is selected, and Overwrite all existing backup sets and Perform checksum before writing to media are selected and highlighted.](media/1.140.png "Back Up Database")
 
-1. Select **OK** to perform the backup.
+1. Click on **OK** to perform the backup.
 
-1. You will receive a message when the backup is complete. Select **OK**.
+1. You will receive a message when the backup is complete. Click on **OK**  button.
 
    ![Screenshot of the dialog confirming the database backup was completed successfully.](media/1.141.png "Backup complete")
 
 ### Task 4: Retrieve legacy SQL Server 2008 VM connection information
 
-In this task, you use the Azure Cloud shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
+In this task, you use the Azure Cloud Shell to retrieve the information necessary to connect to your legacysql2008 VM from DMS.
 
 1. On the JUMPBOX VM, navigate to the Azure portal and select the Azure Cloud Shell icon from the top menu.
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.142.png "Azure Cloud Shell")
 
-1. In the Cloud Shell window that opens at the bottom of your browser window, select **PowerShell**.
+1. Cloud Shell window will open in the bottom of your browser window, select **PowerShell** to configure the Cloud Shell.
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.143.png "Azure Cloud Shell")
    
-1. In the You have no storage mounted, click on **Show advanced settings**.
+1. In the You have no storage mounted popup, click on **Show advanced settings**.
 
    ![](media/sad2.jpg "Azure Cloud Shell")
 
 1. Provide the following details and click on **Create storage (4)**.
 
-   - Resource group: **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" /> (1)**
-   - Storage account: **cloudshell<inject key="SUFFIX" enableCopy="false" /> (2)**
-   - File share: **blob (3)**
+   - Resource group: **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** **(1)**
+   - Storage account: **cloudshell<inject key="SUFFIX" enableCopy="false" />** **(2)**
+   - File share: **blob** **(3)**
 
       ![](media/sad3.jpg "Azure Cloud Shell")
 
@@ -145,18 +145,18 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
  
    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
 
-1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, **replacing `<your-resource-group-name>`** in the resource group name variable with the name of your resource group: Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" /> and VM name with: LEGACYSQL2008.
+1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, 
+
+   >**Note**: Replace `<your-resource-group-name>`** with **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** and `<VM name>` with **LEGACYSQL2008**.
 
       ```powershell
       $resourceGroup = "<your-resource-group-name>"
-      az vm list-ip-addresses -g $resourceGroup -n VMNAME --output table
+      az vm list-ip-addresses -g $resourceGroup -n <VMNAME> --output table
       ```
 
    > **Note**: Copy the PowerShell command in a notepad file and make the required changes and paste it in the cloud shell pane for convenience.
-   
-   > If you have multiple Azure subscriptions, and the account you are using for this hands-on lab is not your default account, you may need to run `az account list --output table` at the Azure Cloud Shell prompt to output a list of your subscriptions, then copy the Subscription Id of the account you are using for this lab and then run `az account set --subscription <your-subscription-id>` to set the appropriate account for the Azure CLI commands.
 
-1. Within the output, locate and copy the value of the `ipAddress` property below the `PrivateIPAddresses` field. Paste the value into a text editor, such as Notepad.exe, for later reference.
+1. Within the output, locate and copy the **Private IP Address** of the legacysql2008 server. Paste the value in a text editor, such as Notepad.exe. We'll be using the value in upcoming task.
 
    ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.146.png "Azure Cloud Shell")   
 
@@ -166,56 +166,55 @@ In this task, you use the Azure Cloud shell to retrieve the information necessar
 
 In this task, you create a new online data migration project in DMS for the `WideWorldImporters` database.
 
-1. In the Azure portal `https://portal.azure.com`, navigate to the Azure Database Migration Service by selecting **Resource groups** from the left-hand navigation menu, selecting the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group, and then select the **wwi-dms** Azure Database Migration Service in the list of resources.
+1. From the Azure portal, select **Resource groups** from the Azure services list.
 
-   ![The wwi-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab resource group.](media/1.147.png "Resources")
+   ![Resource groups is highlighted in the Azure services list.](media/1.1.png "Azure services")
+
+1. Select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group from the list.
+
+   ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab resource group is highlighted.](./media/sad1.jpg "Resource groups list")
+
+1. Select the **wwi-dms** Azure Database Migration Service from the list of resources.
+
+   ![The wwi-dms Azure Database Migration Service is highlighted in the list of resources in the hands-on-lab resource group.](media/sad5.jpg "Resources")
 
 1. On the Azure Database Migration Service blade, select **+New Migration Project**.
 
-   ![On the Azure Database Migration Service blade, +New Migration Project is highlighted in the toolbar.](media/1.148.png "Azure Database Migration Service New Project")
+   ![On the Azure Database Migration Service blade, +New Migration Project is highlighted in the toolbar.](media/sad6.jpg "Azure Database Migration Service New Project")
 
-1. On the New migration project blade, enter the following:
+1. On the New migration project blade, enter the following details and click on **Create and run activity (5)**.
 
-   - **Project name**: Enter `OnPremToSqlMi`**(1)**
-   - **Source server type**: Select **SQL Server**.
-   - **Target server type**: Select **Azure SQL Database Managed Instance (2)**.
-   - **Choose type of activity**: Select **Online data migration (3)**.
+   - **Project name**: Enter `OnPremToSqlMi` **(1)**
+   - **Source server type**: Select **SQL Server** **(2)**
+   - **Target server type**: Select **Azure SQL Database Managed Instance (3)**.
+   - **Choose type of activity**: Select **Online data migration (4)**.
 
-   ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/1.149.png "New migration project")
+   ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/sad7.jpg "New migration project")
 
-1. Select **Create and run activity (4)**.
+1. On the Migration Wizard **Select source** tab, enter the following details and click on **Next: Select target** **(6)** :
 
-1. On the Migration Wizard **Select source** tab, enter the following:
+   - **Source SQL Server instance name**: Enter the IP address of your LEGACYSQL2008 VM which you copied in the previous task. For example, `10.0.236.0`. **(1)**
+   - **Authentication type**: Select SQL Authentication **(2)** 
+   - **User Name**: **<inject key="SQL Server VM Username" />** **(3)**
+   - **Password**: **<inject key="SQL Server VM Password" />** **(4)**
+   - **Connection properties**: select both **Encrypt connection** and **Trust server certificate** **(5)** check boxes.
 
-   - **Source SQL Server instance name**: Enter the IP address of your LEGACYSQL2008 VM that you copied into a text editor in the previous task. For example, `10.0.236.0`.
-   - **Authentication type**: Select SQL Authentication.
-   - **Username**: Enter `DemoUser`
-   - **Password**: Enter `Password.1234567890`
-   - **Connection properties**: Check both Encrypt connection and Trust server certificate.
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/sad8.jpg "Migration Wizard Select source")
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.150.png "Migration Wizard Select source")
+1. On the Migration Wizard **Select target** tab, enter the following and click on **Next: Select databases** **(7)**
 
-1. Select **Next: Select target**.
+   - **Application ID**: **<inject key="Application/Client ID" />** **(1)**
+   - **Key**: **<inject key="Application Secret Key" />** **(2)**
+   - **Subscription**: Leave it to default **(3)**
+   - **Target Azure SQL Managed Instance**: Select the **sqlmi--cus** **(4)** from the dropdown.
+   - **SQL Username**: **<inject key="SQL MI Username" />** **(5)**
+   - **Password**: **<inject key="SQL MI Password" />** **(6)**
 
-1. On the Migration Wizard **Select target** tab, enter the following:
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/sad9.jpg "Migration Wizard Select source")
 
-   - **Application ID**: <inject key="Application/Client ID" />
-   - **Key**:  <inject key="Application Secret Key" />
-   - **Skip the Application ID Contributor level access check on the subscription**: Leave this unchecked.
-   - **Subscription**: Select the subscription you are using for this hands-on lab.
-   - **Target Azure SQL Managed Instance**: Select the sqlmi--cus instance.
-   - **SQL Username**: Enter `contosoadmin`
-   - **Password**: Enter `IAE5fAijit0w^rDM`
-
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.151.png "Migration Wizard Select source")
-   
-1. Select **Next: Select databases**.
-
-1. On the Migration Wizard **Select databases** tab, select `WideWorldImporters`.
+1. On the Migration Wizard **Select databases** tab, select `WideWorldImporters` and click on **Next: Configure migration settings**..
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.152.png "Migration Wizard Select databases")
-
-1. Select **Next: Configure migration settings**.
 
 1. On the Migration Wizard **Configure migration settings** tab, enter the following configuration:
 
