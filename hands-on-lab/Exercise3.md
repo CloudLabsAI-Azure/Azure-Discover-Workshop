@@ -144,7 +144,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
    - Authentication: **SQL Server Authentication**
    - Username: `Contosoadmin`
    - Password: `IAE5fAijit0w^rDM`
-   - Database Name: Select **2008DWSUFFIX** from the drop-down and click **OK**
+   - Database Name: Select **2008DW** from the drop-down and click **OK**
 
    ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
 
