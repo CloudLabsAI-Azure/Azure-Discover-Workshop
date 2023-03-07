@@ -26,6 +26,8 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
 ### Task 2: Prepare SSIS Demo
 
+    In this task, you will be running a powershell script that will restore a SSIS packages DB into the SQLMI and install the required SSIS tool for the packages migration. 
+
 1. Navigate back to JumpBox, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.80.png "SSMS Toolbar")
@@ -40,11 +42,18 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.83.png "SSMS Toolbar")
 
-1. Click on **Run script**.
+1. Click on **Run script**.  
+   
+1. While the script is running, you will see a new SSIS packges install window, click on **Modify** button to configure the SSIS installation on the server.
 
-   ![The Execute button is highlighted in the SSMS toolbar.](media/sad4.jpg "SSMS Toolbar")
+    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis .jpg "SSMS Toolbar")  
+    
+1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
-### Task 3: Review the already created Azure-SSIS integration runtime.
+ ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.jpg "SSMS Toolbar")
+ 
+
+### Task 3: Review the already created Azure-SSIS integration runtime.  
 
 1. Navigate to the Azure portal, search and select **data factories** from the Azure search bar.
 
