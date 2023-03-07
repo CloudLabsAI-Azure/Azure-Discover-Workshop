@@ -156,6 +156,6 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
 # Restore Database 2008DW
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Attempting restore 2008DW database on Managed Instance $sqlmiFDQN"
 $blob = (Get-AzStorageBlob -Container build -Context $Context -Blob '2008DW.bak').ICloudBlob.Uri.AbsoluteUri
-$Query = "if not exists (select 1 from sysdatabases where name = '2008DW$DID') RESTORE DATABASE [2008DW] FROM URL = '$blob'"
+$Query = "if not exists (select 1 from sysdatabases where name = '2008DW$DID') RESTORE DATABASE [2008DW$DID] FROM URL = '$blob'"
 Invoke-Sqlcmd -ServerInstance $sqlmiFDQN -Database "master" -Query $Query -Username $adminUsername -Password $Credentials.GetNetworkCredential().Password
 Write-Host -BackgroundColor Black -ForegroundColor Yellow "Complete."
