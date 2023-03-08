@@ -20,7 +20,9 @@ In this exercise, you enable set up some of the advanced security features of SQ
 1. At the top of the page click on the **Configure** link next to the Azure Defender for SQL: Enabled at the server-level header.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.30.png "Azure services")
-        
+    
+   >**Note:** Please trun on the **MICROSOFT DEFENDER FOR SQL** option if it is not.
+    
 1. Under the VULNERABILITY ASSESSMENT SETTINGS, check your **Subscription** and check defender is linked to a **Storage account**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.29.png "Azure services")
