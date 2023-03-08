@@ -45,11 +45,11 @@ In this task, you will be running a powershell script that will restore a SSIS p
 
 1. Click on **Run script**.  
    
-1. While the script is running, you will see a new SSIS packges install window, click on **Modify** button to configure the SSIS installation on the server.
+1. While the script is running, you will see a new SSIS packges install window, click on **Next/Modify** button to configure the SSIS installation on the server.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis.png "SSMS Toolbar")  
     
-1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
+1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Install/Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.png "SSMS Toolbar")
 
@@ -102,6 +102,8 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 1. Navigate back to Visual Studio and you should be able to see SSIS Package Upgrade Wizard.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.179.png "Azure services")
+   
+      >**Note:** Click on **Next** if you landed in **Select Packages** window.
 
 1. Click on Next on the upgrade wizard, and on **Package management option** page select the below options and click on next.
 
@@ -115,7 +117,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
    ![Resource groups is highlighted in the Azure services list.](media/1.181.png "Azure services")
 
-1. Once the upgrade is complete, you can click on the close button. You should be able to see the below output upon completion of the package upgrade process.
+1. Once the upgrade is completed, you can click on the close button. You should be able to see the below output upon completion of the package upgrade process.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.182.png "Azure services")
 
@@ -127,7 +129,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
 In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
 
-1. Now click on the **PopulateDW.dtsx** and click OK on **Synchronise Connection Strings** to acknowledge the connection.
+1. Now double click on the **PopulateDW.dtsx** and click OK on **Synchronise Connection Strings** to acknowledge the connection.
 
    ![Resource groups is highlighted in the Azure services list.](media/populate.png "Azure services")
 
@@ -136,6 +138,8 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 1. Now right click on the solution and click on **Convert to project deployment model** to convert the project.
 
    ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
+
+   >**Note:** Ignore the Warning message about connection manager and click on **Ok**.
 
 1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project covert.
 
@@ -148,6 +152,8 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 1. Now double click on the **SQL Server** under connection manager windows.
 
    ![Resource groups is highlighted in the Azure services list.](media/cncnmngr.png "Azure services")
+   
+   >**Note:** Please click on **Ok** and continue further, if you encounter pop-up related to Provider not supported.
 
 1. On the **Connection Manager** window, select **Native ODL DB/SQL Server Native Client 11.0**  from the drop-down.
 
