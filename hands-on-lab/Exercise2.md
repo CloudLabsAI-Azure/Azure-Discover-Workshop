@@ -409,6 +409,8 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
      ![A Visual Studio security warning is displayed, and the Ask me for every project in this solution checkbox is unchecked and highlighted.](media/1.68.png "Visual Studio")
 
+      >**Note:** If you get any pop-up to install the ASP.Net and Web depvelopment workloads, please install and continue.
+
 1. At the security warning prompt, uncheck **Ask me for every project in this solution**, and then select **OK**.
 
     ![A Visual Studio security warning is displayed, and the Ask me for every project in this solution checkbox is unchecked and highlighted.](media/1.37.png "Visual Studio")
@@ -475,7 +477,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `sqlmiuser` and Password with `Password.1234567890`.
 
-   ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](https://raw.githubusercontent.com/CloudLabs-MCW/MCW-Migrating-SQL-databases-to-Azure/fix/Hands-on%20lab/media/images/9.png "Edit Connection String")
+   ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](media/E2T9S7.png "Edit Connection String")
 
 1. The updated value should look similar to the following screenshot.
 
@@ -519,7 +521,7 @@ In this task, you add the networking configuration to your App Service to enable
 
    ![Add VNet is highlighted on the VNet Configuration blade.](media/1.55.png "App Service")
 
-1. Now select **Click here to configure** under **VNet Integration** and then click on **Add VNet** on the VNet Configuration blade.
+1. Now under **VNet Integration** click on **Add VNet** on the VNet Configuration blade.
 
    ![Add VNet is highlighted on the VNet Configuration blade.](media/1.56.png "App Service")
 
