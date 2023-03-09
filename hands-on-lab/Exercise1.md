@@ -5,7 +5,7 @@ In this exercise, you will be accessing the already restored database inside the
 
 ### Task 1: Connect to the WideWorldImporters database on the legancysql2008 VM
 
-1. From the provided VM, in the search bar, **Search** for **RDP** and **select** the **Remote Desktop Connection** app.
+1. On the JumpBox VM, in the search bar, **Search** for **RDP** and **select** the **Remote Desktop Connection** app.
    
    ![](media/1.218.png)
 
