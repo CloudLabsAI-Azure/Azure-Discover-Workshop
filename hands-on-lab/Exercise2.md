@@ -472,10 +472,10 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 1. The value of the connection string should look like this:
 
     ``
-   Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=sqlmiuser;Password=Password.1234567890;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
+   Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=contosoadmin;Password=IAE5fAijit0w^rDM;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
    ``
 
-1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `sqlmiuser` and Password with `Password.1234567890`.
+1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `contosoadmin` and Password with `IAE5fAijit0w^rDM`.
 
    ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](media/E2T9S7.png "Edit Connection String")
 
