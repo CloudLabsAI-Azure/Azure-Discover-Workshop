@@ -51,7 +51,7 @@ In this task, you will be running a powershell script that will restore a SSIS p
     
 1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Install/Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
-   ![The Execute button is highlighted in the SSMS toolbar.](media/modifyssis.png "SSMS Toolbar")
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.217.png "SSMS Toolbar")
 
 
 ### Task 3: Review the already created Azure-SSIS integration runtime.  
