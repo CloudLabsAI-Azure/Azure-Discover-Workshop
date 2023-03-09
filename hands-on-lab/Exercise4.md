@@ -23,11 +23,9 @@ In this exercise, you enable set up some of the advanced security features of SQ
     
    >**Note:** Please trun on the **MICROSOFT DEFENDER FOR SQL** option if it is not.
     
-1. Under the VULNERABILITY ASSESSMENT SETTINGS, check your **Subscription** and check defender is linked to a **Storage account**.
-
+1. Under the VULNERABILITY ASSESSMENT SETTINGS, check your **Subscription** it is already selected and defender is already linked to a **Storage account**.
+ 
    ![Resource groups is highlighted in the Azure services list.](media/1.29.png "Azure services")
-    
-1. Click on **Save**.
     
 1. Navigate back to Microsoft defender for cloud and click on **View all recommendations in Defender for Cloud**.
 
