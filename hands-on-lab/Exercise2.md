@@ -453,11 +453,11 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
    ![Resource groups is highlighted in the Azure services list.](media/1.1.png "Azure services")
 
-1. Select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group from the list.
+1. Select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group from the list.
 
    ![Resource groups is selected in the Azure navigation pane, and the "hands-on-lab-< resource group is highlighted.](./media/1.2.png "Resource groups list")
 
-1. In the list of resources for your resource group, select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group and then select the **wwi-web-<inject key="Suffix" enableCopy="false"/>** App Service from the list of resources.
+1. In the list of resources for your resource group, select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group and then select the **wwi-web-<inject key="SUFFIX" enableCopy="false"/>** App Service from the list of resources.
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
@@ -509,7 +509,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 In this task, you add the networking configuration to your App Service to enable communication with resources in the VNet.
 
-1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the left-hand menu, select the **Azure-Discover-RG-<inject key="DeploymentID" enableCopy="false" />** resource group and then select the **wwi-web-UNIQUEID** App Service from the list of resources.
+1. In the Azure portal `https://portal.azure.com`, select **Resource groups** from the left-hand menu, select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group and then select the **wwi-web-<inject key="SUFFIX" enableCopy="false" />** App Service from the list of resources.
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
