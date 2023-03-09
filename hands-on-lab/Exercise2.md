@@ -390,7 +390,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 1. You have already logged-in to JumpBox VM, use this VM to continue with the lab.
 
-1. In the File Explorer dialog, navigate to the `C:\hands-on-lab` folder and then drill down to `Migrating-SQL-databases-to-Azure-master\Hands-on lab\lab-files`. In the `lab-files` folder, double-click `WideWorldImporters.sln` to open the solution in Visual Studio.
+1. In the File Explorer dialog, navigate to the `C:\hands-on-lab\Migrating-SQL-databases-to-Azure-master\Hands-on lab\lab-files`. In the lab-files folder, double-click **WideWorldImporters.sln** to open the solution in Visual Studio.
 
    ![The folder at the path specified above is displayed, and WideWorldImporters.sln is highlighted.](media/1.34.png "Windows Explorer")
 
