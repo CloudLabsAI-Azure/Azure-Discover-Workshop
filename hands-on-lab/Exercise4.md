@@ -21,9 +21,9 @@ In this exercise, you enable set up some of the advanced security features of SQ
 
    ![Resource groups is highlighted in the Azure services list.](media/1.30.png "Azure services")
     
-1. Under the VULNERABILITY ASSESSMENT SETTINGS, Reviewing that Microsoft Defender for SQL is enabled. Also, **Subscription** is already selected and defender is already linked to a **Storage account**.
+1. Under the VULNERABILITY ASSESSMENT SETTINGS, Reviewing that Microsoft Defender for SQL is enabled. Also, Vulnerability Assessment settings for **Subscription** and  **Storage account** is already cofigured by deafault.
 
-   > **Note**: You can click on any of the Severity and explore on this.
+   > **Note**: Incase, if the Microsoft Defender for SQL is not enabled. Please enable it and save.
  
    ![Resource groups is highlighted in the Azure services list.](media/1.29.png "Azure services")
     
