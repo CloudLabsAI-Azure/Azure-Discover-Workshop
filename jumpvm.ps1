@@ -164,10 +164,16 @@ Start-Process -FilePath 'C:\SSMS-Setup-ENU.exe' -ArgumentList $params -Wait
 
 sleep 5
 
-choco install visualstudio2022community -y 
+choco install visualstudio2022community -y -force
 sleep 5
-choco install visualstudio2017sql -y
+choco install visualstudio2022-workload-netweb -y -force
 
+sleep 5
+
+choco install visualstudio2017community -y -force
+sleep 5
+choco install visualstudio2017-workload-data -y -force
+sleep 5
 
 
 Restart-Computer
