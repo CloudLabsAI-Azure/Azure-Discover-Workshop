@@ -501,7 +501,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
     ![Overview is highlighted on the left-hand menu for App Service](media/1.52.png "Overview menu item")
 
-1. At this point, selecting the **URL** for the App Service on the Overview blade still results in an error being returned. The error occurs because SQL Managed Instance has a private IP address in its VNet. To connect an application, you need to configure access to the VNet where Managed Instance is deployed, which you handle in the next exercise.
+1. At this point, selecting the **Default domain** for the App Service on the Overview blade still results in an error being returned. The error occurs because SQL Managed Instance has a private IP address in its VNet. To connect an application, you need to configure access to the VNet where Managed Instance is deployed, which you handle in the next exercise.
 
     ![An error screen is displayed because the application cannot connect to SQL MI within its private virtual network.](media/1.53.png "Web App error")
 
@@ -552,7 +552,7 @@ In this task, you add the networking configuration to your App Service to enable
 
 In this task, you verify your web application now loads, and you can see the home page of the web app.
 
-1. Select **Overview** in the left-hand menu of your App Service and select the **URL** of your App service to launch the website. This link opens the URL in a browser window.
+1. Select **Overview** in the left-hand menu of your App Service and select the **Default domain** of your App service to launch the website. This link opens the URL in a browser window.
 
    ![The App service URL is highlighted.](media/1.174.png "App service URL")
 
