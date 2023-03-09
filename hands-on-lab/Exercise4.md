@@ -45,13 +45,13 @@ In this exercise, you enable set up some of the advanced security features of SQ
     
    > **Note**: You can click on any of the Severity and explore on this.
     
-1. To view the recommendation, search and select **Machines should have a vulnerability assessment solution**.
+1. To view the recommendation, search and select **Endpoint protection should be installed on machines**.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.89.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.216.png "Azure services")
      
 1. Click to expand **Remediation steps (1)** – then click on the **Quick fix logic (2)** option to expose an automatic remediation script content (ARM template). Once done, **Close (3)** this window. 
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.90.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.215.png "Azure services")
     
 1. From the Affected resources tab, you will see **no Unhealthy resources** and **no Healthy resources** are there to fix because they all are already fix
 
