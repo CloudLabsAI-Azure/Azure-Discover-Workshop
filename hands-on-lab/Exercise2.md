@@ -360,7 +360,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
    - **Password**: **<inject key="SQL MI Password" />** **(6)**
    - Check the **Remember password** box.
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.167.png "Migration Wizard Select source")
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/ADWimg-2.png "Migration Wizard Select source")
 
 1. Select **Connect**.
 
