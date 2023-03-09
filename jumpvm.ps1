@@ -167,6 +167,10 @@ sleep 5
 choco install visualstudio2022community -y -force
 sleep 5
 choco install visualstudio2022-workload-netweb -y -force
+sleep 5
+choco install visualstudio2022-workload-azurebuildtools -y -force
+sleep 5
+choco install visualstudio2022-workload-manageddesktop -y -force
 
 sleep 5
 
@@ -174,6 +178,8 @@ choco install visualstudio2017community -y -force
 sleep 5
 choco install visualstudio2017-workload-data -y -force
 sleep 5
+choco install ssdt17 -y -force
 
+sleep 5
 
 Restart-Computer
