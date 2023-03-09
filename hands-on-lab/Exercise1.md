@@ -10,7 +10,7 @@ In this exercise, you will be accessing the already restored database inside the
    ![](media/1.218.png)
 
 1. Paste the **SQLVM DNS Name** in the **Computer** field and click on **Connect**.
-   * **SQLVM DNS Name**: **<inject key="SQL Server VM DNS Name" style="color:blue" />**
+   * **SQLVM DNS Name**: **<inject key="SQL Server VM DNS Name" />**
 
    ![](media/1.219.png)  
  
