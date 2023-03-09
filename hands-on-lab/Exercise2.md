@@ -229,7 +229,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - Click on **Advance Settings**.
    - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="false" />**
 
-   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
+   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/ADWimg-1.png "Migration Wizard Select databases")
 
 1. Select **Next: Summary**.
 
