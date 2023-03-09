@@ -219,7 +219,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
 1. On the Migration Wizard **Configure migration settings** tab, enter the following configuration:
 
    - **Network share location**: ```\\private ip adress\dms-backups``` **(1)**, replace **private ip adress** with **private IP address** legacy server which you copied in previous task. 
-   - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: **LEGACYSQL2008\<inject key="SQL Server VM Username" enableCopy="false" />** 
+   - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: **LEGACYSQL2008\<inject key="SQL Server VM Username" />** 
    - **Password**: **<inject key="SQL Server VM Password" />** 
    - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
 
