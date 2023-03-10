@@ -33,7 +33,7 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![The Done button is highlighted on the File Sharing dialog.](media/1.126.png "File Sharing")
 
-### Task 2: Change the MSSQLSERVER service to run under the sqlmiuser account
+### Task 2: Change the MSSQLSERVER service to run under the DemoUser account
 
 In this task, you use the SQL Server Configuration Manager to update the service account used by the SQL Server (MSSQLSERVER) service to the `DemoUser` account. Changing the account used for this service ensures it has the appropriate permissions to write backups to the shared folder.
 
