@@ -483,7 +483,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
    ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/1.49.png "Connection string value")
    
-   ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/1.173.png "Connection string value")
+   ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/ADWimg-3.png "Connection string value")
 
 1. Select **OK**.
 
