@@ -227,7 +227,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    
    - **Storage account**: Select the **sqlmistoreus** storage account.
    - Click on **Advance Settings**.
-   - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="false" />**
+   - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="True" />**
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/ADWimg-1.png "Migration Wizard Select databases")
 
@@ -239,7 +239,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    
 1. Select **Start migration**.
 
-1. Monitor the migration on the status screen that appears. You can select the refresh icon in the toolbar to retrieve the latest status. Click on **Refresh** button every 5-10 seconds until you see the status change to **Log shipping in progress**. When that status appears, move on to the next task.
+1. Monitor the migration on the status screen that appears. You can select the refresh icon in the toolbar to retrieve the latest status. Click on **Refresh** button in 10 seconds you see the status change to **Log shipping in progress**. When that status appears, move on to the next task.
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.156.png "Migration Wizard Select databases")
 
@@ -297,7 +297,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
 1. You should see the **WideWorldImportersLog.trn** status changed to **Uploaded** state.
 
-1. After the transaction logs are uploaded, they are restored to the database. Once again, continue selecting **Refresh** every 10-15 seconds until you see the status change to **Restored**, which can take a minute or two.
+1. After the transaction logs are uploaded, they are restored to the database. Once again, continue selecting **Refresh**, after 5 minutes you see the status change to **Restored**.
 
     ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.162.png "Migration Wizard Select databases")
 
