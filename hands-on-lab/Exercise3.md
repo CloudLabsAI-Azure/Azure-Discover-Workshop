@@ -155,7 +155,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
    
    >**Note:** Please click on **Ok** and continue further, if you encounter pop-up related to Provider not supported.
 
-1. On the **Connection Manager** window, select **Native ODL DB/SQL Server Native Client 11.0**  from the drop-down.
+1. On the **Connection Manager** window, select **Native OLE DB/SQL Server Native Client 11.0**  from the drop-down.
 
    ![Resource groups is highlighted in the Azure services list.](media/providerssn.png "Azure services")
 
