@@ -229,7 +229,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    - Click on **Advance Settings**.
    - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="false" />**
 
-   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/1.154.png "Migration Wizard Select databases")
+   ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/ADWimg-1.png "Migration Wizard Select databases")
 
 1. Select **Next: Summary**.
 
@@ -360,7 +360,7 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
    - **Password**: **<inject key="SQL MI Password" />** **(6)**
    - Check the **Remember password** box.
 
-   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/1.167.png "Migration Wizard Select source")
+   ![The Migration Wizard Select source tab is displayed, with the values specified above entered into the appropriate fields.](media/ADWimg-2.png "Migration Wizard Select source")
 
 1. Select **Connect**.
 
@@ -472,10 +472,10 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 1. The value of the connection string should look like this:
 
     ``
-   Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=sqlmiuser;Password=Password.1234567890;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
+   Server=tcp:your-sqlmi-host-fqdn-value,1433;Database=WideWorldImportersSuffix;User ID=contosoadmin;Password=IAE5fAijit0w^rDM;Trusted_Connection=False;Encrypt=True;TrustServerCertificate=True;
    ``
 
-1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `sqlmiuser` and Password with `Password.1234567890`.
+1. In the Add/Edit connection string dialog, replace `your-sqlmi-host-fqdn-value` with the fully qualified domain name for your SQL MI that you copied to a text editor earlier from the Azure Cloud Shell and replace suffix with value: <inject key="suffix" /> and also change the UserID with `contosoadmin` and Password with `IAE5fAijit0w^rDM`.
 
    ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](media/E2T9S7.png "Edit Connection String")
 
@@ -501,7 +501,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
     ![Overview is highlighted on the left-hand menu for App Service](media/1.52.png "Overview menu item")
 
-1. At this point, selecting the **URL** for the App Service on the Overview blade still results in an error being returned. The error occurs because SQL Managed Instance has a private IP address in its VNet. To connect an application, you need to configure access to the VNet where Managed Instance is deployed, which you handle in the next exercise.
+1. At this point, selecting the **Default domain** for the App Service on the Overview blade still results in an error being returned. The error occurs because SQL Managed Instance has a private IP address in its VNet. To connect an application, you need to configure access to the VNet where Managed Instance is deployed, which you handle in the next exercise.
 
     ![An error screen is displayed because the application cannot connect to SQL MI within its private virtual network.](media/1.53.png "Web App error")
 
@@ -552,7 +552,7 @@ In this task, you add the networking configuration to your App Service to enable
 
 In this task, you verify your web application now loads, and you can see the home page of the web app.
 
-1. Select **Overview** in the left-hand menu of your App Service and select the **URL** of your App service to launch the website. This link opens the URL in a browser window.
+1. Select **Overview** in the left-hand menu of your App Service and select the **Default domain** of your App service to launch the website. This link opens the URL in a browser window.
 
    ![The App service URL is highlighted.](media/1.174.png "App service URL")
 
