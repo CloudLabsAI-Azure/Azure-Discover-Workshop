@@ -20,7 +20,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.79.png "SSMS Toolbar")
 
-1. The output should display the CLR is enabled for the manged instance.
+1. The output should display the CLR is enabled for the managed instance.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.13.png "SSMS Toolbar")
    
@@ -45,7 +45,7 @@ In this task, you will be running a powershell script that will restore a SSIS p
 
 1. Click on **Run script**.  
    
-1. While the script is running, you will see a new SSIS packges install window, click on **Next/Modify** button to configure the SSIS installation on the server.
+1. While the script is running, you will see a new SSIS packages install window, click on **Next/Modify** button to configure the SSIS installation on the server.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis.png "SSMS Toolbar")  
     
@@ -129,7 +129,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
 In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
 
-1. Now double click on the **PopulateDW.dtsx** and click OK on **Synchronise Connection Strings** to acknowledge the connection.
+1. Now double click on the **PopulateDW.dtsx** and click OK on **Synchronize Connection Strings** to acknowledge the connection.
 
    ![Resource groups is highlighted in the Azure services list.](media/populate.png "Azure services")
 
@@ -141,7 +141,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    >**Note:** Ignore the Warning message about connection manager and click on **Ok**.
 
-1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project covert.
+1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project convert.
 
    ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 
