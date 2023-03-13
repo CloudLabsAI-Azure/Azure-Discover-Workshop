@@ -70,7 +70,7 @@ In this task, you review the [Data Discovery and Classification](https://docs.mi
 
 1. In the **Data Discovery & Classification** blade, select the info link with the message **We have found 35 columns with classification recommendations**.
 
-   ![The recommendations link on the Data Discovery & Classification blade is highlighted.](media/1.94.png "Data Discovery & Classification")
+   ![The recommendations link on the Data Discovery & Classification blade is highlighted.](media/1.229.png "Data Discovery & Classification")
    
 1. Look over the list of recommendations to get a better understanding of the types of data and classifications that can be assigned, based on the built-in classification settings. In the list of classification recommendations, select the recommendation for the **Sales - CreditCard - CardNumber** field.
 
