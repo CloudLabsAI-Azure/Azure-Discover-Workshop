@@ -1,7 +1,7 @@
 ## Exercise 3: Migrate your on-premises SSIS packages using Azure Data Factory
 Duration: 90 minutes
 
-Now that the databases for the Tailspin Application have been migrated, there is a set of additional SSIS packages on the LEGACYSQL2008 server that also require migration to the SQL Managed Instance for the central Data Warehouse. In this exercise you will migrating the SSIS packages to SQLMi using SSDT tools and Azure data factory SSIS integration runtime. 
+Now that the databases for the Tailspin Application have been migrated, there is a set of additional SSIS packages on the LEGACYSQL2008 server that also require migration to the SQL Managed Instance for the central Data Warehouse. In this exercise, you will be migrating the SSIS packages to SQLMi using SSDT tools and Azure data factory SSIS integration runtime. 
 
 ### Task 1: Review the already enabled CLR on the SQL Managed Instance
 
@@ -27,7 +27,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
 ### Task 2: Prepare SSIS Demo
 
-In this task, you will be running a powershell script that will restore a SSIS packages DB into the SQLMI and install the required SSIS tool for the package migration. 
+In this task, you will be running a PowerShell script that will restore an SSIS packages DB into the SQLMI and install the required SSIS tool for the package migration. 
 
 1. Navigate back to JumpBox, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
 
@@ -79,7 +79,7 @@ In this task, you will be running a powershell script that will restore a SSIS p
  
    ![Resource groups is highlighted in the Azure services list.](media/1.25.png "Azure services")
   
-1. If the SSISIR integration runtime is in stopped state, click on **ellipsis** button and then click on **Start**.
+1. If the SSISIR integration runtime is in the stopped state, click on the **ellipsis** button and then click on **Start**.
 
 ### Task 4: Upgrade the package using the Upgrade Wizard
 
@@ -156,9 +156,9 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/cncnmngr.png "Azure services")
    
-   >**Note:** Please click on **Ok** and continue further, if you encounter pop-up related to Provider not supported.
+   >**Note:** Please click on **Ok** and continue further, if you encounter a pop-up related to Provider not supported.
 
-1. On the **Connection Manager** window, select **Native OLE DB/SQL Server Native Client 11.0**  from the drop-down.
+1. On the **Connection Manager** window, select **Native OLE DB/SQL Server Native Client 11.0** from the drop-down.
 
    ![Resource groups is highlighted in the Azure services list.](media/providerssn.png "Azure services")
 
@@ -168,7 +168,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
    - Authentication: **SQL Server Authentication**
    - **User name**: **<inject key="SQL MI Username" />**
    - **Password**: **<inject key="SQL MI Password" />** 
-   - Database Name: Select **2008DW** from the drop-down and click **OK**
+   - Database Name: Select **2008DW** from the drop-down and click **OK**.
 
    ![Resource groups is highlighted in the Azure services list.](media/2008dw.png "Azure services")
 
@@ -188,7 +188,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/1.190.png "Azure services")
 
-1. On the solution properties, select General under **Configuration Properties** and select **TargetServerVersion** as **SQL Server 2017** from drop-down menu and click on Apply and **OK**.
+1. On the solution properties, select General under **Configuration Properties** and select **TargetServerVersion** as **SQL Server 2017** from the drop-down menu and click on Apply and **OK**.
 
    ![Resource groups is highlighted in the Azure services list.](media/targetpackgeproject.png "Azure services")
 
@@ -202,7 +202,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
 1. Click on Next on the **Introduction** page on **Integration Services Deployment Wizard**
 
-1. Click Next on the **Select source** page with default value.
+1. Click Next on the **Select source** page with the default value.
 
    ![Resource groups is highlighted in the Azure services list.](media/selectsource.png "Azure services")
 
@@ -228,7 +228,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/1.213.png "Azure services")
    
-1. Once the Results is passed, click on **Close**.
+1. Once the Results are passed, click on **Close**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.184.png "Azure services")
    
@@ -256,5 +256,5 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
 ## Summary
 
-In this exercise, you have Migrated you SSIS packges to the Azure SQLMI using Azure data factory.
+In this exercise, you have Migrated you SSIS packages to the Azure SQLMI using Azure data factory.
 
