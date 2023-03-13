@@ -15,7 +15,7 @@ In this exercise, you will be accessing the already restored database inside the
    ![](media/1.219.png)  
  
 1. Now, enter the SQLVM **username**, and **password** provided below and then click on the **Ok** button. Please add the **dot** and **back-slash** “.\” before the username.
-    - **Username**: **.\ <inject key="SQL Server VM Username" />**
+    - **Username**: **.\<inject key="SQL Server VM Username" />**
     - **Password**: **<inject key="SQL Server VM Password" />**
    
    ![](media/1.6.png) 
