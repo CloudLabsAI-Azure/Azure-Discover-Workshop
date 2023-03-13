@@ -20,7 +20,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.79.png "SSMS Toolbar")
 
-1. The output should display the CLR is enabled for the managed instance.
+1. The output should display that the CLR is enabled for the managed instance.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.13.png "SSMS Toolbar")
    
