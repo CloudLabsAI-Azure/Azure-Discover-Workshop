@@ -45,7 +45,7 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
 
 1. Click on **Run script**.  
    
-1. While the script is running, you will see a new SSIS packages install window, click on **Next/Modify** button to configure the SSIS installation on the server.
+1. While the script is running, you will see a new SSIS packages install window, click on **Modify** button to configure the SSIS installation on the server.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis.png "SSMS Toolbar")  
     
