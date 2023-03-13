@@ -67,7 +67,7 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
 
    ![Resource groups is highlighted in the Azure services list.](media/1.220.png "Azure services")
 
-1. In the **Overview** section, Click on **Launch Studio**.
+1. In the **Overview** section, Click on **Launch studio**.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.223.png "Azure services")
 
@@ -85,7 +85,7 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
 
 In this section, we will be upgrading the Legacy SSIS package so that it can be migrated to Azure.
 
-1. On the JumpBox VM, navigate to `C:\Labfiles\SSISDW` and open **SSISDW.sln** in VS 2017
+1. On the JumpBox VM, navigate to `C:\Labfiles\SSISDW` and open **SSISDW.sln** in Microsoft Visual Studio 2017.
 
    ![Resource groups is highlighted in the Azure services list.](media/sad11.jpg "Azure services")
 
@@ -94,7 +94,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    * Password: <inject key="AzureAdUserPassword"></inject>   
 
-1. Once Visual Studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click **Ok** to proceed.
+1. Once Visual Studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click **OK** to proceed.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.221.png "Azure services")
 
@@ -108,7 +108,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
    
       >**Note:** Click on **Next** if you landed in **Select Packages** window.
 
-1. Click on Next on the upgrade wizard, and on **Package management option** page select the below options and click on next.
+1. Click on Next on the upgrade wizard, and on **Package management option** page select the below options and click on **Next**.
 
    - Update connection strings to use new provider names.
    - Continue upgrade process when a package upgrade fails.
@@ -120,7 +120,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
    ![Resource groups is highlighted in the Azure services list.](media/1.181.png "Azure services")
 
-1. Once the upgrade is completed, you can click on the close button. You should be able to see the below output upon completion of the package upgrade process.
+1. Once the upgrade is completed, you can click on the **Close** button. You should be able to see the below output upon completion of the package upgrade process.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.182.png "Azure services")
 
@@ -132,17 +132,17 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
 In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
 
-1. Now double click on the **PopulateDW.dtsx** and click OK on **Synchronize Connection Strings** to acknowledge the connection.
+1. Now double click on the **PopulateDW.dtsx** and click **OK** on Synchronize Connection Strings to acknowledge the connection.
 
    ![Resource groups is highlighted in the Azure services list.](media/populate.png "Azure services")
 
    ![Resource groups is highlighted in the Azure services list.](media/syncon.png "Azure services")
 
-1. Now right click on the solution and click on **Convert to project deployment model** to convert the project.
+1. Now right click on the solution and click on **Convert to Project Deployment Model** to convert the project.
 
    ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
 
-   >**Note:** Ignore the Warning message about connection manager and click on **Ok**.
+   >**Note:** Ignore the Warning message about connection manager and click on **OK**.
 
 1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project convert.
 
@@ -156,9 +156,9 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/cncnmngr.png "Azure services")
    
-   >**Note:** Please click on **Ok** and continue further, if you encounter a pop-up related to Provider not supported.
+   >**Note:** Please click on **OK** and continue further, if you encounter a pop-up related to Provider not supported.
 
-1. On the **Connection Manager** window, select **Native OLE DB/SQL Server Native Client 11.0** from the drop-down.
+1. On the **Connection Manager** window, select **Native OLE DB\SQL Server Native Client 11.0** from the drop-down.
 
    ![Resource groups is highlighted in the Azure services list.](media/providerssn.png "Azure services")
 
@@ -176,7 +176,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/credconvert.png "Azure services")
 
-1. Now you should be able to see a newly created connection under **connection manager** on solution explorer.
+1. Now you should be able to see a newly created connection under **Connection Managers** on solution explorer.
 
    ![Resource groups is highlighted in the Azure services list.](media/projctcncn.png "Azure services")
 
@@ -206,7 +206,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/selectsource.png "Azure services")
 
-1. On the **Deployment Target** page select **SSIS in Azure Data Factory** and click on Next.
+1. On the **Deployment Target** page select **SSIS in Azure Data Factory** and click on **Next**.
 
    ![Resource groups is highlighted in the Azure services list.](media/ssdf.png "Azure services")
 
