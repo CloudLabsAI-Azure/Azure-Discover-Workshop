@@ -71,7 +71,7 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
 
    ![Resource groups are highlighted in the Azure services list.](media/1.223.png "Azure services")
 
-1. In the Azure Data Factory portal, switch to the **Monitor** tab, and then select the **Integration runtimes** tab to view existing integration runtimes in your data factory.
+1. In the Azure Data Factory portal switch to the **Monitor** tab, and then select the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
    ![Resource groups are highlighted in the Azure services list.](media/1.205.png "Azure services")
 
@@ -148,11 +148,11 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 
-1. Review the summary of project covert and click on **Close** to close the convert window.
+1. Review the summary of the project convert and click on **Close** to close the convert window.
 
    ![Resource groups is highlighted in the Azure services list.](media/sad12.jpg "Azure services")
 
-1. Now double click on the **SQL Server** under connection manager windows.
+1. Now double click on the **SQL Server** under the connection manager windows.
 
    ![Resource groups is highlighted in the Azure services list.](media/cncnmngr.png "Azure services")
    
@@ -224,7 +224,7 @@ In this task, we will be deploying the fixed package onto the SSIS integration r
 
    ![Resource groups is highlighted in the Azure services list.](media/1.208.png "Azure services") 
 
-1. Review the values and click on **Deploy** button to start the project deployment.
+1. Review the values and click on the **Deploy** button to start the project deployment.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.213.png "Azure services")
    
