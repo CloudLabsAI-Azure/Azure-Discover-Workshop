@@ -1,5 +1,5 @@
 ## Exercise 3: Migrate your on-premises SSIS packages using Azure Data Factory
-Duration: 90 minutes
+Duration: 60 minutes
 
 Now that the databases for the Tailspin Application have been migrated, there is a set of additional SSIS packages on the LEGACYSQL2008 server that also require migration to the SQL Managed Instance for the central Data Warehouse. In this exercise, you will be migrating the SSIS packages to SQLMi using SSDT tools and Azure data factory SSIS integration runtime. 
 
