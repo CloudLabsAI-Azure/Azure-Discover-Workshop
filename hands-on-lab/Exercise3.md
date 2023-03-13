@@ -63,7 +63,7 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
 
    ![Resource groups is highlighted in the Azure services list.](media/1.14.png "Azure services")
 
-1. Select your **Data Factory** names as **Data-Factory-Shared-cs**.
+1. Select your **Data Factory** names as **data-factory-shared-cs**.
 
    ![Resource groups is highlighted in the Azure services list.](media/1.220.png "Azure services")
 
