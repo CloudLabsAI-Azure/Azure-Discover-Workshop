@@ -20,7 +20,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.79.png "SSMS Toolbar")
 
-1. The output should display the CLR is enabled for the manged instance.
+1. The output should display the CLR is enabled for the managed instance.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.13.png "SSMS Toolbar")
    
@@ -45,14 +45,17 @@ In this task, you will be running a powershell script that will restore a SSIS p
 
 1. Click on **Run script**.  
    
-1. While the script is running, you will see a new SSIS packges install window, click on **Next/Modify** button to configure the SSIS installation on the server.
+1. While the script is running, you will see a new SSIS packages install window, click on **Next/Modify** button to configure the SSIS installation on the server.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis.png "SSMS Toolbar")  
     
 1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Install/Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.217.png "SSMS Toolbar")
+   
+1. Once the installation is completed, click on **Close**.
 
+   ![The Execute button is highlighted in the SSMS toolbar.](media/1.222.png "SSMS Toolbar")
 
 ### Task 3: Review the already created Azure-SSIS integration runtime.  
 
@@ -60,13 +63,13 @@ In this task, you will be running a powershell script that will restore a SSIS p
 
    ![Resource groups is highlighted in the Azure services list.](media/1.14.png "Azure services")
 
-1. Select your **Data Factory** names as **Data-Factory-Shared**.
+1. Select your **Data Factory** names as **Data-Factory-Shared-cs**.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.202.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.220.png "Azure services")
 
 1. In the **Overview** section, Click on **Launch Studio**.
 
-   ![Resource groups are highlighted in the Azure services list.](media/1.203.png "Azure services")
+   ![Resource groups are highlighted in the Azure services list.](media/1.223.png "Azure services")
 
 1. In the Azure Data Factory portal, switch to the **Monitor** tab, and then select the **Integration runtimes** tab to view existing integration runtimes in your data factory.
 
@@ -91,9 +94,9 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
    * Email/Username: <inject key="AzureAdUserEmail"></inject>
    * Password: <inject key="AzureAdUserPassword"></inject>   
 
-1. Once Visual Studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click Ok to proceed.
+1. Once Visual Studio is open, you will see that the project is unsupported and visual studio will migrate the project automatically, click **Ok** to proceed.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.177.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/1.221.png "Azure services")
 
 1. Once the project is migrated, a new browser window will open and you should be able to see the migration report. You can review the report and close the tab.
 
@@ -129,7 +132,7 @@ In this section, we will be upgrading the Legacy SSIS package so that it can be 
 
 In this task, we will be converting the DTSX package into a Project Deployment model and correcting the DTSX package connection strings to use the new SQL Server Managed Instance using Visual Studio 2017.
 
-1. Now double click on the **PopulateDW.dtsx** and click OK on **Synchronise Connection Strings** to acknowledge the connection.
+1. Now double click on the **PopulateDW.dtsx** and click OK on **Synchronize Connection Strings** to acknowledge the connection.
 
    ![Resource groups is highlighted in the Azure services list.](media/populate.png "Azure services")
 
@@ -141,7 +144,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    >**Note:** Ignore the Warning message about connection manager and click on **Ok**.
 
-1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project covert.
+1. Click on **Next** button till you get on convert page and click on **Convert** button to complete the project convert.
 
    ![Resource groups is highlighted in the Azure services list.](media/finishconvert.png "Azure services")
 

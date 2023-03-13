@@ -33,7 +33,7 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![The Done button is highlighted on the File Sharing dialog.](media/1.126.png "File Sharing")
 
-### Task 2: Change the MSSQLSERVER service to run under the sqlmiuser account
+### Task 2: Change the MSSQLSERVER service to run under the DemoUser account
 
 In this task, you use the SQL Server Configuration Manager to update the service account used by the SQL Server (MSSQLSERVER) service to the `DemoUser` account. Changing the account used for this service ensures it has the appropriate permissions to write backups to the shared folder.
 
@@ -218,7 +218,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
 1. On the Migration Wizard **Configure migration settings** tab, enter the following configuration:
 
-   - **Network share location**: ```\\private ip adress\dms-backups``` **(1)**, replace **private ip adress** with **private IP address** legacy server which you copied in previous task. 
+   - **Network share location**: ```\\private ip address\dms-backups``` **(1)**, replace **private ip adress** with **private IP address** legacy server which you copied in previous task. 
    - **Windows User Azure Database Migration Service impersonates to upload files to Azure Storage**: **LEGACYSQL2008\DemoUser** 
    - **Password**: **<inject key="SQL Server VM Password" />** 
    - **Subscription containing storage account**: Select the subscription you are using for this hands-on lab.
@@ -261,7 +261,7 @@ Since you performed an "online data migration," the migration wizard continuousl
 
    ![The New Query button is highlighted in the SSMS toolbar.](media/1.159.png "SSMS Toolbar")
 
-1. Paste the following SQL scriptinto in a new query window, which inserts the record into the `Game` table.
+1. Paste the following SQL script into in a new query window, which inserts the record into the `Game` table.
 
    ```sql
    USE WideWorldImporters;
@@ -409,7 +409,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
      ![A Visual Studio security warning is displayed, and the Ask me for every project in this solution checkbox is unchecked and highlighted.](media/1.68.png "Visual Studio")
 
-      >**Note:** If you get any pop-up to install the ASP.Net and Web depvelopment workloads, please install and continue.
+      >**Note:** If you get any pop-up to install the ASP.Net and Web development workloads, please install and continue.
 
 1. At the security warning prompt, uncheck **Ask me for every project in this solution**, and then select **OK**.
 
@@ -567,4 +567,4 @@ In this task, you verify your web application now loads, and you can see the hom
 
 ## Summary
 
-In this exercise, you have Migrated you webapp database and webapplication to Azure and successfully connected the application the Azure SQLMI database and to the network.
+In this exercise, you have Migrated you webapp database and web application to Azure and successfully connected the application the Azure SQLMI database and to the network.
