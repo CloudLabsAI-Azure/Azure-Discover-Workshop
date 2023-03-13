@@ -1,7 +1,7 @@
 ## Exercise 1: Review the on-prem database and enable CLR on the legacy server
 Duration: 20 minutes
 
-In this exercise, you will be accessing the already restored database inside the legacy server and will be enabling the CLR on legacy server.
+In this exercise, you will be accessing the already restored database inside the legacy server and will be enabling the CLR on the legacy server.
 
 ### Task 1: Connect to the WideWorldImporters database on the legancysql2008 VM
 
@@ -18,13 +18,13 @@ In this exercise, you will be accessing the already restored database inside the
     - **Username**: **<inject key="SQL Server VM Username" />**
     - **Password**: **<inject key="SQL Server VM Password" />**
    
-   ![](media/1.6.png) 
+   ![](media/1.224.png) 
 
 1. Next, click on the **Yes** button to accept the certificate and add in trusted certificates.
 
    ![](media/1.7.png)
 
-### Task 2: Connect to the Legacry server using SSMS.
+### Task 2: Connect to the Legacy server using SSMS.
 
 1. Once logged in, open **Microsoft SQL Server Management Studio 17** (SSMS) by entering "sql server" in the search bar in the Windows Start menu and selecting **Microsoft SQL Server Management Studio 17** from the search results.
 
@@ -59,11 +59,11 @@ In this exercise, you will be accessing the already restored database inside the
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.12.png "SSMS Toolbar")
 
-1. The output will look like below
+1. The output will look like below.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.175.png "SSMS Toolbar")
    
-1. You have successfully enabled the CLR on the legacy server, now click on the Next button present in the bottom-right corner of this lab guide.
+1. You have successfully enabled the CLR on the legacy server, now click on the Next button in the bottom-right corner of this lab guide.
 
 ## Summary
 
