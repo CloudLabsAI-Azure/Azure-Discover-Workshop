@@ -65,7 +65,7 @@ Write-Host -BackgroundColor Black -ForegroundColor Yellow $subscriptionMessage
 # Set variables for storage account RG 
 ##############################################################################
 
-$labrg = "Azure-Discover-RG-880762"
+$labrg = "Azure-Discover-RG-deploymentidvalue"
 
 
 ###############################################################################
@@ -75,7 +75,7 @@ $labrg = "Azure-Discover-RG-880762"
 # First find and setup the Storage acocunt
 
 # Setup Storage Conext
-$StorageAccount = "sqlhacksa880762"
+$StorageAccount = "sqlhacksadeploymentidvalue"
 $StorageAccountKeys = Get-AzStorageAccountKey -ResourceGroupName "$labrg" -Name $StorageAccount
 $Key0 = $StorageAccountKeys | Select-Object -First 1 -ExpandProperty Value
 $Context = New-AzStorageContext -StorageAccountName $StorageAccount -StorageAccountKey $Key0
