@@ -63,7 +63,7 @@ In this exercise, you will be accessing the already restored database inside the
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.175.png "SSMS Toolbar")
    
-1. You have successfully enabled the CLR on the legacy server, now click on the Next button in the bottom-right corner of this lab guide.
+1. You have successfully enabled the CLR on the legacy server, now click on the Next button present in the bottom-right corner of this lab guide.
 
 ## Summary
 
