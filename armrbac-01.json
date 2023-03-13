@@ -1,0 +1,39 @@
+{
+    "Name":  "Spektra Custom RBAC",
+    "Id":  null,
+    "IsCustom":  true,
+    "Description":  "Spektra Training Custom Role.",
+    "Actions":  [
+                    "Microsoft.Authorization/*/read",
+                    "Microsoft.Compute/disks/*",
+                    "Microsoft.Compute/virtualMachines/*",
+                    "Microsoft.Compute/virtualMachines/extensions/*",
+                    "Microsoft.DataMigration/*",
+                    "microsoft.web/publishingusers/read",
+                    "microsoft.web/publishingusers/write",
+                    "Microsoft.Web/sites/publishxml/Action",
+                    "Microsoft.Web/sites/publish/Action",
+                    "Microsoft.KeyVault/vaults/*",
+                    "Microsoft.Network/networkInterfaces/*",
+                    "Microsoft.Network/networkSecurityGroups/*",
+                    "Microsoft.Network/publicIPAddresses/*",
+                    "Microsoft.Resources/deployments/*",
+                    "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.SqlVirtualMachine/SqlVirtualMachines/*",
+                    "Microsoft.Storage/storageAccounts/*",
+                    "Microsoft.Web/serverFarms/*",
+                    "Microsoft.Web/sites/*",
+                    "Microsoft.Web/*",
+                    "Microsoft.Sql/locations/managedDatabaseRestoreAzureAsyncOperation/*",
+                    "Microsoft.Sql/locations/managedDatabaseRestoreAzureAsyncOperation/completeRestore/action",
+                    "Microsoft.DataFactory/factories/*",
+                    "Microsoft.Network/virtualNetworkGateways/*",
+                    "Microsoft.Network/virtualNetworks/*",
+                    "Microsoft.Sql/managedInstances/*",
+                    "Microsoft.Sql/managedInstances/databases/*"
+
+                ],
+    "NotActions":  [
+
+                   ]
+}
