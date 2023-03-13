@@ -1,13 +1,9 @@
 {
-    "properties": {
-        "roleName": "Spektra Custom RBAC I29320 S1",
-        "description": "Spektra Training Custom Role.",
-        "assignableScopes": [
-            "/subscriptions/81e26d3a-dfe7-431e-8c58-b611a669dbb2"
-        ],
-        "permissions": [
-            {
-                "actions": [
+    "Name":  "Spektra Custom RBAC",
+    "Id":  null,
+    "IsCustom":  true,
+    "Description":  "Spektra Training Custom Role.",
+    "Actions":  [
                     "microsoft.alertsmanagement/smartDetectorAlertRules/*",
                     "Microsoft.Authorization/*/read",
                     "Microsoft.DataFactory/factories/*",
@@ -36,13 +32,11 @@
                     "Microsoft.SqlVirtualMachine/SqlVirtualMachines/*",
                     "Microsoft.Web/serverFarms/*",
                     "Microsoft.Web/sites/*",
-					"Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks/write",
-					"Microsoft.Web/sites/write"
+                    "Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks/write",
+                    "Microsoft.Web/sites/write"
+
                 ],
-                "notActions": [],
-                "dataActions": [],
-                "notDataActions": []
-            }
-        ]
-    }
+    "NotActions":  [
+
+                   ]
 }
