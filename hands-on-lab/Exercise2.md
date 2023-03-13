@@ -1,9 +1,9 @@
-## Exercise 2: Migrate and run your webapp on Azure using the Database Migration Service
+## Exercise 2: Migrate and run your web app on Azure using the Database Migration Service
 Duration: 90 minutes
 
 In this exercise, you use the **Azure Database Migration Service** here `https://azure.microsoft.com/services/database-migration/` (DMS) to migrate the `WideWorldImporters` database from an on-premises SQL Server 2008 R2 database into an Azure SQL Managed Instance (SQL MI). WWI mentioned the importance of their gamer information web application in driving revenue, so for this migration, the online migration option is used to minimize downtime. Targeting the **Business critical service tier** here `https://docs.microsoft.com/azure/azure-sql/managed-instance/sql-managed-instance-paas-overview#managed-instance-service-tiers` allows WWI to meet its customers' high-availability requirements.
 
-> The Business-Critical service tier is designed for business applications with the highest performance and high-availability (HA) requirements. To learn more, read the Managed Instance service Tiers documentation.
+> The Business-Critical service tier is designed for business applications with the highest performance and high availability (HA) requirements. To learn more, read the Managed Instance Service Tiers documentation.
 
 ### Task 1: Create an SMB network share on the LEGACYSQL2008 VM
 
@@ -17,7 +17,7 @@ In this task, you create a new SMB network share on the legacysql2008 VM. DMS us
 
    ![In Windows Explorer, Windows (C:) is selected under Computer in the left-hand tree view, and New folder is highlighted in the top menu.](media/1.122.png "Windows Explorer")
 
-1. Name the new folder as **dms-backups**. Right-click on the folder, select **Share with**, and then select **Specific people** in the context menu.
+1. Name the new folder as `dms-backups`. Right-click on the folder, select **Share with** and then select **Specific people** in the context menu.
 
    ![In Windows Explorer, the context menu for the dms-backups folder is displayed, with Share with and Specific people highlighted.](media/1.123.png "Windows Explorer")
 
@@ -125,7 +125,7 @@ In this task, you use the Azure Cloud Shell to retrieve the information necessar
 
    ![The Azure Cloud Shell icon is highlighted in the Azure portal's top menu.](media/1.142.png "Azure Cloud Shell")
 
-1. Cloud Shell window will open in the bottom of your browser window, select **PowerShell** to configure the Cloud Shell.
+1. Cloud Shell window will open at the bottom of your browser window, select **PowerShell** to configure the Cloud Shell.
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.143.png "Azure Cloud Shell")
    
@@ -191,7 +191,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
    ![The New migration project blade is displayed, with the values specified above entered into the appropriate fields.](media/sad7.jpg "New migration project")
 
-1. On the Migration Wizard **Select source** tab, enter the following details and click on **Next: Select target** **(6)** :
+1. On the Migration Wizard **Select source** tab, enter the following details and click on **Next: Select target** **(6)**:
 
    - **Source SQL Server instance name**: Enter the IP address of your LEGACYSQL2008 VM which you copied in the previous task. For example, `10.0.236.0`. **(1)**
    - **Authentication type**: Select SQL Authentication **(2)** 
@@ -479,7 +479,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
    ![The your-sqlmi-host-fqdn-value string is highlighted in the connection string.](media/E2T9S7.png "Edit Connection String")
 
-1. The updated value should look similar to the following screenshot.
+1. The updated value should look like the following screenshot.
 
    ![The updated connection string is displayed, with the fully qualified domain name of SQL MI highlighted within the string.](media/1.49.png "Connection string value")
    
@@ -532,11 +532,11 @@ In this task, you add the networking configuration to your App Service to enable
 
    ![image](media/1.57.png "App Service")
 
-   >**Note**: If you see **Failed to add delegation to existing subnet** please select any other subnet.  
+   >**Note**: If you see **Failed to add delegation to existing subnet**, please select any other subnet.  
 
    >**Note**: If you are not able to select any existing subnet, then follow the below steps.
    
-   - Select the create new subnet option and enter name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e., 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping other subnet's address.
+   - Select the create new subnet option and enter the name as Webappsubnet<inject key="Suffix" />. Select the Virtual Network address block i.e., 10.0.0.0/16 from the drop down list. In the subnet address block enter new address block 10.0.xx.0/23 for the subnet, make sure it is not overlapping with the other subnet's address.
   
    > **Note**: If the address space is overlapping with other subnets, change the virtual network address block by selecting a different virtual network address block i.e., 10.1.0.0/16 or 10.2.0.0/16 from the drop-down. In the subnet address block, enter 10.1.xx.0/23 or 10.2.xx.0/23 according to the virtual network address block you have selected and make sure it is not overlapping the other subnet's address.
 
@@ -567,4 +567,4 @@ In this task, you verify your web application now loads, and you can see the hom
 
 ## Summary
 
-In this exercise, you have Migrated you webapp database and web application to Azure and successfully connected the application the Azure SQLMI database and to the network.
+In this exercise, you have Migrated you web app database and web application to Azure and successfully connected the application to the Azure SQLMI database and to the network.
