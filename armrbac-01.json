@@ -1,39 +1,48 @@
 {
-    "Name":  "Spektra Custom RBAC",
-    "Id":  null,
-    "IsCustom":  true,
-    "Description":  "Spektra Training Custom Role.",
-    "Actions":  [
+    "properties": {
+        "roleName": "Spektra Custom RBAC I29320 S1",
+        "description": "Spektra Training Custom Role.",
+        "assignableScopes": [
+            "/subscriptions/81e26d3a-dfe7-431e-8c58-b611a669dbb2"
+        ],
+        "permissions": [
+            {
+                "actions": [
+                    "microsoft.alertsmanagement/smartDetectorAlertRules/*",
                     "Microsoft.Authorization/*/read",
+                    "Microsoft.DataFactory/factories/*",
+                    "Microsoft.Network/networkIntentPolicies/*",
+                    "Microsoft.Network/networkInterfaces/*",
+                    "Microsoft.Network/networkSecurityGroups/*",
+                    "Microsoft.Network/privateDnsZones/*",
+                    "Microsoft.Network/privateDnsZones/virtualNetworkLinks/*",
+                    "Microsoft.Network/privateEndpoints/*",
+                    "Microsoft.Network/publicIPAddresses/*",
+                    "Microsoft.Network/serviceEndpointPolicies/*",
+                    "Microsoft.Network/virtualNetworkGateways/*",
+                    "Microsoft.Network/virtualNetworks/*",
+                    "Microsoft.Resources/deployments/*",
+                    "Microsoft.Resources/subscriptions/resourceGroups/read",
+                    "Microsoft.Sql/managedInstances/*",
+                    "Microsoft.Sql/managedInstances/databases/*",
+                    "Microsoft.Sql/virtualClusters/*",
+                    "Microsoft.Storage/storageAccounts/*",
                     "Microsoft.Compute/disks/*",
                     "Microsoft.Compute/virtualMachines/*",
                     "Microsoft.Compute/virtualMachines/extensions/*",
-                    "Microsoft.DataMigration/*",
-                    "microsoft.web/publishingusers/read",
-                    "microsoft.web/publishingusers/write",
-                    "Microsoft.Web/sites/publishxml/Action",
-                    "Microsoft.Web/sites/publish/Action",
+                    "Microsoft.DataMigration/services/*",
+                    "Microsoft.DataMigration/services/projects/*",
                     "Microsoft.KeyVault/vaults/*",
-                    "Microsoft.Network/networkInterfaces/*",
-                    "Microsoft.Network/networkSecurityGroups/*",
-                    "Microsoft.Network/publicIPAddresses/*",
-                    "Microsoft.Resources/deployments/*",
-                    "Microsoft.Resources/subscriptions/resourceGroups/read",
                     "Microsoft.SqlVirtualMachine/SqlVirtualMachines/*",
-                    "Microsoft.Storage/storageAccounts/*",
                     "Microsoft.Web/serverFarms/*",
                     "Microsoft.Web/sites/*",
-                    "Microsoft.Web/*",
-                    "Microsoft.Sql/locations/managedDatabaseRestoreAzureAsyncOperation/*",
-                    "Microsoft.Sql/locations/managedDatabaseRestoreAzureAsyncOperation/completeRestore/action",
-                    "Microsoft.DataFactory/factories/*",
-                    "Microsoft.Network/virtualNetworkGateways/*",
-                    "Microsoft.Network/virtualNetworks/*",
-                    "Microsoft.Sql/managedInstances/*",
-                    "Microsoft.Sql/managedInstances/databases/*"
-
+					"Microsoft.Network/virtualNetworks/subnets/serviceAssociationLinks/write",
+					"Microsoft.Web/sites/write"
                 ],
-    "NotActions":  [
-
-                   ]
+                "notActions": [],
+                "dataActions": [],
+                "notDataActions": []
+            }
+        ]
+    }
 }
