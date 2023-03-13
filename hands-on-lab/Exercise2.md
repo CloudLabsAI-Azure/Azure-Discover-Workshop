@@ -60,7 +60,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    ![The Yes button is highlighted in the Confirm Account Change dialog.](media/1.130.png "Confirm Account Change")
 
-1. Observe that the **Log on As** value for the SQL Server (MSSQLSERVER) service changed to `.\demouser`.
+1. Observe that the **Log on As** value for the SQL Server (MSSQLSERVER) service changed to `.\demoUser`.
 
    ![In the list of SQL Server Services, the SQL Server (MSSQLSERVER) service is highlighted.](media/1.131.png "SQL Server Services")
 
@@ -147,7 +147,7 @@ In this task, you use the Azure Cloud Shell to retrieve the information necessar
 
 1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, 
 
-   >**Note**: Replace `<your-resource-group-name>` with **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** and `<VM name>` with **LEGACYSQL2008**.
+   >**Note**: Replace `<your-resource-group-name>` with **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** and `<VM name>` with **LEGACYSQL2008**
 
       ```powershell
       $resourceGroup = "<your-resource-group-name>"
