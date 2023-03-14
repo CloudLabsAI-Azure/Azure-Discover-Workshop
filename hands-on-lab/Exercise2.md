@@ -60,7 +60,7 @@ In this task, you use the SQL Server Configuration Manager to update the service
 
    ![The Yes button is highlighted in the Confirm Account Change dialog.](media/1.130.png "Confirm Account Change")
 
-1. Observe that the **Log on As** value for the SQL Server (MSSQLSERVER) service changed to `.\demoUser`.
+1. Observe that the **Log on As** value for the SQL Server (MSSQLSERVER) service changed to `.\DemoUser`.
 
    ![In the list of SQL Server Services, the SQL Server (MSSQLSERVER) service is highlighted.](media/1.131.png "SQL Server Services")
 
@@ -82,7 +82,7 @@ To perform online data migrations, DMS looks for database and transaction log ba
    
 1. Once connected, expand **Databases** under **LEGACYSQL2008** in the Object Explorer, and then right-click on the **WideWorldImporters** database. In the context menu, select **Tasks** and then **Back Up**.
 
-   ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/1.134.png "Windows start menu search")
+   ![SQL Server is entered into the Windows Start menu search box, and Microsoft SQL Server Management Studio 17 is highlighted in the search results.](media/adw1.png "Windows start menu search")
 
 1. In the Back Up Database dialog, you should see `C:\WideWorldImporters.bak` listed in the Destinations box. This device is no longer needed, so select it and then select **Remove**.
 
@@ -141,9 +141,9 @@ In this task, you use the Azure Cloud Shell to retrieve the information necessar
 
       ![](media/sad3.jpg "Azure Cloud Shell")
 
-1. After a moment, a message is displayed that you have successfully requested a Cloudshell and be presented with a PS Azure prompt.
+1. After a moment, a message is displayed that you have successfully requested a Cloudshell and be presented with a PS /home/odl_user prompt.
  
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/adw2.png "Azure Cloud Shell")
 
 1. At the prompt, retrieve the private IP address of the LEGACYSQL2008 VM. This IP address will be used to connect to the database on that server. Enter the following PowerShell command, 
 
@@ -166,9 +166,9 @@ In this task, you use the Azure Cloud Shell to retrieve the information necessar
 
 In this task, you create a new online data migration project in DMS for the `WideWorldImporters` database.
 
-1. From the Azure portal, select **Resource groups** from the Azure services list.
+1. From the Azure portal, select **Resource groups** from the Navigate list.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.1.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/avd3.png "Azure services")
 
 1. Select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group from the list.
 
@@ -227,7 +227,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
    
    - **Storage account**: Select the **sqlmistoreus** storage account.
    - Click on **Advance Settings**.
-   - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="True" />**
+   - **WideWorldImporters**: Enter **WideWorldImporters<inject key="SUFFIX" enableCopy="True" />** in the Target database name space.
 
    ![The Migration Wizard Select databases tab is displayed, with the WideWorldImporters database selected.](media/ADWimg-1.png "Migration Wizard Select databases")
 
@@ -304,6 +304,8 @@ Since you performed an "online data migration," the migration wizard continuousl
 1. After verifying the transaction log status of **Restored**, select **Start Cutover**.
 
     ![The Start Cutover button is displayed.](media/1.163.png "DMS Migration Wizard")
+    
+   > **Note**: If you don't see the Start Cutover button is highlighted even after refreshing the page, Go back to the **WwiMigration Window** and refresh the page and select the WideWorldImporters database.    
 
 1. On the Complete cutover dialog, verify pending log backups is `0`, check **Confirm**, and then select **Apply**.
 
@@ -333,9 +335,9 @@ In this task, you connect to the SQL MI database using SSMS and quickly verify t
 
    ![In the Welcome to Azure Cloud Shell window, PowerShell is highlighted.](media/1.63.png "Azure Cloud Shell")
 
-1. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and be presented with a PS Azure prompt.
+1. After a moment, a message is displayed that you have successfully requested a Cloud Shell, and be presented with a PS /home/odl_user prompt.
 
-   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/1.64.png "Azure Cloud Shell")
+   ![In the Azure Cloud Shell dialog, a message is displayed that requesting a Cloud Shell succeeded, and the PS Azure prompt is displayed.](media/adw2.png "Azure Cloud Shell")
 
 1. At the prompt, retrieve information about SQL MI in the SQLMI-Shared-RG resource group by entering the following PowerShell command.
 
@@ -390,7 +392,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
 1. You have already logged-in to JumpBox VM, use this VM to continue with the lab.
 
-1. In the File Explorer dialog, navigate to the `C:\hands-on-lab\Migrating-SQL-databases-to-Azure-master\Hands-on lab\lab-files`. In the lab-files folder, double-click **WideWorldImporters.sln** to open the solution in Visual Studio.
+1. In the File Explorer dialog, navigate to the `C:\hands-on-lab\MCW-Migrating-SQL-databases-to-Azure-master\Hands-on lab\lab-files`. In the lab-files folder, double-click **WideWorldImporters.sln** to open the solution in Visual Studio.
 
    ![The folder at the path specified above is displayed, and WideWorldImporters.sln is highlighted.](media/1.34.png "Windows Explorer")
 
@@ -423,7 +425,7 @@ In this task, you will use JumpBox VM and then, using Visual Studio on the JumpB
 
     ![In the Publish dialog, Azure is selected and highlighted in the Target box. The Next button is highlighted.](media/1.39.png "Publish API App to Azure")
 
-1. Next, in the **Specific target** box, select **Azure App Service (Windows)**.
+1. Next, in the **Specific target** box, select **Azure App Service (Windows)** and select **Next**.
 
     ![In the Publish dialog, Azure App Service (Windows) is selected and highlighted in the Specific Target box. The Next button is highlighted.](media/1.171.png "Publish API App to Azure")
 
@@ -513,7 +515,7 @@ In this task, you add the networking configuration to your App Service to enable
 
    ![The wwi-web-UNIQUEID App Service is highlighted in the list of resource group resources.](media/1.45.png "Resource group")
 
-1. On the App Service blade, select **Networking** from the left-hand menu.
+1. On the Web App blade, select **Networking** from the left-hand menu.
 
    ![On the App Service blade, Networking is selected in the left-hand menu, and Click here to configure is highlighted under VNet Integration.](media/1.54.png "App Service")
 

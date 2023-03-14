@@ -29,7 +29,7 @@ Now that the databases for the Tailspin Application have been migrated, there is
 
 In this task, you will be running a PowerShell script that will restore an SSIS packages DB into the SQLMI and install the required SSIS tool for the package migration. 
 
-1. Navigate back to JumpBox, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
+1. Navigate back to JumpVM, type **PowerShell** in the search bar, right-click on **Windows PowerShell ISE** and click on **Run as administrator** in the context menu.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.80.png "SSMS Toolbar")
 
@@ -50,6 +50,8 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
    ![The Execute button is highlighted in the SSMS toolbar.](media/installssis.png "SSMS Toolbar")  
     
 1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Install/Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
+
+   >**Note**: Please close the existing visual studio application which is in running and proceed with above step.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.217.png "SSMS Toolbar")
    
@@ -138,7 +140,7 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
    ![Resource groups is highlighted in the Azure services list.](media/syncon.png "Azure services")
 
-1. Now right click on the solution and click on **Convert to Project Deployment Model** to convert the project.
+1. Now right click on the SSISDW(Package deployment Model) and click on **Convert to Project Deployment Model** to convert the project.
 
    ![Resource groups is highlighted in the Azure services list.](media/convert.png "Azure services")
 
@@ -184,15 +186,17 @@ In this task, we will be converting the DTSX package into a Project Deployment m
 
 In this task, we will be deploying the fixed package onto the SSIS integration runtime and SSISDB held within the Managed Instance.
 
-1. Right click on the solution and click on properties to change the target server type to 2017 as 2019 is not yet supported.
+1. Right click on the SSISDW and click on properties to change the target server type to 2017 as 2019 is not yet supported.
 
-   ![Resource groups is highlighted in the Azure services list.](media/1.190.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/adw4.png "Azure services")
 
-1. On the solution properties, select General under **Configuration Properties** and select **TargetServerVersion** as **SQL Server 2017** from the drop-down menu and click on Apply and **OK**.
+1. On the solution properties, select General under **Configuration Properties** and select **TargetServerVersion** as **SQL Server 2017** from the drop-down menu and click on **Apply**.
 
    ![Resource groups is highlighted in the Azure services list.](media/targetpackgeproject.png "Azure services")
+   
+   >**Note:** Please click on **yes** and continue further, if you encounter a pop-up related to apply the changes.   
 
-1. If you do get the "Do you want to reload" message, click **No to All**.
+1. If you do get the "Do you want to reload" message, click **No to All** and click on **OK**
 
    ![Resource groups is highlighted in the Azure services list.](media/notoall.png "Azure services")
 
