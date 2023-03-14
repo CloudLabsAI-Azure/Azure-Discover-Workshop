@@ -168,7 +168,7 @@ In this task, you create a new online data migration project in DMS for the `Wid
 
 1. From the Azure portal, select **Resource groups** from the Navigate list.
 
-   ![Resource groups is highlighted in the Azure services list.](media/awd3.png "Azure services")
+   ![Resource groups is highlighted in the Azure services list.](media/adw3.png "Azure services")
 
 1. Select the **Azure-Discover-RG-<inject key="SUFFIX" enableCopy="false" />** resource group from the list.
 
