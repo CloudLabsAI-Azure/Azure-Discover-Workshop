@@ -51,7 +51,7 @@ In this task, you will be running a PowerShell script that will restore an SSIS 
     
 1. On the next window, select the checkbox on **SQL Server Integration Services** tool and click on **Install/Modify**. This will install the SSIS tool on the server, once the installation is completed you can close the window.
 
-   >**Note**: Please close the existing visual studio application which is in running and click on close.
+   >**Note**: Please close the existing visual studio application which is in running and proceed with above step.
 
    ![The Execute button is highlighted in the SSMS toolbar.](media/1.217.png "SSMS Toolbar")
    
