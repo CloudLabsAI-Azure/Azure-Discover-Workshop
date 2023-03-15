@@ -16,7 +16,7 @@ At the end of this hands-on lab, you will be better able to implement a cloud mi
 The following diagram provides an overview of the Lab environment that will be built.
 
 
-![SQL Hack Architecture](https://github.com/sk-bln/SQL-Hackathon/raw/master/Hands-On%20Lab/SQLHack%20Architecture.png "SQL Hack Architecture")
+![](media/1.230.png)
 
 
 ## Azure services and related products ##
