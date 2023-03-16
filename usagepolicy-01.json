@@ -1,0 +1,49 @@
+﻿[
+  {
+    "ResourceType": "Microsoft.Compute/virtualMachines",
+    "Parameter": [
+      {
+        "Name": "max-cpu-cores",
+        "Value": "4"
+      }
+    ]
+  },
+  {
+    "ResourceType": "Microsoft.KeyVault/vaults",
+    "Parameter": [
+      {
+        "Name": "max-count",
+        "Value": "1"
+      }
+    ]
+  },
+  {
+    "ResourceType": "Microsoft.Storage/storageAccounts",
+    "Parameter": [
+      {
+        "Name": "max-count",
+        "Value": "2"
+      }
+    ]
+  },
+  
+  {
+    "ResourceType": "Microsoft.Network/virtualNetworks",
+    "Parameter": [
+      {
+        "Name": "max-count",
+        "Value": "1"
+      }
+    ]
+  },
+  {
+    "ResourceType": "Microsoft.DataFactory/factories",
+    "Parameter": [
+      {
+        "Name": "max-count",
+        "Value": "1"
+      }
+    ]
+  }
+
+  ]
