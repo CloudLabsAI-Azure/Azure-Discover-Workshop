@@ -27,6 +27,6 @@ Lab Guide Preview URL: [Lab Guide Preview](https://experience.cloudlabs.ai/#/lab
 
    Cannot connect to your SQL VM while creating the migration project **OnPremToSqlMi**. Follow below instructions to resolve the issue.
       
-    1. Enter a Private Ip address of Sql Vm.
+    1. Enter a Private Ip address of SQL Vm.
     
-    1. Turn off the firewall in the SQL vm, if we don't want to turn off the firewall we can create an inbound rule to allow 1433 port.
+    1. Turn off the firewall in the SQL Vm, if we don't want to turn off the firewall we can create an inbound rule to allow 1433 port.
